@@ -388,7 +388,7 @@ body {
     position: relative;
     left: 25%;
     margin-top: 3%;
-    top: 0%;
+    top: 10%;
 }
 .rentBtn{
     position: relative;
@@ -512,4 +512,55 @@ body {
     top: 2%;
     font-size: 20px;
     font-weight: bold;
+}
+
+/*payment*/
+.paymentSection{
+    position: relative;
+    width: 100vw;
+    height: 145vh;
+    background-color: #f6efe3;
+    left: -1%;
+}
+.paymentForm{
+    height: 73%;
+    width: 45%;
+    background-color: white;
+    position: absolute;
+    left: 31px;
+    right: 0;
+    top: 0%;
+    bottom: 0;
+    margin: auto;
+    border: 1px solid white;
+    border-radius: 13px;
+}
+.paymentForm>div{
+    position: relative;
+    left: 25%;
+    margin-top: 3%;
+    top: 5%;
+}
+.submitBtn{
+    position: relative;
+    left: 38%;
+}
+
+/*model*/
+.modelIcon{
+    position: relative;
+    left: 47%;
+}
+.modelTxt1{
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    left: 3%;
+}
+.modelTxt2{
+    font-size: 14px;
+
+    font-weight: bold;
+    position: relative;
+    left: -28%;
 }

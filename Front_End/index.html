@@ -280,10 +280,6 @@
                 <label class="form-label" for="startDate">Start Date :</label>
                 <input data-provide="datepicker" class="form-control"id="startDate" type="date">
             </div>
-            <div class="col-md-6">
-                <label class="form-label" for="endtDate">End Date :</label>
-                <input data-provide="datepicker" class="form-control"id="endtDate" type="date">
-            </div>
             <div class="mb-6">
                 <label class="form-label" for="pickUpTime">pickUp Time :</label>
                 <input data-provide="datepicker" style="width: 50%" class="form-control" id="pickUpTime" type="time">
@@ -423,52 +419,47 @@
 
     <!--payment page-->
     <section class="paymentSection">
-        <idv class="rentForm">
-           <!-- <div class="col-md-6">
-                <label class="form-label" for="selectedCustomer">Selected Customer :</label>
-                <label class="form-label" id="selectedCustomer">Temp_Kasun</label>
-            </div>
+        <idv class="paymentForm">
             <div class="col-md-6">
-                <label class="form-label" for="selectedCar">Selected Car :</label>
-                <label class="form-label" id="selectedCar">Temp_Corolla</label>
-            </div>
-            <div class="col-md-6">
-                <label class="form-label" for="vehicleGroup">Vehicle Group :</label>
-                <label class="form-label" id="vehicleGroup">Temp_Premium</label>
-            </div>
-            <div class="col-md-6">
-                <label class="form-label" for="startDate">Start Date :</label>
-                <input data-provide="datepicker" class="form-control"id="startDate" type="date">
+                <label class="form-label" for="rentID">Rent Id :</label>
+                <label class="form-label" id="rentID">Temp_R001</label>
             </div>
             <div class="col-md-6">
                 <label class="form-label" for="endtDate">End Date :</label>
                 <input data-provide="datepicker" class="form-control"id="endtDate" type="date">
             </div>
             <div class="mb-6">
-                <label class="form-label" for="pickUpTime">pickUp Time :</label>
-                <input data-provide="datepicker" style="width: 50%" class="form-control" id="pickUpTime" type="time">
+                <label class="form-label" for="returnTime">Return Time :</label>
+                <input data-provide="datepicker" style="width: 50%" class="form-control" id="returnTime" type="time">
             </div>
             <div class="mb-6">
-                <label class="form-label" for="LossDamageCost">Loss Damage Cost :</label>
-                <label class="form-label" id="LossDamageCost">Temp_15000</label>
+                <label class="form-label" for="distance">Distance :</label>
+                <input class="form-control" style="width: 50%" id="distance" type="text">
             </div>
             <div class="mb-6">
-                <label class="form-label" for="paymentSlip">Payment Slip</label>
-                <input class="form-control" style="width: 50%" id="paymentSlip" type="file">
+                <label class="form-label" for="damageCost">Loss Damage Cost :</label>
+                <input class="form-control" style="width: 50%" id="damageCost" type="text">
+            </div>
+            <div class="mb-6">
+                <label class="form-label" for="distanceCost">Distance Cost :</label>
+                <input class="form-control" style="width: 50%" id="distanceCost" type="text">
+            </div>
+            <div class="mb-6">
+                <label class="form-label" for="driverCost">Driver Cost :</label>
+                <input class="form-control" style="width: 50%" id="driverCost" type="text">
+            </div>
+            <div class="mb-6">
+                <label class="form-label" for="totalCost">Total Cost :</label>
+                <label class="form-label" id="totalCost">Temp_2500</label>
             </div>
 
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                    With a driver
-                </label>
-            </div>
+
             <div class="col-12">
-                <button class="btn rentBtn btn-warning" type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop">RENT NOW</button>
-            </div>-->
+                <button class="btn submitBtn btn-warning" type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">SUBMIT</button>
+            </div>
         </idv>
 
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
