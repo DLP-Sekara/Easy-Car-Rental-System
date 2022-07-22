@@ -477,6 +477,7 @@
 
     <section class="carManagement">
         <div class="carForm">
+            <pre>Vehicle Management</pre>
             <form class="row g-3">
                 <div class="col-md-6">
                     <label for="regNo" class="form-label">Reg No</label>
@@ -540,10 +541,49 @@
                     <input class="form-control"  id="carImages" type="file">
                 </div>
                 <div class="col-12">
-                    <button class="btn customerSaveBtn btn-warning" type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop">SAVE CUSTOMER</button>
+
+                    <button class="btn carSaveBtn btn-success" type="submit" >SAVE CAR</button>
+                    <button class="btn carUpdateBtn btn-warning" type="submit" >UPDATE CAR</button>
+                    <button class="btn carDeleteBtn btn-danger" type="submit" >DELETE CAR</button>
                 </div>
             </form>
 
+        </div>
+        <div class="carTable">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Car No</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">No Of Passengers</th>
+                    <th scope="col">Daily Price</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td >Larry the Bird</td>
+                    <td>@twitter</td>
+                    <td>@twitter</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 </main>
