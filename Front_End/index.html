@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DSD POS</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+    <link href="assets/css/fontawesome/css/all.css" rel="stylesheet">
+    <link href="assets/css/fontawesome/css/all.css" rel="stylesheet">
+    <link href="assets/main.css" rel="stylesheet">
+</head>
+<body>
+<!--    nav   -->
+<nav class="navbar navOne navbar-expand-lg navbar-light container-fluid fixed-top shadow-lg" id="nav1"
+     style="">
+    <div class="container-fluid ">
+        <a class="logo navbar-brand" href="#home" style="color: #E74C3C; font-weight: bold"><img
+                src="assets/images/logo.jpg" style="height: 125px"></a>
+        <button aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"
+                class="collapsBtn navbar-toggler"
+                data-bs-target="#navbarNavDropdown" data-bs-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown" style="">
+            <ul class="navbar-nav" id="ulNAV">
+                <li class="nav-item nav-link active" id="homeBtn">
+                    <a aria-current="" class="nav-link active" href="#home" style="">Home</a>
+                </li>
+                <li class="nav-item nav-link active" id="customerBTN">
+                    <a aria-current="" class="nav-link active" href="#login" style="">Customers</a>
+                </li>
+                <li class="nav-item nav-link active" id="EmployeeBTN">
+                    <a class="nav-link" href="#adminLogin" style="">Employee</a>
+                </li>
+               <!-- <li class="nav-item nav-link active" id="ManageBTN">
+                    <a class="nav-link" href="#adminLogin" style="">Management</a>
+                </li>-->
+
+                <li class="nav-item dropdown"id="ManageBTN">
+                    <a class="nav-link dropdown-toggle" href="" role="button" style="" data-bs-toggle="dropdown" aria-expanded="false">
+                        Settings
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#myBookings">Return Now</a></li>
+                        <li><a class="dropdown-item" href="#myBookings">Booking</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown"id="AdminManageBTN">
+                    <a class="nav-link dropdown-toggle" href="" role="button" style="" data-bs-toggle="dropdown" aria-expanded="false">
+                        Management
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Add Car</a></li>
+                        <li><a class="dropdown-item" href="#">Add Driver</a></li>
+                        <li><a class="dropdown-item" href="#">View</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+        <li class="nav-item nav-link active" id="logInBTN">
+            <a class="nav-link" href="#login" style="">LOG IN</a>
+        </li>
+        <li class="nav-item nav-link active" id="logOutBtn">
+            <a class="nav-link" href="#login" style="">LOG Out</a>
+        </li>
+
+    </div>
+
+</nav>
+
+<main class="container-fluid">
+
+
+    <!--    home page   -->
+    <section class="home" id="home">
+        <img alt="..." class="homePageImg img-fluid" src="assets/images/background.png" style="">
+        <div class="topic">
+            <div class="top"></div>
+            <pre class="topic1">Car Rentals</pre>
+            <div class="bottom"></div>
+            <pre class="topic2">Online  Car  Rental  Service</pre>
+            <!--<a href="#1"></a>-->
+            <a aria-current="" class="nav-link active" href="#1" style=""><img
+                    src="assets/images/icons8-down-button-50.png"></a>
+        </div>
+    </section>
+
+
+    <!--    first page   -->
+    <section class="firstPage">
+        <pre class="topic3" id="1">AVAILABLE VEHICLES</pre>
+        <div class="vehicles">
+            <section>
+                <div id="v1">
+                    <img src="assets/images/cars/V1.png"/>
+                    <pre>Graphic Design</pre>
+                </div>
+
+                <div id="v2">
+                    <img src="assets/images/cars/V2.png"/>
+                    <pre>UI/UX Design</pre>
+                </div>
+
+                <div id="v3">
+                    <img src="assets/images/cars/V3.png"/>
+                    <pre>Web Design</pre>
+                </div>
+
+                <div id="v4">
+                    <img src="assets/images/cars/V2.png"/>
+                    <pre>App Design</pre>
+                </div>
+
+                <div id="v5">
+                    <img src="assets/images/cars/V3.png"/>
+                    <pre>SEO</pre>
+                </div>
+
+                <div id="v6">
+                    <img src="assets/images/cars/V1.png"/>
+                    <pre>Software Development</pre>
+                </div>
+
+                <div id="v7">
+                    <img src="assets/images/cars/V3.png"/>
+                    <pre>Graphic Design</pre>
+                </div>
+
+                <div id="v8">
+                    <img src="assets/images/cars/V2.png"/>
+                    <pre>UI/UX Design</pre>
+                </div>
+
+                <div id="v9">
+                    <img src="assets/images/cars/V1.png"/>
+                    <pre>Web Design</pre>
+                </div>
+
+                <div id="v10">
+                    <img src="assets/images/cars/V1.png"/>
+                    <pre>App Design</pre>
+                </div>
+
+                <div id="v11">
+                    <img src="assets/images/cars/V2.png"/>
+                    <pre>SEO</pre>
+                </div>
+
+                <div id="v12">
+                    <img src="assets/images/cars/V3.png"/>
+                    <pre>Software Development</pre>
+                </div>
+            </section>
+        </div>
+    </section>
+
+
+    <!--    login,sign in page   -->
+    <section class="loginPage" id="login">
+        <div class="customerPanel">
+            <div class="top"></div>
+            <pre class="customerTopic1">Customer Panel </pre>
+            <div class="bottom"></div>
+            <pre class="customerTopic2">Please Login or Sign in to continue</pre>
+        </div>
+        <div class="logInForm">
+            <pre id="lbl1">Login</pre>
+            <form class="loginForm">
+                <div class="row mb-3 col-11 col-lg-3">
+                    <label class="col-sm-2 col-form-label" for="inputEmail3">Email</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputEmail3" type="email">
+                    </div>
+                </div>
+                <div class="row mb-3 col-11 col-lg-3">
+                    <label class="col-sm-2 col-form-label" for="inputPassword3">Password</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputPassword3" type="password">
+                    </div>
+                </div>
+                <button class="btn custLogInBtn btn-primary" type="submit">Sign in</button>
+            </form>
+            <pre id="lbl2">Create a new account</pre>
+        </div>
+
+        <div class="SignInForm">
+            <pre id="lbl3">Sign in</pre>
+            <form class="signinForm row g-3">
+                <div class="col-md-6">
+                    <label class="form-label" for="inputEmail4">Username</label>
+                    <input class="form-control" id="inputUsername" placeholder="Username" type="text">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label" for="inputPassword4">Password</label>
+                    <input class="form-control" id="inputPassword4" placeholder="Password" type="password">
+                </div>
+                <div class="col-md-12">
+                    <label class="form-label" for="inputEmail4">Email</label>
+                    <input class="form-control" id="inputEmail4" placeholder="Email" type="email">
+                </div>
+                <div class="col-12">
+                    <label class="form-label" for="inputAddress">Address</label>
+                    <input class="form-control" id="inputAddress" placeholder="1234 Main St" type="text">
+                </div>
+                <div class="col-12">
+                    <label class="form-label" for="inputAddress2">Driving License No</label>
+                    <input class="form-control" id="inputAddress2" placeholder="Driving License No" type="text">
+                </div>
+                <div class="col-md-12">
+                    <label class="form-label" for="inputCity">Contact</label>
+                    <input class="form-control" id="inputCity " placeholder="Contact" type="text">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="formFile">NIC Images</label>
+                    <input class="form-control" id="formFile" type="file">
+                </div>
+                <div class="col-12">
+                    <button class="btn custSignInBtn btn-primary" type="submit">Sign in</button>
+                </div>
+            </form>
+            <pre id="lbl4">Have an account?Login</pre>
+        </div>
+    </section>
+
+
+    <!--    admin login -->
+    <section class="adminloginPage" id="adminLogin">
+        <div class="adminPanel">
+            <div class="top"></div>
+            <pre class="adminTopic1">Admin Panel </pre>
+            <div class="bottom"></div>
+            <pre class="adminTopic2">Please Login or Sign in to continue</pre>
+        </div>
+        <div class="logInForm">
+            <pre id="lbl5">Login</pre>
+            <form class="loginForm">
+                <div class="row mb-3 col-11 col-lg-3">
+                    <label class="col-sm-2 col-form-label" for="inputEmail3">Email</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputAdminEmail3" type="email">
+                    </div>
+                </div>
+                <div class="row mb-3 col-11 col-lg-3">
+                    <label class="col-sm-2 col-form-label" for="inputPassword3">Password</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="inputAdminPassword3" type="password">
+                    </div>
+                </div>
+                <button class="btn btn-primary adminLoginBtn" type="submit">Sign in</button>
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!--    rent  -->
+    <section class="rentSection">
+        <idv class="rentForm">
+            <div class="col-md-6">
+                <label class="form-label" for="selectedCustomer">Selected Customer :</label>
+                <label class="form-label" id="selectedCustomer">Temp_Kasun</label>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label" for="selectedCar">Selected Car :</label>
+                <label class="form-label" id="selectedCar">Temp_Corolla</label>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label" for="vehicleGroup">Vehicle Group :</label>
+                <label class="form-label" id="vehicleGroup">Temp_Premium</label>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label" for="startDate">Start Date :</label>
+                <input data-provide="datepicker" class="form-control"id="startDate" type="date">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label" for="endtDate">End Date :</label>
+                <input data-provide="datepicker" class="form-control"id="endtDate" type="date">
+            </div>
+            <div class="mb-6">
+                <label class="form-label" for="pickUpTime">pickUp Time :</label>
+                <input data-provide="datepicker" style="width: 50%" class="form-control" id="pickUpTime" type="time">
+            </div>
+            <div class="mb-6">
+                <label class="form-label" for="LossDamageCost">Loss Damage Cost :</label>
+                <label class="form-label" id="LossDamageCost">Temp_15000</label>
+            </div>
+            <div class="mb-6">
+                <label class="form-label" for="paymentSlip">Payment Slip</label>
+                <input class="form-control" style="width: 50%" id="paymentSlip" type="file">
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    With a driver
+                </label>
+            </div>
+            <div class="col-12">
+                <button class="btn rentBtn btn-warning" type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop">RENT NOW</button>
+            </div>
+        </idv>
+
+
+
+        <!-- Button trigger modal -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Rent Status</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="modelIcon" src="assets/images/success%20icon.png">
+                        <pre class="modelTxt1">Booking Confirmed.</pre>
+                        <pre class="modelTxt2">
+                            Thank you for car rental system.
+                             we wish you have a safe ride.</pre>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--    my booking  -->
+    <section id="myBookings" class="myBookings">
+        <div class="bookingPanel">
+            <div class="top"></div>
+            <pre class="bookingTopic1">My Bookings </pre>
+            <div class="bottom"></div>
+            <pre class="bookingTopic2">Hope You Enjoyed Our Service</pre>
+        </div>
+
+        <div class="bookingTable">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Car No</th>
+                    <th scope="col">Start Date</th>
+                    <th scope="col">End Date</th>
+                    <th scope="col">Distance</th>
+                    <th scope="col">Total Cost</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td >Larry the Bird</td>
+                    <td>@twitter</td>
+                    <td>@twitter</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="returnTable">
+            <pre>Current rentals</pre>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Car No</th>
+                    <th scope="col">Start Date</th>
+                    <th scope="col">End Date</th>
+                    <th scope="col">Cash on hand</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td type="button">@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td >Larry the Bird</td>
+                    <td>@twitter</td>
+                    <td>@twitter</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</main>
+<script src="assets/JQuery/jquery-3.6.0.min.js"></script>
+<script>
+    $(".ManageBTN").css('display', 'block')
+    $(".SignInForm").css('display', 'none')
+
+    $("#lbl2").click(function () {
+        $(".logInForm").css('display', 'none')
+        $(".SignInForm").css('display', 'block')
+    })
+    $("#lbl4").click(function () {
+        $(".logInForm").css('display', 'block')
+        $(".SignInForm").css('display', 'none')
+    })
+
+    //nav changes
+    $("#ManageBTN").css('display', 'none')
+    $("#logOutBtn").css('display', 'none')
+    $("#AdminManageBTN").css('display', 'none')
+
+    $(".custLogInBtn,.custSignInBtn").click(function () {
+        $("#ManageBTN").css('display', 'block')
+        $("#logOutBtn").css('display', 'block')
+        $("#logInBTN").css('display', 'none')
+        $("#AdminManageBTN").css('display', 'none')
+    })
+
+    $(".adminLoginBtn").click(function () {
+        $("#ManageBTN").css('display', 'none')
+        $("#logOutBtn").css('display', 'block')
+        $("#logInBTN").css('display', 'none')
+        $("#AdminManageBTN").css('display', 'block')
+    })
+
+    $("#logOutBtn").click(function () {
+        $("#ManageBTN").css('display', 'none')
+        $("#logOutBtn").css('display', 'none')
+        $("#logInBTN").css('display', 'block')
+        $("#AdminManageBTN").css('display', 'none')
+    })
+
+    $("#homePage").css('display', 'block')
+    $("#1stPage").css('display', 'none')
+    $("#2ndPage").css('display', 'none')
+    $("#3rdPage").css('display', 'none')
+    $("#nav").css('background-color', 'transparent')
+
+    $("#customerBTN").click(function () {
+        $("#1stPage").css('display', 'block')
+        $("#2ndPage").css('display', 'none')
+        $("#3rdPage").css('display', 'none')
+        $("#homePage").css('display', 'none')
+
+        $("#homeBtn>a").css('color', 'black')
+        $("#homeBtn").css('border-bottom', 'none')
+        $("#customerBTN>a").css('color', 'red')
+        $("#customerBTN").css('border-bottom', '4px solid red')
+        $("#EmployeeBTN>a").css('color', 'black')
+        $("#EmployeeBTN").css('border-bottom', 'none')
+        $("#logInBTN>a").css('color', 'black')
+        $("#logInBTN").css('border-bottom', 'none')
+        $("#ManageBTN>a").css('color', 'black')
+        $("#ManageBTN").css('border-bottom', 'none')
+        $("#logOutBtn>a").css('color', 'black')
+        $("#logOutBtn").css('border-bottom', 'none')
+    })
+    $("#EmployeeBTN").click(function () {
+        $("#1stPage").css('display', 'none')
+        $("#2ndPage").css('display', 'block')
+        $("#3rdPage").css('display', 'none')
+        $("#homePage").css('display', 'none')
+
+        $("#homeBtn>a").css('color', 'black')
+        $("#homeBtn").css('border-bottom', 'none')
+        $("#EmployeeBTN>a").css('color', 'red')
+        $("#EmployeeBTN").css('border-bottom', '4px solid red')
+        $("#customerBTN>a").css('color', 'black')
+        $("#customerBTN").css('border-bottom', 'none')
+        $("#logInBTN>a").css('color', 'black')
+        $("#logInBTN").css('border-bottom', 'none')
+        $("#ManageBTN>a").css('color', 'black')
+        $("#ManageBTN").css('border-bottom', 'none')
+        $("#logOutBtn>a").css('color', 'black')
+        $("#logOutBtn").css('border-bottom', 'none')
+    })
+    $("#logInBTN").click(function () {
+        $("#1stPage").css('display', 'none')
+        $("#2ndPage").css('display', 'none')
+        $("#3rdPage").css('display', 'block')
+        $("#homePage").css('display', 'none')
+
+        $("#homeBtn>a").css('color', 'black')
+        $("#homeBtn").css('border-bottom', 'none')
+        $("#logInBTN>a").css('color', 'red')
+        $("#logInBTN").css('border-bottom', '4px solid red')
+        $("#EmployeeBTN>a").css('color', 'black')
+        $("#EmployeeBTN").css('border-bottom', 'none')
+        $("#customerBTN>a").css('color', 'black')
+        $("#customerBTN").css('border-bottom', 'none')
+        $("#ManageBTN>a").css('color', 'black')
+        $("#ManageBTN").css('border-bottom', 'none')
+        $("#logOutBtn>a").css('color', 'black')
+        $("#logOutBtn").css('border-bottom', 'none')
+
+    })
+    $("#homeBtn").click(function () {
+        $("#1stPage").css('display', 'none')
+        $("#2ndPage").css('display', 'none')
+        $("#3rdPage").css('display', 'none')
+        $("#homePage").css('display', 'block')
+
+        $("#homeBtn>a").css('color', 'black')
+        //$("#homeBtn").css('border-bottom','4px solid red')
+        $("#logInBTN>a").css('color', 'black')
+        $("#logInBTN").css('border-bottom', 'none')
+        $("#EmployeeBTN>a").css('color', 'black')
+        $("#EmployeeBTN").css('border-bottom', 'none')
+        $("#customerBTN>a").css('color', 'black')
+        $("#customerBTN").css('border-bottom', 'none')
+        $("#ManageBTN>a").css('color', 'black')
+        $("#ManageBTN").css('border-bottom', 'none')
+        $("#logOutBtn>a").css('color', 'black')
+        $("#logOutBtn").css('border-bottom', 'none')
+        $("#nav").css('background-color', 'transparent')
+    })
+
+
+    $("#ManageBTN").click(function () {
+        $("#1stPage").css('display', 'none')
+        $("#2ndPage").css('display', 'none')
+        $("#3rdPage").css('display', 'none')
+        $("#homePage").css('display', 'block')
+
+        $("#ManageBTN>a").css('color', 'black')
+        $("#ManageBTN").css('border-bottom','4px solid red')
+        $("#logInBTN>a").css('color', 'black')
+        $("#logInBTN").css('border-bottom', 'none')
+        $("#EmployeeBTN>a").css('color', 'black')
+        $("#EmployeeBTN").css('border-bottom', 'none')
+        $("#customerBTN>a").css('color', 'black')
+        $("#customerBTN").css('border-bottom', 'none')
+        $("#logOutBtn>a").css('color', 'black')
+        $("#logOutBtn").css('border-bottom', 'none')
+        $("#nav").css('background-color', 'transparent')
+
+    })
+    $("#logOutBtn").click(function () {
+        $("#1stPage").css('display', 'none')
+        $("#2ndPage").css('display', 'none')
+        $("#3rdPage").css('display', 'none')
+        $("#homePage").css('display', 'block')
+
+        $("#logOutBtn>a").css('color', 'black')
+        $("#logOutBtn").css('border-bottom','4px solid red')
+        $("#logInBTN>a").css('color', 'black')
+        $("#logInBTN").css('border-bottom', 'none')
+        $("#EmployeeBTN>a").css('color', 'black')
+        $("#EmployeeBTN").css('border-bottom', 'none')
+        $("#customerBTN>a").css('color', 'black')
+        $("#customerBTN").css('border-bottom', 'none')
+        $("#ManageBTN>a").css('color', 'black')
+        $("#ManageBTN").css('border-bottom', 'none')
+        $("#nav").css('background-color', 'transparent')
+
+
+        getCustomerNames();
+        getItemNames();
+        setOrderDetailsToDropDown();
+    })
+
+    $("#logoutIcon").click(function () {
+        window.location.href = "index.html"
+    })
+
+    $(".dltTxt").attr('disabled', true);
+    $(".txtOrderId").attr('disabled', true);
+    $(".txtBalance").attr('disabled', true);
+
+    $(".itemCode,.itemName,.itemPrice,.itemQty").attr('disabled', true);
+
+    $("#totalpriceLbl").text("0000.00")
+    $("#subTotalpriceLbl").text("0000.00")
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = dd + '.' + mm + '.' + yyyy;
+    $(".dateLbl").text(today);
+</script>
+<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

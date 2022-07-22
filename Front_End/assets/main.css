@@ -1,0 +1,516 @@
+#nav1{
+    height: 60px;
+}
+
+#EmployeeBTN > a, #CustomerBTN > a, #logInBTN > a, #homeBtn > a,#ManageBTN>a,#AdminManageBTN>a {
+    color: black;
+}
+
+#ManageBTN,#AdminManageBTN{
+    top: 9px;
+}
+
+main {
+    overflow: hidden;
+    position: relative;
+}
+
+body {
+    position: relative;
+}
+
+.home {
+    left: -1%;
+    width: 100vw;
+    position: relative;
+}
+
+.homePageImg {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    right: 0;
+}
+
+.topic {
+    height: 30%;
+    width: 48%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.topic1 {
+    font-size: 120px;
+    color: black;
+    font-family: "Arial Unicode MS";
+    position: relative;
+    left: 9%;
+    bottom: 39%;
+    opacity: 75%;
+}
+
+.top {
+    position: relative;
+    background-color: black;
+    height: 4px;
+    width: 83%;
+    top: -25%;
+    left: 11%;
+    opacity: 75%;
+}
+
+.bottom {
+    position: relative;
+    background-color: black;
+    height: 4px;
+    width: 83%;
+    top: -56%;
+    left: 11%;
+    opacity: 75%;
+}
+
+.topic2 {
+    position: relative;
+    left: 31%;
+    bottom: 51%;
+    font-size: 20px;
+}
+
+.topic > a {
+    position: relative;
+    left: 49%;
+    top: -47%;
+}
+
+.topic > img:hover {
+    cursor: pointer;
+}
+
+/*first page*/
+.firstPage {
+    position: relative;
+    width: 100vw;
+    height: 250vh;
+}
+
+.topic3 {
+    position: relative;
+    font-size: 26px;
+    top: 3%;
+    /* left: 47%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vehicles {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 20vh;
+    margin: auto;
+    height: 360%;
+    width: 90%;
+    overflow: hidden;
+}
+
+.vehicles > section {
+    position: relative;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.vehicles > section > div {
+    width: 30%;
+    height: 53%;
+    margin-top: 37px;
+    background-color: #dcdee7;
+    border-radius: 10px;
+    position: relative;
+    -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.vehicles > section > div > img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 10%;
+    background-size: cover;
+}
+
+.vehicles > section > div > pre {
+    color: BLACK;
+    font-size: 30px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    top: 75%;
+    display: table;
+}
+
+/*login page*/
+.loginPage {
+    position: relative;
+    width: 100vw;
+    height: 150vh;
+    background-color: #f6efe3;
+    left: -1%;
+}
+
+.customerPanel {
+    height: 15%;
+    width: 48%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -56%;
+    bottom: 0;
+    margin: auto;
+}
+
+.customerTopic1 {
+    font-size: 88px;
+    color: black;
+    font-family: "Arial Unicode MS";
+    position: relative;
+    left: 9%;
+    bottom: 39%;
+    opacity: 75%;
+}
+
+.customerPanel > .top {
+    position: relative;
+    background-color: black;
+    height: 4px;
+    width: 83%;
+    top: -25%;
+    left: 11%;
+    opacity: 75%;
+}
+
+.customerPanel > .bottom {
+    position: relative;
+    background-color: black;
+    height: 4px;
+    width: 83%;
+    top: -56%;
+    left: 11%;
+    opacity: 75%;
+}
+
+.customerTopic2 {
+    position: relative;
+    left: 28%;
+    bottom: 51%;
+    font-size: 20px;
+}
+
+.logInForm {
+    height: 46%;
+    width: 37%;
+    background-color: white;
+    position: absolute;
+    left: 31px;
+    right: 0;
+    top: 31%;
+    bottom: 0;
+    margin: auto;
+    border: 1px solid white;
+    border-radius: 13px;
+}
+
+.SignInForm {
+    height: 61%;
+    width: 40%;
+    background-color: white;
+    position: absolute;
+    left: 31px;
+    right: 0;
+    top: 31%;
+    bottom: 0;
+    margin: auto;
+    border: 1px solid white;
+    border-radius: 13px;
+}
+
+.loginForm {
+    position: relative;
+    width: 315%;
+    top: 20%;
+    left: 10%;
+    z-index: 1;
+}
+
+.signinForm {
+    position: relative;
+    width: 90%;
+    left: 6%;
+    top: 4%;
+}
+
+#lbl1 {
+    position: relative;
+    font-size: 23px;
+    left: 45%;
+    top: 6%;
+}
+
+#lbl2 {
+    position: relative;
+    font-size: 15px;
+    left: 10%;
+    top: 28%;
+    color: mediumblue;
+}
+
+#lbl3 {
+    position: relative;
+    font-size: 23px;
+    left: 45%;
+    top: 2%;
+}
+
+#lbl4 {
+    position: relative;
+    font-size: 15px;
+    left: 22%;
+    top: 1%;
+    color: mediumblue;
+}
+
+#lbl2:hover {
+    cursor: pointer;
+}
+
+#lbl4:hover {
+    cursor: pointer;
+}
+
+/*admin*/
+
+.adminloginPage {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f6efe3;
+    left: -1%;
+}
+
+.adminPanel {
+    height: 15%;
+    width: 48%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -56%;
+    bottom: 0;
+    margin: auto;
+}
+
+.adminTopic1 {
+    font-size: 88px;
+    color: black;
+    font-family: "Arial Unicode MS";
+    position: relative;
+    left: 18%;
+    bottom: 39%;
+    opacity: 75%;
+}
+
+.adminPanel > .top {
+    position: relative;
+    background-color: black;
+    height: 4px;
+    width: 66%;
+    top: -25%;
+    left: 20%;
+    opacity: 75%;
+}
+
+.adminPanel > .bottom {
+    position: relative;
+    background-color: black;
+    height: 4px;
+    width: 66%;
+    top: -56%;
+    left: 20%;
+    opacity: 75%;
+}
+
+.adminTopic2 {
+    position: relative;
+    left: 28%;
+    bottom: 51%;
+    font-size: 20px;
+}
+
+#lbl5 {
+    position: relative;
+    font-size: 23px;
+    left: 45%;
+    top: 6%;
+}
+
+/*rent*/
+.rentSection{
+    position: relative;
+    width: 100vw;
+    height: 145vh;
+    background-color: #f6efe3;
+    left: -1%;
+}
+.rentForm{
+    height: 66%;
+    width: 45%;
+    background-color: white;
+    position: absolute;
+    left: 31px;
+    right: 0;
+    top: 0%;
+    bottom: 0;
+    margin: auto;
+    border: 1px solid white;
+    border-radius: 13px;
+}
+.rentForm>div{
+    position: relative;
+    left: 25%;
+    margin-top: 3%;
+    top: 0%;
+}
+.rentBtn{
+    position: relative;
+    left: 34%;
+}
+
+/*model*/
+.modelIcon{
+    position: relative;
+    left: 47%;
+}
+.modelTxt1{
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    left: 3%;
+}
+.modelTxt2{
+    font-size: 14px;
+
+    font-weight: bold;
+    position: relative;
+    left: -28%;
+}
+
+
+/*my booking*/
+
+.myBookings{
+    position: relative;
+    width: 100vw;
+    height: 160vh;
+    background-color: #f6efe3;
+    left: -1%;
+}
+.bookingPanel {
+    height: 15%;
+    width: 48%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -65%;
+    bottom: 0;
+    margin: auto;
+}
+
+.bookingTopic1 {
+    font-size: 88px;
+    color: black;
+    font-family: "Arial Unicode MS";
+    position: relative;
+    left: 18%;
+    bottom: 39%;
+    opacity: 75%;
+}
+
+.bookingPanel > .top {
+    position: relative;
+    background-color: black;
+    height: 4px;
+    width: 68%;
+    top: -25%;
+    left: 18%;
+    opacity: 75%;
+}
+
+.bookingPanel > .bottom {
+    position: relative;
+    background-color: black;
+    height: 4px;
+    width: 68%;
+    top: -56%;
+    left: 18%;
+    opacity: 75%;
+}
+
+.bookingTopic2 {
+    position: relative;
+    left: 30%;
+    bottom: 51%;
+    font-size: 20px;
+}
+
+.bookingTable{
+    position: absolute;
+    width: 80%;
+    height: 32%;
+    top: 23%;
+    left: 10%;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+.bookingTable>table{
+    width: 92%;
+    left: 4%;
+    top: 4%;
+    position: relative;
+}
+
+.returnTable{
+    position: absolute;
+    width: 80%;
+    height: 32%;
+    top: 63%;
+    left: 10%;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+.returnTable>table{
+    width: 92%;
+    left: 4%;
+    top: 10%;
+    position: relative;
+}
+.returnTable>pre{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 2%;
+    font-size: 20px;
+    font-weight: bold;
+}
