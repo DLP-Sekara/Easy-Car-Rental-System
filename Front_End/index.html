@@ -54,8 +54,8 @@
                         Management
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Add Car</a></li>
-                        <li><a class="dropdown-item" href="#">Add Driver</a></li>
+                        <li><a class="dropdown-item" href="#carManagement">Add Car</a></li>
+                        <li><a class="dropdown-item" href="#driverManagement">Add Driver</a></li>
                         <li><a class="dropdown-item" href="#">View</a></li>
                     </ul>
                 </li>
@@ -90,7 +90,6 @@
                     src="assets/images/icons8-down-button-50.png"></a>
         </div>
     </section>
-
 
     <!--    first page   -->
     <section class="firstPage">
@@ -160,7 +159,6 @@
         </div>
     </section>
 
-
     <!--    login,sign in page   -->
     <section class="loginPage" id="login">
         <div class="customerPanel">
@@ -229,7 +227,6 @@
         </div>
     </section>
 
-
     <!--    admin login -->
     <section class="adminloginPage" id="adminLogin">
         <div class="adminPanel">
@@ -259,7 +256,6 @@
         </div>
 
     </section>
-
 
     <!--    rent  -->
     <section class="rentSection">
@@ -410,7 +406,6 @@
         </div>
     </section>
 
-
     <!--payment page-->
     <section class="paymentSection">
         <idv class="paymentForm">
@@ -474,8 +469,8 @@
         </div>
     </section>
 
-
-    <section class="carManagement">
+    <!--car page-->
+    <section class="carManagement" id="carManagement">
         <div class="carForm">
             <pre>Vehicle Management</pre>
             <form class="row g-3">
@@ -586,6 +581,80 @@
             </table>
         </div>
     </section>
+
+    <!--Driver page-->
+    <section class="driverManagement" id="driverManagement">
+        <div class="driverForm">
+            <pre>Driver Management</pre>
+            <form class="row g-3">
+                <div class="col-md-6">
+                    <label for="driverNic" class="form-label">Driver Nic</label>
+                    <input type="text" class="form-control" id="driverNic">
+                </div>
+                <div class="col-md-6">
+                    <label for="Driving_License_no" class="form-label">Driving License no</label>
+                    <input type="text" class="form-control" id="Driving_License_no">
+                </div>
+                <div class="col-md-6">
+                    <label for="driverName" class="form-label">Driver Name</label>
+                    <input type="text" class="form-control" id="driverName">
+                </div>
+                <div class="col-md-6">
+                    <label for="driverStatus" class="form-label">Driver Status</label>
+                    <select class="col-md-6 form-select" id="driverStatus" aria-label="Default select example">
+                        <option selected>Fuel Type</option>
+                        <option value="1">Available</option>
+                        <option value="2">Working</option>
+                    </select>
+                </div>
+
+                <div class="col-12">
+
+                    <button class="btn driverSaveBtn btn-success" type="submit" >SAVE CAR</button>
+                    <button class="btn driverUpdateBtn btn-warning" type="submit" >UPDATE CAR</button>
+                    <button class="btn driverDeleteBtn btn-danger" type="submit" >DELETE CAR</button>
+                </div>
+            </form>
+
+        </div>
+        <div class="driverTable">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Car No</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">No Of Passengers</th>
+                    <th scope="col">Daily Price</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td >Larry the Bird</td>
+                    <td>@twitter</td>
+                    <td>@twitter</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
 </main>
 <script src="assets/JQuery/jquery-3.6.0.min.js"></script>
 <script>
