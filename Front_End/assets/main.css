@@ -404,16 +404,17 @@ body {
     font-size: 40px;
     font-weight: bold;
     position: relative;
-    left: 3%;
+    left: 10%;
 }
 .modelTxt2{
     font-size: 14px;
-
     font-weight: bold;
     position: relative;
-    left: -28%;
+    left: -20%;
 }
-
+.modal-body{
+    overflow: hidden;
+}
 
 /*my booking*/
 
@@ -555,12 +556,14 @@ body {
     font-size: 40px;
     font-weight: bold;
     position: relative;
-    left: 3%;
+    left: 23%;
 }
 .modelTxt2{
     font-size: 14px;
-
     font-weight: bold;
     position: relative;
-    left: -28%;
+    left: -20%;
+}
+.modal-body{
+    overflow: hidden;
 }
