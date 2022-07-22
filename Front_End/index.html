@@ -292,7 +292,6 @@
                 <label class="form-label" for="paymentSlip">Payment Slip</label>
                 <input class="form-control" style="width: 50%" id="paymentSlip" type="file">
             </div>
-
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                 <label class="form-check-label" for="flexCheckDefault">
@@ -472,6 +471,79 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+
+    <section class="carManagement">
+        <div class="carForm">
+            <form class="row g-3">
+                <div class="col-md-6">
+                    <label for="regNo" class="form-label">Reg No</label>
+                    <input type="text" class="form-control" id="regNo">
+                </div>
+                <div class="col-md-6">
+                    <label for="brand" class="form-label">Brand</label>
+                    <input type="text" class="form-control" id="brand">
+                </div>
+                <div class="col-md-6">
+                    <label for="color" class="form-label">Color</label>
+                    <input type="text" class="form-control" id="color">
+                </div>
+                <div class="col-md-6">
+                    <label for="noOfPassengers" class="form-label">No Of Passengers</label>
+                    <input type="text" class="form-control" id="noOfPassengers">
+                </div>
+                <div class="col-md-6">
+                    <label for="type" class="form-label">Type</label>
+                    <input type="text" class="form-control" id="type">
+                </div>
+                <div class="col-md-6">
+                    <label for="extraKmPrice" class="form-label">Extra Km Price</label>
+                    <input type="text" class="form-control" id="extraKmPrice">
+                </div>
+                <div class="col-md-6">
+                    <label for="dailyPrice" class="form-label">Daily Price</label>
+                    <input type="text" class="form-control" id="dailyPrice">
+                </div>
+                <div class="col-md-6">
+                    <label for="monthlyPrice" class="form-label">Monthly Price</label>
+                    <input type="text" class="form-control" id="monthlyPrice">
+                </div>
+                <div class="col-md-6">
+                    <label for="fuelType" class="form-label">Fuel Type</label>
+                    <select class="col-md-6 form-select" id="fuelType" aria-label="Default select example">
+                        <option selected>Fuel Type</option>
+                        <option value="1">Petrol</option>
+                        <option value="2">Diesel</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="transmissionType" class="form-label">Transmission Type</label>
+                    <select class="col-md-6 form-select" id="transmissionType" aria-label="Default select example">
+                        <option selected>Transmission Type</option>
+                        <option value="1">Manual</option>
+                        <option value="2">Auto</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="status" class="form-label">Status</label>
+                    <select class="col-md-6 form-select" id="status" aria-label="Default select example">
+                        <option selected>Status</option>
+                        <option value="1">Available</option>
+                        <option value="2">Under Maintenance</option>
+                        <option value="3">Running</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label" for="carImages">Images</label>
+                    <input class="form-control"  id="carImages" type="file">
+                </div>
+                <div class="col-12">
+                    <button class="btn customerSaveBtn btn-warning" type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop">SAVE CUSTOMER</button>
+                </div>
+            </form>
+
         </div>
     </section>
 </main>

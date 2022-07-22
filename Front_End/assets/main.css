@@ -567,3 +567,35 @@ body {
 .modal-body{
     overflow: hidden;
 }
+
+/*carManagement*/
+.carManagement{
+    position: relative;
+    width: 100vw;
+    height: 145vh;
+    background-color: lightblue;
+    left: -1%;
+}
+.carForm{
+    height: 90%;
+    width: 82%;
+    background-color: white;
+    position: absolute;
+    left: 31px;
+    right: 0;
+    top: -18%;
+    bottom: 0;
+    margin: auto;
+    border: 1px solid white;
+    border-radius: 13px;
+}
+.carForm>form{
+    width: 85%;
+    left: 9%;
+    position: relative;
+    top: 12%;
+}
+.customerSaveBtn{
+    position: relative;
+    left: 86%;
+}
