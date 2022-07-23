@@ -682,17 +682,17 @@ body {
 .dashboard{
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 270vh;
     background-color: #f6efe3;
     left: -1%;
 }
 .DashboardLabels{
     position: relative;
     background-color: white;
-    height: 81%;
+    height: 30%;
     width: 90%;
     left: 4%;
-    top: 16%;
+    top: 7%;
     border-radius: 10px;
     font-size: 32px;
     font-weight: bold;
@@ -726,4 +726,36 @@ body {
 .DashboardLabels>div>.count{
     opacity: 75%;
     font-size: 50px;
+}
+
+.returnAllTable{
+    position: absolute;
+    width: 90%;
+    height: 20%;
+    top: 42%;
+    left: 4%;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+.returnAllTable>table{
+    width: 92%;
+    left: 4%;
+    top: 10%;
+    position: relative;
+}
+.returnAllTable>pre{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 2%;
+    font-size: 20px;
+    font-weight: bold;
+}
+.accordion{
+    position: relative;
+    top: 35%;
+    width: 90%;
+    left: 4%;
 }
