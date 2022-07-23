@@ -683,6 +683,47 @@ body {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-color: lightblue;
+    background-color: #f6efe3;
     left: -1%;
+}
+.DashboardLabels{
+    position: relative;
+    background-color: white;
+    height: 81%;
+    width: 90%;
+    left: 4%;
+    top: 16%;
+    border-radius: 10px;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: "Arial Rounded MT Bold";
+}
+
+.DashboardLabels>div{
+    position: relative;
+    background-color: red;
+    height: 32%;
+    width: 26%;
+    margin: 18px;
+    left: 7%;
+    top: 10%;
+    display: inline-block;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 6px -6px black;
+
+
+}
+.DashboardLabels>div>pre{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 10%;
+    opacity: 60%;
+}
+.DashboardLabels>div>.count{
+    opacity: 75%;
+    font-size: 50px;
 }
