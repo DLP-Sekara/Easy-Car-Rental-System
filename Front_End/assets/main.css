@@ -140,6 +140,12 @@ body {
     box-shadow: 0 8px 6px -6px black;
 }
 
+.vehicles > section > div:hover{
+    cursor: pointer;
+    background-color: #abacb4;
+    font-weight: bold;
+
+}
 .vehicles > section > div > img {
     position: absolute;
     left: 0;
@@ -151,7 +157,7 @@ body {
 
 .vehicles > section > div > pre {
     color: BLACK;
-    font-size: 30px;
+    font-size: 25px;
     position: absolute;
     right: 0;
     left: 0;
