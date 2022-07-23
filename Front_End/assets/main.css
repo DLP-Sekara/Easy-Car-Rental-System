@@ -91,6 +91,7 @@ body {
     cursor: pointer;
 }
 
+
 /*first page*/
 .firstPage {
     position: relative;
@@ -164,6 +165,33 @@ body {
     margin: auto;
     top: 75%;
     display: table;
+}
+
+/*second page*/
+.secondPage {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    left: -1%;
+    background-color: black;
+}
+.pic1{
+    position: relative;
+    top: 15%;
+}
+.pic1>img{
+    position: relative;
+    height: 13%;
+    width: 51%;
+    border-bottom-right-radius: 100%;
+    border-top-right-radius: 100%;
+}
+.info{
+    font-size: 20px;
+    color: white;
+    position: relative;
+    left: 48%;
+    top: -50%;
 }
 
 /*login page*/

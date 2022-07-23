@@ -161,6 +161,29 @@
         </div>
     </section>
 
+    <!--    second page   -->
+    <section class="secondPage">
+        <div class="pic1">
+            <img src="assets/images/img%201.png">
+        </div>
+        <div class="info">
+            <pre>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+               Autem consequuntur doloribus earum magni nam neque possimus
+            reiciendis similique! Beatae dolore eius explicabo inrepellendus!
+                   Atque excepturi perspiciatis sed soluta voluptas?
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+               Autem consequuntur doloribus earum magni nam neque possimus
+            reiciendis similique! Beatae dolore eius explicabo inrepellendus!
+                   Atque excepturi perspiciatis sed soluta voluptas?
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+               Autem consequuntur doloribus earum magni nam neque possimus
+            reiciendis similique! Beatae dolore eius explicabo inrepellendus!
+                   Atque excepturi perspiciatis sed soluta voluptas?
+            </pre>
+        </div>
+    </section>
+
     <!--    login,sign in page   -->
     <section class="loginPage" id="login">
         <div class="customerPanel">
@@ -823,10 +846,10 @@
 
 </main>
 <script src="assets/JQuery/jquery-3.6.0.min.js"></script>
+<script src="assets/main.js"></script>
 <script>
     $(".ManageBTN").css('display', 'block')
     $(".SignInForm").css('display', 'none')
-
     $("#lbl2").click(function () {
         $(".logInForm").css('display', 'none')
         $(".SignInForm").css('display', 'block')
@@ -837,6 +860,7 @@
     })
 
     //nav changes
+    $("#nav").css('background-color', 'transparent')
     $("#ManageBTN").css('display', 'none')
     $("#logOutBtn").css('display', 'none')
     $("#AdminManageBTN").css('display', 'none')
@@ -862,11 +886,15 @@
         $("#AdminManageBTN").css('display', 'none')
     })
 
-    $("#homePage").css('display', 'block')
-    $("#1stPage").css('display', 'none')
-    $("#2ndPage").css('display', 'none')
-    $("#3rdPage").css('display', 'none')
-    $("#nav").css('background-color', 'transparent')
+
+
+
+
+
+
+
+
+
 
     $("#customerBTN").click(function () {
         $("#1stPage").css('display', 'block')
