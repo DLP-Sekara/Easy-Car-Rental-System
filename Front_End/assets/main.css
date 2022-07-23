@@ -280,13 +280,13 @@ body {
 }
 
 .logInForm {
-    height: 46%;
+    height: 34%;
     width: 37%;
     background-color: white;
     position: absolute;
     left: 31px;
     right: 0;
-    top: 31%;
+    top: -10%;
     bottom: 0;
     margin: auto;
     border: 1px solid white;
@@ -294,13 +294,13 @@ body {
 }
 
 .SignInForm {
-    height: 61%;
+    height: 62%;
     width: 40%;
     background-color: white;
     position: absolute;
     left: 31px;
     right: 0;
-    top: 31%;
+    top: -25%;
     bottom: 0;
     margin: auto;
     border: 1px solid white;
