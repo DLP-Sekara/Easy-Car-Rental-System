@@ -394,6 +394,12 @@ body {
     position: relative;
     left: 34%;
 }
+.checkCarBtn{
+    position: absolute;
+    left: 60%;
+    top: 20%;
+    height: 34px;
+}
 
 /*model*/
 .modelIcon{

@@ -268,6 +268,7 @@
                 <label class="form-label" for="selectedCar">Selected Car :</label>
                 <label class="form-label" id="selectedCar">Temp_Corolla</label>
             </div>
+            <button class="btn checkCarBtn btn-success" type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Check Car</button>
             <div class="col-md-6">
                 <label class="form-label" for="vehicleGroup">Vehicle Group :</label>
                 <label class="form-label" id="vehicleGroup">Temp_Premium</label>
@@ -312,6 +313,59 @@
                         <pre class="modelTxt2">
                             Thank you for car rental system.
                              we wish you have a safe ride.</pre>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel2">Your Car</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img style="position: relative; left: 10%" src="assets/images/cars/V1.png">
+                        <div class="col-md-6">
+                            <label class="form-label" style="font-weight: bold" for="carRegNo">Car Register No :</label>
+                            <label class="form-label" id="carRegNo">BCI-4094</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" style="font-weight: bold" for="carBrand">Brand :</label>
+                            <label class="form-label" id="carBrand">Temp_Toyota</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" style="font-weight: bold" for="carType">Type :</label>
+                            <label class="form-label" id="carType">Temp_SUV</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" style="font-weight: bold" for="carFuelType">Fuel Type :</label>
+                            <label class="form-label" id="carFuelType">Temp_Petrol</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" style="font-weight: bold"  for="passengersCount">No Of Passengers :</label>
+                            <label class="form-label" id="passengersCount">Temp_4</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" style="font-weight: bold" for="carTransmissionType">Transmission Type :</label>
+                            <label class="form-label" id="carTransmissionType">Manual</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" style="font-weight: bold" for="carDailyPrice">Daily Price :</label>
+                            <label class="form-label" id="carDailyPrice">Temp_5000</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" style="font-weight: bold" for="carMonthlyPrice">Monthly Price :</label>
+                            <label class="form-label" id="carMonthlyPrice">Temp_5000</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" style="font-weight: bold" for="carExtraKmPrice">Extra Km Price :</label>
+                            <label class="form-label" id="carExtraKmPrice">Temp_5000</label>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
