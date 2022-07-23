@@ -44,8 +44,8 @@
                         Settings
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#myBookings">Return Now</a></li>
-                        <li><a class="dropdown-item" href="#myBookings">Booking</a></li>
+                        <li class="returnNowBtn"><a class="dropdown-item " href="#">Return Now</a></li>
+                        <li class="bookingBtn"><a class="dropdown-item " href="#">Booking</a></li>
                     </ul>
                 </li>
 
@@ -54,9 +54,9 @@
                         Management
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#carManagement">Add Car</a></li>
-                        <li><a class="dropdown-item" href="#driverManagement">Add Driver</a></li>
-                        <li><a class="dropdown-item" href="#dashboard">View</a></li>
+                        <li class="addCarBtn"><a class="dropdown-item" href="#">Add Car</a></li>
+                        <li class="addDriverBtn"><a class="dropdown-item" href="#driverManagement">Add Driver</a></li>
+                        <li class="viewBtn"><a class="dropdown-item" href="#dashboard">View</a></li>
                     </ul>
                 </li>
 
@@ -97,63 +97,63 @@
         <div class="vehicles">
             <section>
                 <!--General cars-->
-                <div id="v1">
+                <div class="carTab" id="v1">
                     <img src="assets/images/cars/V1.png"/>
                     <pre>Suzuki Alto</pre>
                 </div>
 
-                <div id="v2">
+                <div class="carTab" id="v2">
                     <img src="assets/images/cars/V2.png"/>
                     <pre>Suzuki Alto K10</pre>
                 </div>
 
-                <div id="v3">
+                <div class="carTab" id="v3">
                     <img src="assets/images/cars/V3.png"/>
                     <pre>Suzuki Celerio</pre>
                 </div>
 
-                <div id="v4">
+                <div class="carTab" id="v4">
                     <img src="assets/images/cars/v4.png"/>
                     <pre>Perodua (Daihatsu) </pre>
                 </div>
 
-                <div id="v5">
+                <div class="carTab" id="v5">
                     <img src="assets/images/cars/v5.png"/>
                     <pre>Toyota Prius C</pre>
                 </div>
                 <!--premium cars-->
 
-                <div id="v6">
+                <div class="carTab" id="v6">
                     <img src="assets/images/cars/v6.png"/>
                     <pre>Toyota Corolla Axio</pre>
                 </div>
 
-                <div id="v7">
+                <div class="carTab" id="v7">
                     <img src="assets/images/cars/v7.png"/>
                     <pre>Perodua Bezza Prime Sedan</pre>
                 </div>
 
-                <div id="v8">
+                <div class="carTab" id="v8">
                     <img src="assets/images/cars/v8.png"/>
                     <pre>Toyota Allion NZT 260</pre>
                 </div>
 
-                <div id="v9">
+                <div class="carTab" id="v9">
                     <img src="assets/images/cars/v9.png"/>
                     <pre>Toyota Axio NKR 165</pre>
                 </div>
 
-                <div id="v10">
+                <div class="carTab" id="v10">
                     <img src="assets/images/cars/v10.png"/>
                     <pre>Toyota Premio</pre>
                 </div>
 
-                <div id="v11">
+                <div class="carTab" id="v11">
                     <img src="assets/images/cars/v11.png"/>
                     <pre>Mercedes</pre>
                 </div>
 
-                <div id="v12">
+                <div class="carTab" id="v12">
                     <img src="assets/images/cars/v12.png"/>
                     <pre>BMW i8</pre>
                 </div>
@@ -206,7 +206,7 @@
             </pre>
         </div>
     </section>
-
+<section class="other">
     <!--    login,sign in page   -->
     <section class="loginPage" id="login">
         <div class="customerPanel">
@@ -308,6 +308,8 @@
     <!--    rent  -->
     <section class="rentSection">
         <idv class="rentForm">
+            <img class=" backImg2" src="assets/images/back.png">
+            <pre class="rentTopic">Rent Details</pre>
             <div class="col-md-6">
                 <label class="form-label" for="selectedCustomer">Selected Customer :</label>
                 <label class="form-label" id="selectedCustomer">Temp_Kasun</label>
@@ -363,7 +365,7 @@
                              we wish you have a safe ride.</pre>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn rentPageModelCloseBtn btn-primary" data-bs-dismiss="modal">Close</button>
 
                     </div>
                 </div>
@@ -511,6 +513,8 @@
     <!--payment page-->
     <section class="paymentSection">
         <idv class="paymentForm">
+            <img class="backImg1" src="assets/images/back.png">
+            <pre class="paymentTopic">Payment Details</pre>
             <div class="col-md-6">
                 <label class="form-label" for="rentID">Rent Id :</label>
                 <label class="form-label" id="rentID">Temp_R001</label>
@@ -563,7 +567,7 @@
                              we wish you have a safe ride.</pre>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="paymentPageModelCloseBtn btn btn-primary" data-bs-dismiss="modal">Close</button>
 
                     </div>
                 </div>
@@ -792,7 +796,7 @@
         </div>
         <div class="returnAllTable">
             <pre>Current All rentals</pre>
-            <table class="table">
+            <table class=" table">
                 <thead>
                 <tr>
                     <th scope="col">Car No</th>
@@ -802,7 +806,7 @@
                     <th scope="col">Action</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody class="allRentTable">
                 <tr>
                     <th scope="row">1</th>
                     <td>Mark</td>
@@ -866,7 +870,7 @@
             </div>
         </div>
     </section>
-
+</section>
 </main>
 <script src="assets/JQuery/jquery-3.6.0.min.js"></script>
 <script src="assets/main.js"></script>
