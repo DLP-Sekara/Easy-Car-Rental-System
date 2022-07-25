@@ -51,7 +51,6 @@ public class CustomerController {
 
     @GetMapping(params = {"username","password"},produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil checkCustomer(@RequestParam String username,@RequestParam String password) {
-        System.out.println("wede hari onna");
         return new ResponseUtil(200,"Ok",customerService.checkCustomer(username,password));
     }
 
