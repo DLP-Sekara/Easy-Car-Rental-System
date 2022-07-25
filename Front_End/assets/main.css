@@ -437,6 +437,14 @@ body {
     left: 45%;
     top: 6%;
 }
+#adminLoginWarningMsg{
+    position: relative;
+    left: 7%;
+    top: 10%;
+    font-size: 15px;
+    font-weight: bold;
+    color: red;
+}
 
 /*rent*/
 .rentSection{
@@ -748,7 +756,7 @@ body {
     left: -1%;
 }
 .driverForm{
-    height: 43%;
+    height: 55%;
     width: 82%;
     background-color: white;
     position: absolute;
@@ -779,6 +787,9 @@ body {
     background-color: white;
     border: 1px solid white;
     border-radius: 10px;
+}
+.driverTbl>tr:hover{
+    cursor: pointer;
 }
 .driverForm>pre{
     position: relative;

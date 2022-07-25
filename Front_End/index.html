@@ -290,16 +290,17 @@
                 <div class="row mb-3 col-11 col-lg-3">
                     <label class="col-sm-2 col-form-label" for="inputEmail3">Email</label>
                     <div class="col-sm-10">
-                        <input class="form-control" id="inputAdminEmail3" type="email">
+                        <input class="form-control" id="inputAdminEmail" type="email">
                     </div>
                 </div>
                 <div class="row mb-3 col-11 col-lg-3">
                     <label class="col-sm-2 col-form-label" for="inputPassword3">Password</label>
                     <div class="col-sm-10">
-                        <input class="form-control" id="inputAdminPassword3" type="password">
+                        <input class="form-control" id="inputAdminPassword" type="password">
                     </div>
                 </div>
-                <button class="btn btn-primary adminLoginBtn" type="submit">Sign in</button>
+                <button class="btn btn-primary adminLoginBtn" type="button">Sign in</button>
+                 <pre id="adminLoginWarningMsg"></pre>
             </form>
 
         </div>
@@ -693,22 +694,26 @@
     <section class="driverManagement" id="driverManagement">
         <div class="driverForm">
             <pre>Driver Management</pre>
-            <form class="row g-3">
+            <form class="row g-3 " id="driverForm">
+                <div class="col-md-6">
+                    <label for="driverID" class="form-label">Driver ID</label>
+                    <input name="driverID" type="text" class="form-control" id="driverID">
+                </div>
                 <div class="col-md-6">
                     <label for="driverNic" class="form-label">Driver Nic</label>
-                    <input type="text" class="form-control" id="driverNic">
+                    <input name="driverNIC" type="text" class="form-control" id="driverNic">
                 </div>
                 <div class="col-md-6">
                     <label for="Driving_License_no" class="form-label">Driving License no</label>
-                    <input type="text" class="form-control" id="Driving_License_no">
+                    <input name="Driving_License_no" type="text" class="form-control" id="Driving_License_no">
                 </div>
                 <div class="col-md-6">
                     <label for="driverName" class="form-label">Driver Name</label>
-                    <input type="text" class="form-control" id="driverName">
+                    <input name="driverName" type="text" class="form-control" id="driverName">
                 </div>
                 <div class="col-md-6">
                     <label for="driverStatus" class="form-label">Driver Status</label>
-                    <select class="col-md-6 form-select" id="driverStatus" aria-label="Default select example">
+                    <select name="status" class="col-md-6 form-select" id="driverStatus" aria-label="Default select example">
                         <option selected>Fuel Type</option>
                         <option value="1">Available</option>
                         <option value="2">Working</option>
@@ -717,15 +722,15 @@
 
                 <div class="col-12">
 
-                    <button class="btn driverSaveBtn btn-success" type="submit" >SAVE CAR</button>
-                    <button class="btn driverUpdateBtn btn-warning" type="submit" >UPDATE CAR</button>
-                    <button class="btn driverDeleteBtn btn-danger" type="submit" >DELETE CAR</button>
+                    <button class="btn driverSaveBtn btn-success" type="button" >SAVE CAR</button>
+                    <button class="btn driverUpdateBtn btn-warning" type="button" >UPDATE CAR</button>
+                    <button class="btn driverDeleteBtn btn-danger" type="button" >DELETE CAR</button>
                 </div>
             </form>
 
         </div>
         <div class="driverTable">
-            <table class="table">
+            <table class="table driverTbl1">
                 <thead>
                 <tr>
                     <th scope="col">Driver ID</th>
@@ -735,28 +740,8 @@
                     <th scope="col">Driver Status</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td >Larry the Bird</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                </tr>
+                <tbody class="driverTbl" id="driverTbl">
+
                 </tbody>
             </table>
         </div>
@@ -808,7 +793,7 @@
                 </tr>
                 </thead>
                 <tbody class="allRentTable">
-                <tr>
+               <!-- <tr>
                     <th scope="row">1</th>
                     <td>Mark</td>
                     <td>Otto</td>
@@ -828,7 +813,7 @@
                     <td>@twitter</td>
                     <td>@twitter</td>
                     <td>@twitter</td>
-                </tr>
+                </tr>-->
                 </tbody>
             </table>
         </div>
