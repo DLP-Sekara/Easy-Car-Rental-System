@@ -100,6 +100,10 @@ $("#EmployeeBTN").click(function () {
     $("#ManageBTN").css('border-bottom', 'none')
     $("#logOutBtn>a").css('color', 'black')
     $("#logOutBtn").css('border-bottom', 'none')
+
+    $("#adminLoginWarningMsg").text("")
+    $("#inputAdminPassword").val("");
+    $("#inputAdminEmail").val("");
 })
 $("#logInBTN").click(function () {
     $(".home").css('display', 'none')
