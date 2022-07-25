@@ -271,6 +271,14 @@ body {
     left: 11%;
     opacity: 75%;
 }
+#customerLoginWarningMsg{
+    position: relative;
+    left: 7%;
+    top: 10%;
+    font-size: 15px;
+    font-weight: bold;
+    color: red;
+}
 
 .customerTopic2 {
     position: relative;
@@ -294,7 +302,7 @@ body {
 }
 
 .SignInForm {
-    height: 62%;
+    height: 70%;
     width: 40%;
     background-color: white;
     position: absolute;
@@ -445,6 +453,7 @@ body {
     font-weight: bold;
     color: red;
 }
+
 
 /*rent*/
 .rentSection{

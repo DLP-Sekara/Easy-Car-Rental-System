@@ -10,7 +10,7 @@ $(".rentSection").css('display', 'none')
 $(".myBookings").css('display', 'none')
 $(".paymentSection").css('display', 'none')
 $(".carManagement").css('display', 'none')
-$(".driverManagement").css('display', 'block')
+$(".driverManagement").css('display', 'none')
 $(".dashboard").css('display', 'none')
 
 /* nav button functions*/
@@ -72,6 +72,10 @@ $("#customerBTN").click(function () {
     $("#ManageBTN").css('border-bottom', 'none')
     $("#logOutBtn>a").css('color', 'black')
     $("#logOutBtn").css('border-bottom', 'none')
+
+    $("#customerLoginWarningMsg").text("")
+    $("#customerUsername").val("");
+    $("#customerPassword").val("");
 })
 $("#EmployeeBTN").click(function () {
     $(".home").css('display', 'none')
@@ -132,7 +136,7 @@ $("#logInBTN").click(function () {
     $("#ManageBTN").css('border-bottom', 'none')
     $("#logOutBtn>a").css('color', 'black')
     $("#logOutBtn").css('border-bottom', 'none')
-
+    $("#customerLoginWarningMsg").text("")
 })
 $("#logOutBtn").click(function () {
     $(".home").css('display', 'block')
@@ -302,7 +306,7 @@ $("#logOutBtn").css('display', 'none')
 
 /*customer login form functions*/
 $(".custLogInBtn,.custSignInBtn").click(function () {
-    $(".home").css('display', 'block')
+    /*$(".home").css('display', 'block')
     $(".firstPage").css('display', 'block')
     $(".secondPage").css('display', 'block')
     $(".thirdPage").css('display', 'block')
@@ -319,7 +323,7 @@ $(".custLogInBtn,.custSignInBtn").click(function () {
     $("#ManageBTN").css('display', 'block')
     $("#logOutBtn").css('display', 'block')
     $("#logInBTN").css('display', 'none')
-    $("#AdminManageBTN").css('display', 'none')
+    $("#AdminManageBTN").css('display', 'none')*/
 })
 $("#lbl2").click(function () {
     $(".logInForm").css('display', 'none')

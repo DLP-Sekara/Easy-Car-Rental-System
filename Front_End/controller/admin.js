@@ -74,8 +74,7 @@ function checkAdmin() {
         success: function (resp) {
             console.log(resp.data)
             for (const admin of resp.data) {
-               if(admin.username===tempEmail){
-                   if(admin.password===tempPassword) {
+               if(admin.username===tempEmail & admin.password===tempPassword){
                        $(".home").css('display', 'block')
                        $(".firstPage").css('display', 'block')
                        $(".secondPage").css('display', 'block')
@@ -102,15 +101,17 @@ function checkAdmin() {
                        $("#inputAdminPassword").val("");
                        $("#inputAdminEmail").val("");
                        $(".adminLoginBtn").attr('disabled', true);
+                       return;
                    }else{
                        //alert("check emails or password")
                        $("#adminLoginWarningMsg").text("check email or password")
                        $("#inputAdminPassword").css('border', '2px solid #ced4da');
                        $("#inputAdminEmail").css('border', '2px solid #ced4da');
-                   }
+
                }
-               return;
-            }
+               }
+
+
             //tblClick1();
         }
     })
