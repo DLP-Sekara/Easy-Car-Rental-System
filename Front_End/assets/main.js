@@ -9,7 +9,7 @@ $(".adminloginPage").css('display', 'none')
 $(".rentSection").css('display', 'none')
 $(".myBookings").css('display', 'none')
 $(".paymentSection").css('display', 'none')
-$(".carManagement").css('display', 'none')
+$(".carManagement").css('display', 'block')
 $(".driverManagement").css('display', 'none')
 $(".dashboard").css('display', 'none')
 

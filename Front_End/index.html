@@ -588,42 +588,42 @@
     <section class="carManagement" id="carManagement">
         <div class="carForm">
             <pre>Vehicle Management</pre>
-            <form class="row g-3">
+            <form class="carManagementForm row g-3">
                 <div class="col-md-6">
                     <label for="regNo" class="form-label">Reg No</label>
-                    <input type="text" class="form-control" id="regNo">
+                    <input type="text" name="car_reg_no" class="form-control" id="regNo">
                 </div>
                 <div class="col-md-6">
                     <label for="brand" class="form-label">Brand</label>
-                    <input type="text" class="form-control" id="brand">
+                    <input type="text"name="brand" class="form-control" id="brand">
                 </div>
                 <div class="col-md-6">
                     <label for="color" class="form-label">Color</label>
-                    <input type="text" class="form-control" id="color">
+                    <input type="text" name="color"class="form-control" id="color">
                 </div>
                 <div class="col-md-6">
                     <label for="noOfPassengers" class="form-label">No Of Passengers</label>
-                    <input type="text" class="form-control" id="noOfPassengers">
+                    <input type="text" name="no_of_passengers" class="form-control" id="noOfPassengers">
                 </div>
                 <div class="col-md-6">
                     <label for="type" class="form-label">Type</label>
-                    <input type="text" class="form-control" id="type">
+                    <input type="text" name="type"class="form-control" id="type">
                 </div>
                 <div class="col-md-6">
                     <label for="extraKmPrice" class="form-label">Extra Km Price</label>
-                    <input type="text" class="form-control" id="extraKmPrice">
+                    <input type="text" name="extra_km_price" class="form-control" id="extraKmPrice">
                 </div>
                 <div class="col-md-6">
                     <label for="dailyPrice" class="form-label">Daily Price</label>
-                    <input type="text" class="form-control" id="dailyPrice">
+                    <input type="text" name="daily_price" class="form-control" id="dailyPrice">
                 </div>
                 <div class="col-md-6">
                     <label for="monthlyPrice" class="form-label">Monthly Price</label>
-                    <input type="text" class="form-control" id="monthlyPrice">
+                    <input type="text" name="monthly_price" class="form-control" id="monthlyPrice">
                 </div>
                 <div class="col-md-6">
                     <label for="fuelType" class="form-label">Fuel Type</label>
-                    <select class="col-md-6 form-select" id="fuelType" aria-label="Default select example">
+                    <select class="col-md-6 form-select" id="fuelType" name="fuel_type" aria-label="Default select example">
                         <option selected>Fuel Type</option>
                         <option value="1">Petrol</option>
                         <option value="2">Diesel</option>
@@ -631,7 +631,7 @@
                 </div>
                 <div class="col-md-6">
                     <label for="transmissionType" class="form-label">Transmission Type</label>
-                    <select class="col-md-6 form-select" id="transmissionType" aria-label="Default select example">
+                    <select class="col-md-6 form-select" name="transmission_type" id="transmissionType" aria-label="Default select example">
                         <option selected>Transmission Type</option>
                         <option value="1">Manual</option>
                         <option value="2">Auto</option>
@@ -639,7 +639,7 @@
                 </div>
                 <div class="col-md-6">
                     <label for="status" class="form-label">Status</label>
-                    <select class="col-md-6 form-select" id="status" aria-label="Default select example">
+                    <select class="col-md-6 form-select" name="status" id="status" aria-label="Default select example">
                         <option selected>Status</option>
                         <option value="1">Available</option>
                         <option value="2">Under Maintenance</option>
@@ -652,9 +652,9 @@
                 </div>
                 <div class="col-12">
 
-                    <button class="btn carSaveBtn btn-success" type="submit" >SAVE CAR</button>
-                    <button class="btn carUpdateBtn btn-warning" type="submit" >UPDATE CAR</button>
-                    <button class="btn carDeleteBtn btn-danger" type="submit" >DELETE CAR</button>
+                    <button class="btn carSaveBtn btn-success" type="button" >SAVE CAR</button>
+                    <button class="btn carUpdateBtn btn-warning" type="button" >UPDATE CAR</button>
+                    <button class="btn carDeleteBtn btn-danger" type="button" >DELETE CAR</button>
                 </div>
             </form>
 
@@ -667,31 +667,16 @@
                     <th scope="col">Brand</th>
                     <th scope="col">Type</th>
                     <th scope="col">No Of Passengers</th>
+                    <th scope="col">Transmission Type</th>
+                    <th scope="col">Fuel Type</th>
+                    <th scope="col">Status</th>
                     <th scope="col">Daily Price</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td >Larry the Bird</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                </tr>
+                <tbody class="allCarsTbl">
+               <tr>
+
+               </tr>
                 </tbody>
             </table>
         </div>
@@ -729,7 +714,7 @@
 
                 <div class="col-12">
 
-                    <button class="btn driverSaveBtn btn-success" type="button" >SAVE CAR</button>
+                    <button class="btn carTblClick btn-success" type="button" >SAVE CAR</button>
                     <button class="btn driverUpdateBtn btn-warning" type="button" >UPDATE CAR</button>
                     <button class="btn driverDeleteBtn btn-danger" type="button" >DELETE CAR</button>
                 </div>
@@ -747,8 +732,10 @@
                     <th scope="col">Driver Status</th>
                 </tr>
                 </thead>
-                <tbody class="driverTbl" id="driverTbl">
+                <tbody class="driverTbl" >
+                <tr>
 
+                </tr>
                 </tbody>
             </table>
         </div>

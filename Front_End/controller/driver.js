@@ -1,7 +1,7 @@
 addDriverToTable();
-tblClick1()
-function tblClick1() {
-    $("#driverTbl>Tr").click(function () {
+DriverTblClick()
+function DriverTblClick() {
+    $(".driverTbl>Tr").click(function () {
         console.log("tbl click")
         $(".driverSaveBtn").attr('disabled', true);
         let driverID = $(this).children().eq(0).text();
@@ -31,7 +31,7 @@ function addDriverToTable() {
                 let row = `<tr><td>${driver.driverID}</td><td>${driver.driving_License_no}</td><td>${driver.driverNIC}</td><td>${driver.driverName}</td><td>${driver.status}</td></tr>`;
                 $(".driverTbl").append(row);
             }
-            //tblClick1();
+            DriverTblClick();
         }
     })
 }
@@ -46,7 +46,7 @@ $(".driverSaveBtn").click(function () {
             if (res.code == 200) {
                 alert(res.message);
                 addDriverToTable()
-                tblClick1()
+                DriverTblClick()
             }
 
         },
