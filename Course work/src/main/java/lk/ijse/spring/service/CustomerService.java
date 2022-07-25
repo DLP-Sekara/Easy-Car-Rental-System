@@ -13,5 +13,7 @@ public interface CustomerService {
 
      CustomerDto searchCustomer(String id);
 
+     boolean checkCustomer(String username,String password);
+
      List<CustomerDto> getAllCustomer();
 }

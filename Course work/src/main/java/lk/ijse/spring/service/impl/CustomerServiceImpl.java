@@ -63,6 +63,19 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    public boolean checkCustomer(String username, String password) {
+        /*boolean temp=repo.findCustomerByUsernameAndPassword(username,password);
+        if (temp==true) {
+            //Customer customer = repo.findById(username).get();
+            //CustomerDto map = mapper.map(customer, CustomerDto.class);
+            return true;
+        } else {
+            throw new RuntimeException("No customer");
+        }*/
+        return  repo.existsByUsernameAndPassword(username,password);
+    }
+
+    @Override
     public List<CustomerDto> getAllCustomer() {
         List<Customer> all = repo.findAll();
         return mapper.map(all,new TypeToken<List<CustomerDto>>(){}.getType());

@@ -216,22 +216,24 @@
             <div class="bottom"></div>
             <pre class="customerTopic2">Please Login or Sign in to continue</pre>
         </div>
+
         <div class="logInForm">
             <pre id="lbl1">Login</pre>
             <form class="loginForm">
                 <div class="row mb-3 col-11 col-lg-3">
-                    <label class="col-sm-2 col-form-label" for="inputEmail3">Email</label>
+                    <label class="col-sm-2 col-form-label" for="customerUsername">Username</label>
                     <div class="col-sm-10">
-                        <input class="form-control" id="inputEmail3" type="email">
+                        <input class="form-control" id="customerUsername" type="text">
                     </div>
                 </div>
                 <div class="row mb-3 col-11 col-lg-3">
-                    <label class="col-sm-2 col-form-label" for="inputPassword3">Password</label>
+                    <label class="col-sm-2 col-form-label" for="customerPassword">Password</label>
                     <div class="col-sm-10">
-                        <input class="form-control" id="inputPassword3" type="password">
+                        <input class="form-control" id="customerPassword" type="password">
                     </div>
                 </div>
-                <button class="btn custLogInBtn btn-primary" type="submit">Sign in</button>
+                <button class="btn custLogInBtn btn-primary" type="button">Login</button>
+                <pre id="customerLoginWarningMsg"></pre>
             </form>
             <pre id="lbl2">Create a new account</pre>
         </div>
@@ -240,28 +242,28 @@
             <pre id="lbl3">Sign in</pre>
             <form class="signinForm row g-3">
                 <div class="col-md-6">
-                    <label class="form-label" for="inputEmail4">Username</label>
-                    <input class="form-control" id="inputUsername" placeholder="Username" type="text">
+                    <label class="form-label" for="inputCustomerUsername">Username</label>
+                    <input class="form-control" id="inputCustomerUsername" placeholder="Username" type="text">
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label" for="inputPassword4">Password</label>
-                    <input class="form-control" id="inputPassword4" placeholder="Password" type="password">
+                    <label class="form-label" for="inputCustomerPassword4">Password</label>
+                    <input class="form-control" id="inputCustomerPassword4" placeholder="Password" type="password">
                 </div>
                 <div class="col-md-12">
-                    <label class="form-label" for="inputEmail4">Email</label>
-                    <input class="form-control" id="inputEmail4" placeholder="Email" type="email">
+                    <label class="form-label" for="inputCustomerEmail">Email</label>
+                    <input class="form-control" id="inputCustomerEmail" placeholder="Email" type="email">
                 </div>
                 <div class="col-12">
-                    <label class="form-label" for="inputAddress">Address</label>
-                    <input class="form-control" id="inputAddress" placeholder="1234 Main St" type="text">
+                    <label class="form-label" for="inputCustomerAddress">Address</label>
+                    <input class="form-control" id="inputCustomerAddress" placeholder="1234 Main St" type="text">
                 </div>
                 <div class="col-12">
-                    <label class="form-label" for="inputAddress2">Driving License No</label>
-                    <input class="form-control" id="inputAddress2" placeholder="Driving License No" type="text">
+                    <label class="form-label" for="inputCustomerDrivingLicenseNo">Driving License No</label>
+                    <input class="form-control" id="inputCustomerDrivingLicenseNo" placeholder="Driving License No" type="text">
                 </div>
-                <div class="col-md-12">
-                    <label class="form-label" for="inputCity">Contact</label>
-                    <input class="form-control" id="inputCity " placeholder="Contact" type="text">
+                <div class="col-12">
+                    <label class="form-label" for="inputCustomerContact">Contact</label>
+                    <input class="form-control" id="inputCustomerContact" placeholder="Contact" type="text">
                 </div>
 
                 <div class="mb-3">
@@ -269,7 +271,7 @@
                     <input class="form-control" id="formFile" type="file">
                 </div>
                 <div class="col-12">
-                    <button class="btn custSignInBtn btn-primary" type="submit">Sign in</button>
+                    <button class="btn custSignInBtn btn-primary" type="button">Sign in</button>
                 </div>
             </form>
             <pre id="lbl4">Have an account?Login</pre>
@@ -288,13 +290,13 @@
             <pre id="lbl5">Login</pre>
             <form class="loginForm">
                 <div class="row mb-3 col-11 col-lg-3">
-                    <label class="col-sm-2 col-form-label" for="inputEmail3">Email</label>
+                    <label class="col-sm-2 col-form-label" for="inputAdminEmail">Email</label>
                     <div class="col-sm-10">
                         <input class="form-control" id="inputAdminEmail" type="email">
                     </div>
                 </div>
                 <div class="row mb-3 col-11 col-lg-3">
-                    <label class="col-sm-2 col-form-label" for="inputPassword3">Password</label>
+                    <label class="col-sm-2 col-form-label" for="inputAdminPassword">Password</label>
                     <div class="col-sm-10">
                         <input class="form-control" id="inputAdminPassword" type="password">
                     </div>
