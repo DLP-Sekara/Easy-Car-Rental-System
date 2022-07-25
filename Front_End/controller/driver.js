@@ -35,6 +35,8 @@ function addDriverToTable() {
         }
     })
 }
+
+/*driver  save BtnEvent==============================================*/
 $(".driverSaveBtn").click(function () {
     var serialize = $("#driverForm").serialize();
     console.log(serialize)
@@ -51,7 +53,58 @@ $(".driverSaveBtn").click(function () {
 
         },
         error: function (ob) {
+            alert(ob.responseJSON.message)
             console.log(ob.responseJSON.message);
         }
     })
 })
+
+/*driver update BtnEvent==============================================*/
+$(".driverUpdateBtn").click(function () {
+    updateDriver();
+})
+function updateDriver() {
+    var driverOB={
+        "driverID":$("#driverID").val(),
+        "driverNIC":$("#driverNic").val(),
+        "driverName":$("#driverName").val(),
+        "Driving_License_no":$("#Driving_License_no").val(),
+        "status":$("#driverStatus").val(),
+    }
+    $.ajax({
+        url: "http://localhost:8080/Course_work_war/driver",
+        method: "PUT",
+        contentType:"application/json",
+        data: JSON.stringify(driverOB),
+        success: function (resp) {
+            if(resp.code==200){
+                addDriverToTable();
+                alert("successfully update");
+            }
+        },
+        error:function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    })
+}
+
+/*driver delete BtnEvent==============================================*/
+$(".driverDeleteBtn").click(function () {
+    deleteDriver();
+})
+function deleteDriver() {
+    var temp_DriverID = $("#driverID").val();
+    $.ajax({
+        url: "http://localhost:8080/Course_work_war/driver?driverID=" + temp_DriverID,
+        method: "DELETE",
+        success: function (resp) {
+            if(resp.code==200){
+                alert("successfully delete")
+                addDriverToTable();
+            }
+        },
+        error:function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    })
+}

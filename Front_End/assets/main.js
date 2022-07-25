@@ -9,8 +9,8 @@ $(".adminloginPage").css('display', 'none')
 $(".rentSection").css('display', 'none')
 $(".myBookings").css('display', 'none')
 $(".paymentSection").css('display', 'none')
-$(".carManagement").css('display', 'block')
-$(".driverManagement").css('display', 'none')
+$(".carManagement").css('display', 'none')
+$(".driverManagement").css('display', 'block')
 $(".dashboard").css('display', 'none')
 
 /* nav button functions*/
