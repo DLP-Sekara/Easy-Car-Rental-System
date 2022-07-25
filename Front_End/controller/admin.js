@@ -1,4 +1,5 @@
 /*validation==============================================*/
+$(".adminLoginBtn").attr('disabled', true);
 var adminEmail = /^[A-z]{2,20}[@][A-z]{2,10}[.][A-z]{2,20}$/;
 var adminPassword = /^[A-z,0-9 _]{4,10}$/;
 
@@ -93,11 +94,19 @@ function checkAdmin() {
                        $("#logOutBtn").css('display', 'block')
                        $("#logInBTN").css('display', 'none')
                        $("#AdminManageBTN").css('display', 'block')
+                       $("#EmployeeBTN").css('display', 'none')
+
+                       $("#adminLoginWarningMsg").text("")
+                       $("#inputAdminPassword").css('border', '2px solid #ced4da');
+                       $("#inputAdminEmail").css('border', '2px solid #ced4da');
+                       $("#inputAdminPassword").val("");
+                       $("#inputAdminEmail").val("");
+                       $(".adminLoginBtn").attr('disabled', true);
                    }else{
                        //alert("check emails or password")
                        $("#adminLoginWarningMsg").text("check email or password")
-                       $("#inputAdminPassword").css('border', 'none');
-                       $("#inputAdminEmail").css('border', 'none');
+                       $("#inputAdminPassword").css('border', '2px solid #ced4da');
+                       $("#inputAdminEmail").css('border', '2px solid #ced4da');
                    }
                }
                return;

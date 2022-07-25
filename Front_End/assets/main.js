@@ -287,6 +287,7 @@ $("#logOutBtn").click(function () {
     $("#logOutBtn").css('display', 'none')
     $("#logInBTN").css('display', 'block')
     $("#AdminManageBTN").css('display', 'none')
+    $("#EmployeeBTN").css('display', 'block')
 })
 $("#logoutIcon").click(function () {
     window.location.href = "index.html"
