@@ -83,7 +83,9 @@ function carTblClick() {
                     $("#extraKmPrice").val(resp.data.extra_km_price);
                     $("#dailyPrice").val(resp.data.daily_price);
                     $("#monthlyPrice").val(resp.data.monthly_price);
-                    $("#fuelType").val(resp.data.fuel_type);
+                     $("#fuelType").val(resp.data.fuel_type);
+                     $("#lostDamageCost").val(resp.data.damageCost);
+                     $("#car_group").val(resp.data.car_group);
                     $("#transmission_type").val(resp.data.transmission_type);
                     $("#status").val(resp.data.status);
             }
@@ -190,6 +192,8 @@ function updateCar() {
         "fuel_type":$("#fuelType").val(),
         "transmission_type":$("#transmissionType").val(),
         "status":$("#status").val(),
+        "car_group":$("#car_group").val(),
+        "damageCost":$("#lostDamageCost").val(),
         "daily_price":$("#dailyPrice").val(),
         "monthly_price":$("#monthlyPrice").val(),
         "extra_km_price":$("#extraKmPrice").val(),

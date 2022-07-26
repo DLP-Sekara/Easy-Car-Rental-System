@@ -1,3 +1,6 @@
+
+
+
 //main functions======================================
 $(".home").css('display', 'block')
 $(".firstPage").css('display', 'block')
@@ -12,7 +15,7 @@ $(".paymentSection").css('display', 'none')
 $(".carManagement").css('display', 'none')
 $(".driverManagement").css('display', 'none')
 $(".dashboard").css('display', 'none')
-$(".customerManagement").css('display', 'block')
+$(".customerManagement").css('display', 'none')
 
 /* nav button functions*/
 $("#homeBtn").click(function () {
@@ -142,6 +145,9 @@ $("#logInBTN").click(function () {
     $("#customerLoginWarningMsg").text("")
 })
 $("#logOutBtn").click(function () {
+
+    tempLoginStatus="notNow";
+    tempCustomerUsernameStatus=null;
     $(".home").css('display', 'block')
     $(".firstPage").css('display', 'block')
     $(".secondPage").css('display', 'block')
@@ -262,6 +268,35 @@ $(".addDriverBtn").click(function () {
     $("#nav").css('background-color', 'transparent')
 
 })
+$(".manageCustomerBtn").click(function () {
+    $(".home").css('display', 'none')
+    $(".firstPage").css('display', 'none')
+    $(".secondPage").css('display', 'none')
+    $(".thirdPage").css('display', 'none')
+
+    $(".loginPage").css('display', 'none')
+    $(".adminloginPage").css('display', 'none')
+    $(".rentSection").css('display', 'none')
+    $(".myBookings").css('display', 'none')
+    $(".paymentSection").css('display', 'none')
+    $(".carManagement").css('display', 'none')
+    $(".driverManagement").css('display', 'none')
+    $(".dashboard").css('display', 'none')
+    $(".customerManagement").css('display', 'block')
+
+    $("#ManageBTN>a").css('color', 'black')
+    $("#ManageBTN").css('border-bottom','4px solid red')
+    $("#logInBTN>a").css('color', 'black')
+    $("#logInBTN").css('border-bottom', 'none')
+    $("#EmployeeBTN>a").css('color', 'black')
+    $("#EmployeeBTN").css('border-bottom', 'none')
+    $("#customerBTN>a").css('color', 'black')
+    $("#customerBTN").css('border-bottom', 'none')
+    $("#logOutBtn>a").css('color', 'black')
+    $("#logOutBtn").css('border-bottom', 'none')
+    $("#nav").css('background-color', 'transparent')
+
+})
 $(".viewBtn").click(function () {
     $(".home").css('display', 'none')
     $(".firstPage").css('display', 'none')
@@ -366,24 +401,7 @@ $(".adminLoginBtn").click(function () {
     $("#AdminManageBTN").css('display', 'block')*/
 })
 
-/*car click event*/
-$(".carTab").click(function () {
-    console.log("done done")
-    $(".home").css('display', 'none')
-    $(".firstPage").css('display', 'none')
-    $(".secondPage").css('display', 'none')
-    $(".thirdPage").css('display', 'none')
-
-    $(".loginPage").css('display', 'none')
-    $(".adminloginPage").css('display', 'none')
-    $(".rentSection").css('display', 'block')
-    $(".myBookings").css('display', 'none')
-    $(".paymentSection").css('display', 'none')
-    $(".carManagement").css('display', 'none')
-    $(".driverManagement").css('display', 'none')
-    $(".dashboard").css('display', 'none')
-    $(".customerManagement").css('display', 'none')
-})
+/*all rent click event*/
 $(".allRentTable>tr").click(function () {
     $(".home").css('display', 'none')
     $(".firstPage").css('display', 'none')
@@ -454,7 +472,6 @@ $(".rentPageModelCloseBtn").click(function () {
     $(".dashboard").css('display', 'none')
     $(".customerManagement").css('display', 'none')
 })
-
 $(".paymentPageModelCloseBtn").click(function () {
     $(".home").css('display', 'none')
     $(".firstPage").css('display', 'none')
@@ -471,3 +488,5 @@ $(".paymentPageModelCloseBtn").click(function () {
     $(".dashboard").css('display', 'block')
     $(".customerManagement").css('display', 'none')
 })
+
+

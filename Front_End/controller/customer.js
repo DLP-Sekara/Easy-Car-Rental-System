@@ -62,6 +62,7 @@ function btnAction2() {
 }
 
 /*customer login BtnEvent==============================================*/
+
 $(".custLogInBtn").click(function () {
     checkCustomer()
 })
@@ -75,6 +76,9 @@ function checkCustomer() {
             console.log(resp.data)
             for (const customer of resp.data) {
                 if(customer.username===tempUsername & customer.password===tempCustPassword){
+
+                        tempLoginStatus="availableNow";
+                    tempCustomerUsernameStatus=tempUsername;
                         $(".home").css('display', 'block')
                         $(".firstPage").css('display', 'block')
                         $(".secondPage").css('display', 'block')
@@ -210,6 +214,9 @@ function availableCustomer() {
                     data: serialize,
                     success: function (res) {
                         if (res.code == 200) {
+
+                            tempLoginStatus="availableNow";
+                            tempCustomerUsernameStatus=tempUsername;
                             alert(res.message);
                         }
 

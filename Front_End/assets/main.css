@@ -489,7 +489,7 @@ body {
 .checkCarBtn{
     position: absolute;
     left: 60%;
-    top: 20%;
+    top: 27%;
     height: 34px;
 }
 .rentTopic{
@@ -499,6 +499,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.backImg2{
+    position: relative;
+    top: 9%;
+    left: 4%;
+}
+.backImg2:hover{
+    cursor: pointer;
 }
 
 /*model*/
@@ -658,14 +666,6 @@ body {
     left: 4%;
 }
 .backImg1:hover{
-    cursor: pointer;
-}
-.backImg2{
-    position: relative;
-    top: 4%;
-    left: 4%;
-}
-.backImg2:hover{
     cursor: pointer;
 }
 .paymentTopic{

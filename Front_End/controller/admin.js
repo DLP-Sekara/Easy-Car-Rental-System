@@ -75,6 +75,9 @@ function checkAdmin() {
             console.log(resp.data)
             for (const admin of resp.data) {
                if(admin.username===tempEmail & admin.password===tempPassword){
+
+                   tempLoginStatus="availableNow";
+
                        $(".home").css('display', 'block')
                        $(".firstPage").css('display', 'block')
                        $(".secondPage").css('display', 'block')

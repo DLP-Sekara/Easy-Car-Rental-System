@@ -57,7 +57,7 @@
                     <ul class="dropdown-menu">
                         <li class="addCarBtn"><a class="dropdown-item" href="#">Manage Car</a></li>
                         <li class="addDriverBtn"><a class="dropdown-item" href="#driverManagement">Manage Driver</a></li>
-                        <li class="addCustomerBtn"><a class="dropdown-item" href="#">Manage Customer</a></li>
+                        <li class="manageCustomerBtn"><a class="dropdown-item" href="#">Manage Customer</a></li>
                         <li class="viewBtn"><a class="dropdown-item" href="#dashboard">View</a></li>
                         <li class="settingBtn"><a class="dropdown-item" href="#">Settings</a></li>
                     </ul>
@@ -103,62 +103,77 @@
                 <div class="carTab" id="v1">
                     <img src="assets/images/cars/V1.png"/>
                     <pre>Suzuki Alto</pre>
+                    <pre class="temp_RegNo">v-01</pre>
+                    <pre class="temp_CarGroup">Premium</pre>
+                    <pre class="temp_DamageCost">200</pre>
+
                 </div>
 
                 <div class="carTab" id="v2">
                     <img src="assets/images/cars/V2.png"/>
                     <pre>Suzuki Alto K10</pre>
+                    <pre class="temp_RegNo">v-02</pre>
                 </div>
 
                 <div class="carTab" id="v3">
                     <img src="assets/images/cars/V3.png"/>
                     <pre>Suzuki Celerio</pre>
+                    <pre class="temp_RegNo">v-03</pre>
                 </div>
 
                 <div class="carTab" id="v4">
                     <img src="assets/images/cars/v4.png"/>
                     <pre>Perodua (Daihatsu) </pre>
+                    <pre class="temp_RegNo">v-04</pre>
                 </div>
 
                 <div class="carTab" id="v5">
                     <img src="assets/images/cars/v5.png"/>
                     <pre>Toyota Prius C</pre>
+                    <pre class="temp_RegNo">v-05</pre>
                 </div>
                 <!--premium cars-->
 
                 <div class="carTab" id="v6">
                     <img src="assets/images/cars/v6.png"/>
                     <pre>Toyota Corolla Axio</pre>
+                    <pre class="temp_RegNo">v-06</pre>
                 </div>
 
                 <div class="carTab" id="v7">
                     <img src="assets/images/cars/v7.png"/>
                     <pre>Perodua Bezza Prime Sedan</pre>
+                    <pre class="temp_RegNo">v-07</pre>
                 </div>
 
                 <div class="carTab" id="v8">
                     <img src="assets/images/cars/v8.png"/>
                     <pre>Toyota Allion NZT 260</pre>
+                    <pre class="temp_RegNo">v-08</pre>
                 </div>
 
                 <div class="carTab" id="v9">
                     <img src="assets/images/cars/v9.png"/>
                     <pre>Toyota Axio NKR 165</pre>
+                    <pre class="temp_RegNo">v-09</pre>
                 </div>
 
                 <div class="carTab" id="v10">
                     <img src="assets/images/cars/v10.png"/>
                     <pre>Toyota Premio</pre>
+                    <pre class="temp_RegNo">v-10</pre>
                 </div>
 
                 <div class="carTab" id="v11">
                     <img src="assets/images/cars/v11.png"/>
                     <pre>Mercedes</pre>
+                    <pre class="temp_RegNo">v-11</pre>
                 </div>
 
                 <div class="carTab" id="v12">
                     <img src="assets/images/cars/v12.png"/>
                     <pre>BMW i8</pre>
+                    <pre class="temp_RegNo">v-12</pre>
                 </div>
             </section>
         </div>
@@ -323,20 +338,20 @@
             <pre class="rentTopic">Rent Details</pre>
             <div class="col-md-6">
                 <label class="form-label" for="selectedCustomer">Selected Customer :</label>
-                <label class="form-label" id="selectedCustomer">Temp_Kasun</label>
+                <label class="form-label" id="selectedCustomer"></label>
             </div>
             <div class="col-md-6">
                 <label class="form-label" for="selectedCar">Selected Car :</label>
-                <label class="form-label" id="selectedCar">Temp_Corolla</label>
+                <label class="form-label" id="selectedCar"></label>
             </div>
             <button class="btn checkCarBtn btn-success" type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Check Car</button>
             <div class="col-md-6">
                 <label class="form-label" for="vehicleGroup">Vehicle Group :</label>
-                <label class="form-label" id="vehicleGroup">Temp_Premium</label>
+                <label class="form-label" id="vehicleGroup"></label>
             </div>
             <div class="col-md-6">
                 <label class="form-label" for="startDate">Start Date :</label>
-                <input data-provide="datepicker" class="form-control"id="startDate" type="date">
+                <input data-provide="datepicker" class="form-control" id="startDate" type="date">
             </div>
             <div class="mb-6">
                 <label class="form-label" for="pickUpTime">pickUp Time :</label>
@@ -344,7 +359,7 @@
             </div>
             <div class="mb-6">
                 <label class="form-label" for="LossDamageCost">Loss Damage Cost :</label>
-                <label class="form-label" id="LossDamageCost">Temp_15000</label>
+                <label class="form-label" id="LossDamageCost"></label>
             </div>
             <div class="mb-6">
                 <label class="form-label" for="paymentSlip">Payment Slip</label>
@@ -357,7 +372,7 @@
                 </label>
             </div>
             <div class="col-12">
-                <button class="btn rentBtn btn-warning" type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop">RENT NOW</button>
+                <button class="btn rentBtn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">RENT NOW</button>
             </div>
         </idv>
 
@@ -627,25 +642,40 @@
                     <label for="fuelType" class="form-label">Fuel Type</label>
                     <select class="col-md-6 form-select" id="fuelType" name="fuel_type" aria-label="Default select example">
                         <option selected>Fuel Type</option>
-                        <option value="1">Petrol</option>
-                        <option value="2">Diesel</option>
+                        <option value="Petrol">Petrol</option>
+                        <option value="Diesel">Diesel</option>
                     </select>
                 </div>
+
+                <div class="col-md-6">
+                    <label for="lostDamageCost" class="form-label">Damage Cost</label>
+                    <input type="text" name="damageCost" class="form-control" id="lostDamageCost">
+                </div>
+                <div class="col-md-6">
+                    <label for="car_group" class="form-label">Car Group</label>
+                    <select class="col-md-6 form-select" id="car_group" name="car_group" aria-label="Default select example">
+                        <option selected>Car Group</option>
+                        <option value="Premium">Premium</option>
+                        <option value="General">General</option>
+                        <option value="Luxury">Luxury</option>
+                    </select>
+                </div>
+
                 <div class="col-md-6">
                     <label for="transmissionType" class="form-label">Transmission Type</label>
                     <select class="col-md-6 form-select" name="transmission_type" id="transmissionType" aria-label="Default select example">
                         <option selected>Transmission Type</option>
-                        <option value="1">Manual</option>
-                        <option value="2">Auto</option>
+                        <option value="Manual">Manual</option>
+                        <option value="Auto">Auto</option>
                     </select>
                 </div>
                 <div class="col-md-6">
                     <label for="status" class="form-label">Status</label>
                     <select class="col-md-6 form-select" name="status" id="status" aria-label="Default select example">
                         <option selected>Status</option>
-                        <option value="1">Available</option>
-                        <option value="2">Under Maintenance</option>
-                        <option value="3">Running</option>
+                        <option value="Available">Available</option>
+                        <option value="Under Maintenance">Under Maintenance</option>
+                        <option value="Running">Running</option>
                     </select>
                 </div>
                 <div class="col-md-6">
@@ -931,6 +961,7 @@
 <script src="controller/payment.js"></script>
 <script src="controller/rent.js"></script>
 <script src="controller/rentDetails.js"></script>
+<script src="db/db.js"></script>
 <script>
    /* var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
