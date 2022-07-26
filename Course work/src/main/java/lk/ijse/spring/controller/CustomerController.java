@@ -44,10 +44,10 @@ public class CustomerController {
         return new ResponseUtil(200,"Deleted",null);
     }
 
-   /* @GetMapping(path = "/{username}",produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/{username}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil searchCustomer(@PathVariable String username) {
         return new ResponseUtil(200,"Ok",customerService.searchCustomer(username));
-    }*/
+    }
 
     @GetMapping(params = {"username","password"},produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil checkCustomer(@RequestParam String username,@RequestParam String password) {

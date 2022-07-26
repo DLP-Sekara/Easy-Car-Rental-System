@@ -813,6 +813,60 @@ body {
     font-weight: bold;
 }
 
+/*customer management*/
+.customerManagement{
+    position: relative;
+    width: 100vw;
+    height: 175vh;
+    background-color: #f6efe3;
+    left: -1%;
+}
+.customerManagementForm{
+    height: 63%;
+    width: 78%;
+    background-color: white;
+    position: absolute;
+    left: 31px;
+    right: 0;
+    top: -31%;
+    bottom: 0;
+    margin: auto;
+    border: 1px solid white;
+    border-radius: 13px;
+}
+.customerManagementForm>form{
+    width: 85%;
+    left: 9%;
+    position: relative;
+    top: 9%;
+}
+.customerUpdateBtn,.customerDeleteBtn{
+    position: relative;
+    left: 69%;
+}
+.customerTable{
+    position: absolute;
+    width: 82%;
+    height: 25%;
+    top: 70%;
+    left: 10%;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+.customerTbl>tr:hover{
+    cursor: pointer;
+}
+.customerManagementForm>pre{
+    position: relative;
+    display: flex;
+    top: 6%;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 /*dashboard*/
 
 .dashboard{

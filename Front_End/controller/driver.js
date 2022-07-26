@@ -1,4 +1,4 @@
-addDriverToTable();
+
 DriverTblClick()
 function DriverTblClick() {
     $(".driverTbl>Tr").click(function () {
@@ -20,6 +20,10 @@ function DriverTblClick() {
         $(".dltBtn").attr('disabled', false);
     })
 }
+
+
+/*driver  getall BtnEvent==============================================*/
+addDriverToTable();
 function addDriverToTable() {
     $.ajax({
         url: "http://localhost:8080/Course_work_war/driver",

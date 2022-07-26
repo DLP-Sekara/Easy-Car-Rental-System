@@ -10,8 +10,9 @@ $(".rentSection").css('display', 'none')
 $(".myBookings").css('display', 'none')
 $(".paymentSection").css('display', 'none')
 $(".carManagement").css('display', 'none')
-$(".driverManagement").css('display', 'block')
+$(".driverManagement").css('display', 'none')
 $(".dashboard").css('display', 'none')
+$(".customerManagement").css('display', 'block')
 
 /* nav button functions*/
 $("#homeBtn").click(function () {
@@ -28,7 +29,7 @@ $("#homeBtn").click(function () {
     $(".carManagement").css('display', 'none')
     $(".driverManagement").css('display', 'none')
     $(".dashboard").css('display', 'none')
-
+    $(".customerManagement").css('display', 'none')
 
     $("#homeBtn>a").css('color', 'black')
     //$("#homeBtn").css('border-bottom','4px solid red')
@@ -58,7 +59,7 @@ $("#customerBTN").click(function () {
     $(".carManagement").css('display', 'none')
     $(".driverManagement").css('display', 'none')
     $(".dashboard").css('display', 'none')
-
+    $(".customerManagement").css('display', 'none')
 
     $("#homeBtn>a").css('color', 'black')
     $("#homeBtn").css('border-bottom', 'none')
@@ -91,6 +92,7 @@ $("#EmployeeBTN").click(function () {
     $(".carManagement").css('display', 'none')
     $(".driverManagement").css('display', 'none')
     $(".dashboard").css('display', 'none')
+    $(".customerManagement").css('display', 'none')
 
     $("#homeBtn>a").css('color', 'black')
     $("#homeBtn").css('border-bottom', 'none')
@@ -123,6 +125,7 @@ $("#logInBTN").click(function () {
     $(".carManagement").css('display', 'none')
     $(".driverManagement").css('display', 'none')
     $(".dashboard").css('display', 'none')
+    $(".customerManagement").css('display', 'none')
 
     $("#homeBtn>a").css('color', 'black')
     $("#homeBtn").css('border-bottom', 'none')
@@ -152,6 +155,7 @@ $("#logOutBtn").click(function () {
     $(".carManagement").css('display', 'none')
     $(".driverManagement").css('display', 'none')
     $(".dashboard").css('display', 'none')
+    $(".customerManagement").css('display', 'none')
 
     $("#ManageBTN").css('display', 'none')
     $("#logOutBtn").css('display', 'none')
@@ -185,6 +189,7 @@ $(".returnNowBtn,.bookingBtn").click(function () {
     $(".carManagement").css('display', 'none')
     $(".driverManagement").css('display', 'none')
     $(".dashboard").css('display', 'none')
+    $(".customerManagement").css('display', 'none')
 
     $("#ManageBTN>a").css('color', 'black')
     $("#ManageBTN").css('border-bottom','4px solid red')
@@ -213,6 +218,7 @@ $(".addCarBtn").click(function () {
     $(".carManagement").css('display', 'block')
     $(".driverManagement").css('display', 'none')
     $(".dashboard").css('display', 'none')
+    $(".customerManagement").css('display', 'none')
 
     $("#ManageBTN>a").css('color', 'black')
     $("#ManageBTN").css('border-bottom','4px solid red')
@@ -241,6 +247,7 @@ $(".addDriverBtn").click(function () {
     $(".carManagement").css('display', 'none')
     $(".driverManagement").css('display', 'block')
     $(".dashboard").css('display', 'none')
+    $(".customerManagement").css('display', 'none')
 
     $("#ManageBTN>a").css('color', 'black')
     $("#ManageBTN").css('border-bottom','4px solid red')
@@ -269,6 +276,7 @@ $(".viewBtn").click(function () {
     $(".carManagement").css('display', 'none')
     $(".driverManagement").css('display', 'none')
     $(".dashboard").css('display', 'block')
+    $(".customerManagement").css('display', 'none')
 
     $("#ManageBTN>a").css('color', 'black')
     $("#ManageBTN").css('border-bottom','4px solid red')
@@ -374,6 +382,7 @@ $(".carTab").click(function () {
     $(".carManagement").css('display', 'none')
     $(".driverManagement").css('display', 'none')
     $(".dashboard").css('display', 'none')
+    $(".customerManagement").css('display', 'none')
 })
 $(".allRentTable>tr").click(function () {
     $(".home").css('display', 'none')
@@ -389,6 +398,7 @@ $(".allRentTable>tr").click(function () {
     $(".carManagement").css('display', 'none')
     $(".driverManagement").css('display', 'none')
     $(".dashboard").css('display', 'none')
+    $(".customerManagement").css('display', 'none')
 })
 
 
@@ -407,6 +417,7 @@ $(".backImg1").click(function () {
     $(".carManagement").css('display', 'none')
     $(".driverManagement").css('display', 'none')
     $(".dashboard").css('display', 'block')
+    $(".customerManagement").css('display', 'none')
 })
 $(".backImg2").click(function () {
     $(".home").css('display', 'block')
@@ -422,6 +433,7 @@ $(".backImg2").click(function () {
     $(".carManagement").css('display', 'none')
     $(".driverManagement").css('display', 'none')
     $(".dashboard").css('display', 'none')
+    $(".customerManagement").css('display', 'none')
 })
 
 
@@ -440,6 +452,7 @@ $(".rentPageModelCloseBtn").click(function () {
     $(".carManagement").css('display', 'none')
     $(".driverManagement").css('display', 'none')
     $(".dashboard").css('display', 'none')
+    $(".customerManagement").css('display', 'none')
 })
 
 $(".paymentPageModelCloseBtn").click(function () {
@@ -456,4 +469,5 @@ $(".paymentPageModelCloseBtn").click(function () {
     $(".carManagement").css('display', 'none')
     $(".driverManagement").css('display', 'none')
     $(".dashboard").css('display', 'block')
+    $(".customerManagement").css('display', 'none')
 })
