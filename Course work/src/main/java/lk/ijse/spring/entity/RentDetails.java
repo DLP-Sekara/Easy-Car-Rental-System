@@ -20,6 +20,7 @@ public class RentDetails {
     @Id
     private String rentID;
     private String car_reg_no;
+    private String driver;
     private LocalDate date;
     private String pickup_time;
 

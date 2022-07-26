@@ -19,6 +19,7 @@ import java.time.LocalDate;
 public class RentDetailsDto {
     private String rentID;
     private String car_reg_no;
+    private String driver;
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
     private String pickup_time;

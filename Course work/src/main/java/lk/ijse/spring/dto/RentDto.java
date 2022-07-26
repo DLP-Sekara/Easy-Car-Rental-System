@@ -19,6 +19,7 @@ public class RentDto {
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
     private String pickUpTime;
+    private String driver;
     private double cash_on_hand;
     private CustomerDto customer;
     private List<RentDetailsDto> rentDetails;

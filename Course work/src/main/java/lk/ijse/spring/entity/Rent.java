@@ -19,6 +19,7 @@ public class Rent {
     private String rentID;
     private LocalDate date;
     private String pickUpTime;
+    private String driver;
     private double cash_on_hand;
 
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
