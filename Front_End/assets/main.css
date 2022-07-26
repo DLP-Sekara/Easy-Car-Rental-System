@@ -166,6 +166,13 @@ body {
     top: 75%;
     display: table;
 }
+.vehicles > section > div > .temp_CarGroup {
+    position: relative;
+    top: 85%;
+    font-size: 17px;
+    color: red;
+    font-weight: bold;
+}
 
 /*second page*/
 .secondPage {
@@ -942,9 +949,6 @@ body {
     top: 2%;
     font-size: 20px;
     font-weight: bold;
-}
-.allRentTable>tr:hover{
-    cursor: pointer;
 }
 .accordion{
     position: relative;

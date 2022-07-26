@@ -104,8 +104,8 @@
                     <img src="assets/images/cars/V1.png"/>
                     <pre>Suzuki Alto</pre>
                     <pre class="temp_RegNo">v-01</pre>
-                    <pre class="temp_CarGroup">Premium</pre>
-                    <pre class="temp_DamageCost">200</pre>
+                    <pre class="temp_CarGroup">General</pre>
+                    <pre class="temp_DamageCost">10000</pre>
 
                 </div>
 
@@ -113,24 +113,32 @@
                     <img src="assets/images/cars/V2.png"/>
                     <pre>Suzuki Alto K10</pre>
                     <pre class="temp_RegNo">v-02</pre>
+                    <pre class="temp_CarGroup">General</pre>
+                    <pre class="temp_DamageCost">10000</pre>
                 </div>
 
                 <div class="carTab" id="v3">
                     <img src="assets/images/cars/V3.png"/>
                     <pre>Suzuki Celerio</pre>
                     <pre class="temp_RegNo">v-03</pre>
+                    <pre class="temp_CarGroup">General</pre>
+                    <pre class="temp_DamageCost">10000</pre>
                 </div>
 
                 <div class="carTab" id="v4">
                     <img src="assets/images/cars/v4.png"/>
                     <pre>Perodua (Daihatsu) </pre>
                     <pre class="temp_RegNo">v-04</pre>
+                    <pre class="temp_CarGroup">General</pre>
+                    <pre class="temp_DamageCost">10000</pre>
                 </div>
 
                 <div class="carTab" id="v5">
                     <img src="assets/images/cars/v5.png"/>
                     <pre>Toyota Prius C</pre>
                     <pre class="temp_RegNo">v-05</pre>
+                    <pre class="temp_CarGroup">General</pre>
+                    <pre class="temp_DamageCost">10000</pre>
                 </div>
                 <!--premium cars-->
 
@@ -138,42 +146,56 @@
                     <img src="assets/images/cars/v6.png"/>
                     <pre>Toyota Corolla Axio</pre>
                     <pre class="temp_RegNo">v-06</pre>
+                    <pre class="temp_CarGroup">premium</pre>
+                    <pre class="temp_DamageCost">15000</pre>
                 </div>
 
                 <div class="carTab" id="v7">
                     <img src="assets/images/cars/v7.png"/>
                     <pre>Perodua Bezza Prime Sedan</pre>
                     <pre class="temp_RegNo">v-07</pre>
+                    <pre class="temp_CarGroup">premium</pre>
+                    <pre class="temp_DamageCost">15000</pre>
                 </div>
 
                 <div class="carTab" id="v8">
                     <img src="assets/images/cars/v8.png"/>
                     <pre>Toyota Allion NZT 260</pre>
                     <pre class="temp_RegNo">v-08</pre>
+                    <pre class="temp_CarGroup">Premium</pre>
+                    <pre class="temp_DamageCost">15000</pre>
                 </div>
 
                 <div class="carTab" id="v9">
                     <img src="assets/images/cars/v9.png"/>
                     <pre>Toyota Axio NKR 165</pre>
                     <pre class="temp_RegNo">v-09</pre>
+                    <pre class="temp_CarGroup">Premium</pre>
+                    <pre class="temp_DamageCost">15000</pre>
                 </div>
 
                 <div class="carTab" id="v10">
                     <img src="assets/images/cars/v10.png"/>
                     <pre>Toyota Premio</pre>
                     <pre class="temp_RegNo">v-10</pre>
+                    <pre class="temp_CarGroup">Premium</pre>
+                    <pre class="temp_DamageCost">15000</pre>
                 </div>
 
                 <div class="carTab" id="v11">
                     <img src="assets/images/cars/v11.png"/>
                     <pre>Mercedes</pre>
                     <pre class="temp_RegNo">v-11</pre>
+                    <pre class="temp_CarGroup">Luxury</pre>
+                    <pre class="temp_DamageCost">20000</pre>
                 </div>
 
                 <div class="carTab" id="v12">
                     <img src="assets/images/cars/v12.png"/>
                     <pre>BMW i8</pre>
                     <pre class="temp_RegNo">v-12</pre>
+                    <pre class="temp_CarGroup">Luxury</pre>
+                    <pre class="temp_DamageCost">20000</pre>
                 </div>
             </section>
         </div>
@@ -366,8 +388,8 @@
                 <input class="form-control" style="width: 50%" id="paymentSlip" type="file">
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
+                <input class="form-check-input" type="checkbox" value="" id="driverCheckBox">
+                <label class="form-check-label" for="driverCheckBox">
                     With a driver
                 </label>
             </div>
@@ -412,35 +434,35 @@
                         </div>
                         <div class="col-md-6">
                             <label class="form-label" style="font-weight: bold" for="carBrand">Brand :</label>
-                            <label class="form-label" id="carBrand">Temp_Toyota</label>
+                            <label class="form-label" id="carBrand"></label>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label" style="font-weight: bold" for="carType">Type :</label>
-                            <label class="form-label" id="carType">Temp_SUV</label>
+                            <label class="form-label" id="carType"></label>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label" style="font-weight: bold" for="carFuelType">Fuel Type :</label>
-                            <label class="form-label" id="carFuelType">Temp_Petrol</label>
+                            <label class="form-label" id="carFuelType"></label>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label" style="font-weight: bold"  for="passengersCount">No Of Passengers :</label>
-                            <label class="form-label" id="passengersCount">Temp_4</label>
+                            <label class="form-label" id="passengersCount"></label>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label" style="font-weight: bold" for="carTransmissionType">Transmission Type :</label>
-                            <label class="form-label" id="carTransmissionType">Manual</label>
+                            <label class="form-label" id="carTransmissionType"></label>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label" style="font-weight: bold" for="carDailyPrice">Daily Price :</label>
-                            <label class="form-label" id="carDailyPrice">Temp_5000</label>
+                            <label class="form-label" id="carDailyPrice"></label>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label" style="font-weight: bold" for="carMonthlyPrice">Monthly Price :</label>
-                            <label class="form-label" id="carMonthlyPrice">Temp_5000</label>
+                            <label class="form-label" id="carMonthlyPrice"></label>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label" style="font-weight: bold" for="carExtraKmPrice">Extra Km Price :</label>
-                            <label class="form-label" id="carExtraKmPrice">Temp_5000</label>
+                            <label class="form-label" id="carExtraKmPrice"></label>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -879,35 +901,17 @@
             <table class=" table">
                 <thead>
                 <tr>
-                    <th scope="col">Car No</th>
-                    <th scope="col">Start Date</th>
-                    <th scope="col">End Date</th>
-                    <th scope="col">Cash on hand</th>
+                    <th scope="col">Rent ID</th>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Starting Date</th>
+                    <th scope="col">Pickup Time</th>
                     <th scope="col">Action</th>
                 </tr>
                 </thead>
                 <tbody class="allRentTable">
-               <!-- <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td type="button">@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td >Larry the Bird</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                </tr>-->
+            <tr>
+
+            </tr>
                 </tbody>
             </table>
         </div>
@@ -961,6 +965,7 @@
 <script src="controller/payment.js"></script>
 <script src="controller/rent.js"></script>
 <script src="controller/rentDetails.js"></script>
+<script src="controller/dashboard.js"></script>
 <script src="db/db.js"></script>
 <script>
    /* var today = new Date();

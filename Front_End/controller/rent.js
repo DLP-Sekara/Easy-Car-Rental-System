@@ -1,6 +1,7 @@
 
 /*car click event*/
 $(".temp_RegNo").css('display','none');
+$(".temp_DamageCost").css('display','none');
 $(".carTab").click(function () {
     //==========================================
     $(".home").css('display', 'none')
@@ -99,7 +100,7 @@ $(".carTab").click(function () {
         $(".customerManagement").css('display', 'none')
     }*/
 })
-
+//rent btn function
 $(".rentBtn").click(function () {
     console.log($("#LossDamageCost").val());
     console.log($("#selectedCar").val());
@@ -112,9 +113,11 @@ $(".rentBtn").click(function () {
 
             let date = $("#startDate").val();
             let pickUpTime = $("#pickUpTime").val();
+            let driver = $("#driverCheckBox").val();
             let cash_on_hand =temp_CarDamagePrice;
             let customer =resp.data;
-
+            console.log("driver")
+            console.log(driver)
 
             $.ajax({
                 url: "http://localhost:8080/Course_work_war/rent",
@@ -130,6 +133,7 @@ $(".rentBtn").click(function () {
                         {
                             "rentID":rentID,
                             "car_reg_no":temp_CarRegNo2,
+                            "driver":driver,
                             "date":date,
                             "pickup_time":pickUpTime
                         }
@@ -139,6 +143,7 @@ $(".rentBtn").click(function () {
                         "rentID": rentID,
                         "date": date,
                         "pickUpTime": pickUpTime,
+                        "driver": driver,
                         "cash_on_hand":cash_on_hand,
                         "customer":customer,
                         "rentDetails":rentDetails
@@ -164,12 +169,34 @@ $(".rentBtn").click(function () {
                 }
             })
 
-
-
-
         }
     })
 
 
 })
+
+
+//car view btn function
+$(".checkCarBtn").click(function () {
+    $.ajax({
+        url: "http://localhost:8080/Course_work_war/car/"+temp_CarRegNo2,
+        method:"GET",
+        success: function (resp) {
+            console.log(resp.data)
+            $("#carRegNo").text(resp.data.car_reg_no);
+            $("#carBrand").text(resp.data.brand);
+            $("#carType").text(resp.data.type);
+            $("#carFuelType").text(resp.data.fuel_type);
+            $("#passengersCount").text(resp.data.no_of_passengers);
+            $("#carTransmissionType").text(resp.data.transmission_type);
+            $("#carDailyPrice").text(resp.data.daily_price);
+            $("#carMonthlyPrice").text(resp.data.monthly_price);
+            $("#carExtraKmPrice").text(resp.data.extra_km_price);
+        }
+    })
+})
+
+
+
+
 

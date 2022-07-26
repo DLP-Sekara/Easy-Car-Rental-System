@@ -14,7 +14,7 @@ $(".myBookings").css('display', 'none')
 $(".paymentSection").css('display', 'none')
 $(".carManagement").css('display', 'none')
 $(".driverManagement").css('display', 'none')
-$(".dashboard").css('display', 'none')
+$(".dashboard").css('display', 'block')
 $(".customerManagement").css('display', 'none')
 
 /* nav button functions*/
