@@ -1,7 +1,9 @@
 package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.RentDetailsDto;
+import lk.ijse.spring.entity.Car;
 import lk.ijse.spring.entity.RentDetails;
+import lk.ijse.spring.repo.CarRepo;
 import lk.ijse.spring.repo.RentDetailsRepo;
 import lk.ijse.spring.service.RentDetailsService;
 import org.modelmapper.ModelMapper;
@@ -18,11 +20,24 @@ public class RentDetailsServiceImpl implements RentDetailsService {
     private RentDetailsRepo repo;
     @Autowired
     private ModelMapper mapper;
+    @Autowired
+    private CarRepo carRepo;
 
     @Override
     public void saveRentDetails(RentDetailsDto rentDetailsDto) {
         if (!repo.existsById(rentDetailsDto.getRentID())) {
             repo.save(mapper.map(rentDetailsDto, RentDetails.class));
+/*
+
+            Car car = carRepo.findById(rentDetailsDto.getCar_reg_no()).get();
+            System.out.println("menna car eka");
+            System.out.println(car);
+            car.setStatus("Running");
+            carRepo.save(car);
+
+*/
+
+
         } else {
             throw new RuntimeException("rentDetails Already Exist..!");
         }
