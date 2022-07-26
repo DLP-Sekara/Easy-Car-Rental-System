@@ -20,6 +20,8 @@ public class CarDto {
     private String fuel_type;
     private String transmission_type;
     private String status;
+    private String car_group;
+    private double damageCost;
     private double daily_price;
     private double monthly_price;
     private double extra_km_price;
