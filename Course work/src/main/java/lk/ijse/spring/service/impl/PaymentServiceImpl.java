@@ -6,7 +6,9 @@ import lk.ijse.spring.dto.RentDto;
 import lk.ijse.spring.entity.Car;
 import lk.ijse.spring.entity.Payment;
 import lk.ijse.spring.entity.Rent;
+import lk.ijse.spring.repo.CarRepo;
 import lk.ijse.spring.repo.PaymentRepo;
+import lk.ijse.spring.repo.RentDetailsRepo;
 import lk.ijse.spring.repo.RentRepo;
 import lk.ijse.spring.service.PaymentService;
 import org.modelmapper.ModelMapper;
@@ -26,7 +28,8 @@ public class PaymentServiceImpl implements PaymentService {
     private ModelMapper mapper;
     @Autowired
     private RentRepo rentRepo;
-
+    @Autowired
+    private CarRepo carRepo;
     @Override
     public void savePayment(PaymentDto paymentDto) {
         if (!repo.existsById(paymentDto.getPaymentId())) {
@@ -35,6 +38,12 @@ public class PaymentServiceImpl implements PaymentService {
             RentDto rentDto=paymentDto.getRent();
             rentDto.setStatus("returned");
             rentRepo.save(mapper.map(rentDto, Rent.class));
+
+            for (RentDetailsDto rentDetails : rentDto.getRentDetails()) {
+                Car car = carRepo.findById(rentDetails.getCar_reg_no()).get();
+                car.setStatus("Available");
+                carRepo.save(car);
+            }
 
         } else {
             throw new RuntimeException("Payment Already Exist..!");
