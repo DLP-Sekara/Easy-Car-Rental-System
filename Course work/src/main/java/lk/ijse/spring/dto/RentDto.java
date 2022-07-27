@@ -20,6 +20,7 @@ public class RentDto {
     private LocalDate date;
     private String pickUpTime;
     private String driver;
+    private String status;
     private double cash_on_hand;
     private CustomerDto customer;
     private List<RentDetailsDto> rentDetails;

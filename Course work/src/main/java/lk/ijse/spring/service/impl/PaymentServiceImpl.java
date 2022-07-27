@@ -1,8 +1,13 @@
 package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.PaymentDto;
+import lk.ijse.spring.dto.RentDetailsDto;
+import lk.ijse.spring.dto.RentDto;
+import lk.ijse.spring.entity.Car;
 import lk.ijse.spring.entity.Payment;
+import lk.ijse.spring.entity.Rent;
 import lk.ijse.spring.repo.PaymentRepo;
+import lk.ijse.spring.repo.RentRepo;
 import lk.ijse.spring.service.PaymentService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -19,10 +24,18 @@ public class PaymentServiceImpl implements PaymentService {
     private PaymentRepo repo;
     @Autowired
     private ModelMapper mapper;
+    @Autowired
+    private RentRepo rentRepo;
+
     @Override
     public void savePayment(PaymentDto paymentDto) {
         if (!repo.existsById(paymentDto.getPaymentId())) {
             repo.save(mapper.map(paymentDto, Payment.class));
+
+            RentDto rentDto=paymentDto.getRent();
+            rentDto.setStatus("returned");
+            rentRepo.save(mapper.map(rentDto, Rent.class));
+
         } else {
             throw new RuntimeException("Payment Already Exist..!");
         }
