@@ -564,39 +564,43 @@
             <img class="backImg1" src="assets/images/back.png">
             <pre class="paymentTopic">Payment Details</pre>
             <div class="col-md-6">
-                <label class="form-label" for="rentID">Rent Id :</label>
-                <label class="form-label" id="rentID">Temp_R001</label>
+                <label class="form-label" style="font-weight: bold;" for="rentID">Rent Id :</label>
+                <label class="form-label" id="rentID"></label>
             </div>
             <div class="col-md-6">
-                <label class="form-label" for="endtDate">End Date :</label>
-                <input data-provide="datepicker" class="form-control"id="endtDate" type="date">
+                <label class="form-label" style="font-weight: bold;"  for="startingDate">Start Date :</label>
+                <input data-provide="datepicker" disabled class="form-control"id="startingDate" type="text">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label" style="font-weight: bold;" for="endDate">End Date :</label>
+                <input data-provide="datepicker" class="form-control"id="endDate" type="date">
             </div>
             <div class="mb-6">
-                <label class="form-label" for="returnTime">Return Time :</label>
+                <label class="form-label" style="font-weight: bold;" for="returnTime">Return Time :</label>
                 <input data-provide="datepicker" style="width: 50%" class="form-control" id="returnTime" type="time">
             </div>
             <div class="mb-6">
-                <label class="form-label" for="distance">Distance :</label>
+                <label class="form-label" style="font-weight: bold;" for="distance">Distance (Km) :</label>
                 <input class="form-control" style="width: 50%" id="distance" type="text">
             </div>
             <div class="mb-6">
-                <label class="form-label" for="damageCost">Loss Damage Cost :</label>
-                <input class="form-control" style="width: 50%" id="damageCost" type="text">
+                <label class="form-label" style="font-weight: bold;" for="damageCost2">Loss Damage Cost (LKR) :</label>
+                <input class="form-control" style="width: 50%" id="damageCost2" type="text">
             </div>
             <div class="mb-6">
-                <label class="form-label" for="distanceCost">Distance Cost :</label>
+                <label class="form-label" style="font-weight: bold;" for="distanceCost">Distance Cost (LKR) :</label>
                 <input class="form-control" style="width: 50%" id="distanceCost" type="text">
             </div>
             <div class="mb-6">
-                <label class="form-label" for="driverCost">Driver Cost :</label>
-                <input class="form-control" style="width: 50%" id="driverCost" type="text">
+                <label class="form-label" style="font-weight: bold;" for="driverCost">Driver Cost (LKR):</label>
+                <input class="form-control" disabled style="width: 50%" id="driverCost" type="text">
             </div>
             <div class="mb-6">
-                <label class="form-label" for="totalCost">Total Cost :</label>
-                <label class="form-label" id="totalCost">Temp_2500</label>
+                <label class="form-label" style="font-weight: bold;" for="totalCost">Total Cost (LKR) :</label>
+                <label class="form-label" id="totalCost"></label>
             </div>
             <div class="col-12">
-                <button class="btn submitBtn btn-warning" type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">SUBMIT</button>
+                <button class="btn submitBtn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">SUBMIT</button>
             </div>
         </idv>
 

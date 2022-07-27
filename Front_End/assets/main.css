@@ -645,7 +645,7 @@ body {
     left: -1%;
 }
 .paymentForm{
-    height: 80%;
+    height: 90%;
     width: 45%;
     background-color: white;
     position: absolute;
@@ -669,7 +669,7 @@ body {
 }
 .backImg1{
     position: relative;
-    top: 4%;
+    top: 9%;
     left: 4%;
 }
 .backImg1:hover{

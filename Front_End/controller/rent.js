@@ -110,10 +110,18 @@ $(".rentBtn").click(function () {
         success: function (resp) {
             console.log(resp.data)
 
+            //driver check box
+            var tempCheckBoxValue;
+            if($("#driverCheckBox").prop("checked") == true){
+                console.log("Checkbox is checked.");
+                tempCheckBoxValue=true;
+            }else{
+                tempCheckBoxValue=false;
+            }
 
             let date = $("#startDate").val();
             let pickUpTime = $("#pickUpTime").val();
-            let driver = $("#driverCheckBox").val();
+            let driver = tempCheckBoxValue;
             let cash_on_hand =temp_CarDamagePrice;
             let customer =resp.data;
             console.log("driver")
