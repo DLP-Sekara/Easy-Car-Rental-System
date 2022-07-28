@@ -499,24 +499,31 @@ $(".paymentPageModelCloseBtn").click(function () {
 /*loadAllCars function*/
 loadAllCarsToHome()
 function loadAllCarsToHome() {
+
+    var imgArray=["v1.png","v2.png","v3.png","v4.png","v5.png","v6.png","v7.png","v8.png","v9.png","v10.png","v11.png","v12.png"];
     $.ajax({
         url: "http://localhost:8080/Course_work_war/car",
         method:"GET",
         success: function (resp) {
             $(".carArea").empty();
-            console.log(resp.data)
+            var count=0;
             for (const car of resp.data) {
                 if(car.status==="Available") {
                     let newCar = `<div class="carTab">
+                            <img  class="carImg" src="">
                             <pre class="carBrand">${car.brand}</pre>
                             <pre style="display: none" class="temp_RegNo">${car.car_reg_no}</pre>
                             <pre class="temp_CarGroup">${car.car_group}</pre>
                             <pre class="temp_Carstatus">${car.status}</pre>
                             <pre style="display: none" class="temp_DamageCost">${car.damageCost}</pre>
                             </div>`;
+
+                    $(".carImg").attr("src","assets/images/cars/"+imgArray[imgArray.length-1]);
+
                     $(".carArea").append(newCar)
                 }
                 selectedCarClickEvent();
+                count=count++;
             }
         }
     })
