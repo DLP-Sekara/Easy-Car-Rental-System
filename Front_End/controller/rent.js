@@ -2,106 +2,92 @@
 /*car click event*/
 $(".temp_RegNo").css('display','none');
 $(".temp_DamageCost").css('display','none');
-$(".carTab").click(function () {
-    //==========================================
-    $(".home").css('display', 'none')
-    $(".firstPage").css('display', 'none')
-    $(".secondPage").css('display', 'none')
-    $(".thirdPage").css('display', 'none')
 
-    $(".loginPage").css('display', 'none')
-    $(".adminloginPage").css('display', 'none')
-    $(".rentSection").css('display', 'block')
-    $(".myBookings").css('display', 'none')
-    $(".paymentSection").css('display', 'none')
-    $(".carManagement").css('display', 'none')
-    $(".driverManagement").css('display', 'none')
-    $(".dashboard").css('display', 'none')
-    $(".customerManagement").css('display', 'none')
+selectedCarClickEvent();
+function selectedCarClickEvent() {
+    $(".carTab").click(function () {
+        //==========================================
+        if(tempLoginStatus==="notNow"){
+            $(".home").css('display', 'none')
+            $(".firstPage").css('display', 'none')
+            $(".secondPage").css('display', 'none')
+            $(".thirdPage").css('display', 'none')
 
-    //function behaviour
-    temp_CarRegNo2=$(this).children().eq(2).text();
-    temp_CarDamagePrice=$(this).children().eq(4).text();
-    console.log(temp_CarRegNo2);
-    console.log(temp_CarDamagePrice);
-    $.ajax({
-        url: "http://localhost:8080/Course_work_war/car/"+temp_CarRegNo2,
-        method:"GET",
-        success: function (resp) {
-            console.log(resp.data)
-            $("#selectedCar").text(resp.data.car_reg_no);
-            $("#vehicleGroup").text(resp.data.car_group);
-            $("#LossDamageCost").text(resp.data.damageCost);
+            $(".loginPage").css('display', 'block')
+            $(".adminloginPage").css('display', 'none')
+            $(".rentSection").css('display', 'none')
+            $(".myBookings").css('display', 'none')
+            $(".paymentSection").css('display', 'none')
+            $(".carManagement").css('display', 'none')
+            $(".driverManagement").css('display', 'none')
+            $(".dashboard").css('display', 'none')
+            $(".customerManagement").css('display', 'none')
 
-            //get customer values
+            $("#homeBtn>a").css('color', 'black')
+            $("#homeBtn").css('border-bottom', 'none')
+            $("#customerBTN>a").css('color', 'red')
+            $("#customerBTN").css('border-bottom', '4px solid red')
+            $("#EmployeeBTN>a").css('color', 'black')
+            $("#EmployeeBTN").css('border-bottom', 'none')
+            $("#logInBTN>a").css('color', 'black')
+            $("#logInBTN").css('border-bottom', 'none')
+            $("#ManageBTN>a").css('color', 'black')
+            $("#ManageBTN").css('border-bottom', 'none')
+            $("#logOutBtn>a").css('color', 'black')
+            $("#logOutBtn").css('border-bottom', 'none')
+
+            $("#customerLoginWarningMsg").text("")
+            $("#customerUsername").val("");
+            $("#customerPassword").val("");
+        }else {
+            $(".home").css('display', 'none')
+            $(".firstPage").css('display', 'none')
+            $(".secondPage").css('display', 'none')
+            $(".thirdPage").css('display', 'none')
+
+            $(".loginPage").css('display', 'none')
+            $(".adminloginPage").css('display', 'none')
+            $(".rentSection").css('display', 'block')
+            $(".myBookings").css('display', 'none')
+            $(".paymentSection").css('display', 'none')
+            $(".carManagement").css('display', 'none')
+            $(".driverManagement").css('display', 'none')
+            $(".dashboard").css('display', 'none')
+            $(".customerManagement").css('display', 'none')
+
+            //function behaviour
+            temp_CarRegNo2=$(this).children().eq(1).text();
+            temp_CarDamagePrice=$(this).children().eq(4).text();
             $.ajax({
-                url: "http://localhost:8080/Course_work_war/customer/"+tempCustomerUsernameStatus,
+                url: "http://localhost:8080/Course_work_war/car/"+temp_CarRegNo2,
                 method:"GET",
                 success: function (resp) {
-                    console.log(resp.data)
-                    $("#selectedCustomer").text(resp.data.username);
-                    //var customer=resp.data();
-                    //console.log(customer)
+                    $("#selectedCar").text(resp.data.car_reg_no);
+                    $("#vehicleGroup").text(resp.data.car_group);
+                    $("#LossDamageCost").text(resp.data.damageCost);
+
+                    //get customer values
+                    $.ajax({
+                        url: "http://localhost:8080/Course_work_war/customer/"+tempCustomerUsernameStatus,
+                        method:"GET",
+                        success: function (resp) {
+                            $("#selectedCustomer").text(resp.data.username);
+                            //var customer=resp.data();
+                            //console.log(customer)
+                        }
+                    })
                 }
             })
         }
+
+        //==========================================
+
     })
+}
 
-    //==========================================
-
-
-    /*if(tempLoginStatus=="notNow"){
-        $(".home").css('display', 'none')
-        $(".firstPage").css('display', 'none')
-        $(".secondPage").css('display', 'none')
-        $(".thirdPage").css('display', 'none')
-
-        $(".loginPage").css('display', 'block')
-        $(".adminloginPage").css('display', 'none')
-        $(".rentSection").css('display', 'none')
-        $(".myBookings").css('display', 'none')
-        $(".paymentSection").css('display', 'none')
-        $(".carManagement").css('display', 'none')
-        $(".driverManagement").css('display', 'none')
-        $(".dashboard").css('display', 'none')
-        $(".customerManagement").css('display', 'none')
-
-        $("#homeBtn>a").css('color', 'black')
-        $("#homeBtn").css('border-bottom', 'none')
-        $("#customerBTN>a").css('color', 'red')
-        $("#customerBTN").css('border-bottom', '4px solid red')
-        $("#EmployeeBTN>a").css('color', 'black')
-        $("#EmployeeBTN").css('border-bottom', 'none')
-        $("#logInBTN>a").css('color', 'black')
-        $("#logInBTN").css('border-bottom', 'none')
-        $("#ManageBTN>a").css('color', 'black')
-        $("#ManageBTN").css('border-bottom', 'none')
-        $("#logOutBtn>a").css('color', 'black')
-        $("#logOutBtn").css('border-bottom', 'none')
-
-        $("#customerLoginWarningMsg").text("")
-        $("#customerUsername").val("");
-        $("#customerPassword").val("");
-    }else {
-        console.log("done done")
-        $(".home").css('display', 'none')
-        $(".firstPage").css('display', 'none')
-        $(".secondPage").css('display', 'none')
-        $(".thirdPage").css('display', 'none')
-
-        $(".loginPage").css('display', 'none')
-        $(".adminloginPage").css('display', 'none')
-        $(".rentSection").css('display', 'block')
-        $(".myBookings").css('display', 'none')
-        $(".paymentSection").css('display', 'none')
-        $(".carManagement").css('display', 'none')
-        $(".driverManagement").css('display', 'none')
-        $(".dashboard").css('display', 'none')
-        $(".customerManagement").css('display', 'none')
-    }*/
-})
 //rent btn function
 $(".rentBtn").click(function () {
+    console.log("this is done")
     console.log($("#LossDamageCost").val());
     console.log($("#selectedCar").val());
     $.ajax({
@@ -152,10 +138,12 @@ $(".rentBtn").click(function () {
                         "date": date,
                         "pickUpTime": pickUpTime,
                         "driver": driver,
-                        "cash_on_hand":cash_on_hand,
+                        "status": "ongoing",
+                        "cash_on_hand":temp_CarDamagePrice,
                         "customer":customer,
                         "rentDetails":rentDetails
                     }
+                    console.log(rentOB)
                     $.ajax({
                         url: "http://localhost:8080/Course_work_war/rent",
                         method: "POST",
@@ -164,6 +152,8 @@ $(".rentBtn").click(function () {
                         success: function (res) {
                             if (res.code == 200) {
                                 alert(res.message);
+                                loadAllCarsToHome();
+                                addRentsToTable();
                             } else {
                                 alert(res.data);
                             }
@@ -207,4 +197,23 @@ $(".checkCarBtn").click(function () {
 
 
 
+//for customer booking page
+addOngoingAndReturnedRents();
+function addOngoingAndReturnedRents() {
+    $.ajax({
+        url: "http://localhost:8080/Course_work_war/rent",
+        method:"GET",
+        success: function (resp) {
+            $(".customerUniqueRentsTbl").empty();
+            console.log(resp.data)
+            for (const rent of resp.data) {
+                console.log(rent.customer.username)
+                if(rent.customer.username===tempCustomerUsernameStatus) {
+                    let row = `<tr><td>${rent.rentID}</td><td>${rent.cash_on_hand}</td><td>${rent.date}</td><td>${rent.pickUpTime}</td><td>${rent.customer.username}</td><td>${rent.status}</td></tr>`;
+                    $(".customerUniqueRentsTbl").append(row);
+                }
+            }
+        }
+    })
+}
 

@@ -12,9 +12,9 @@ $(".adminloginPage").css('display', 'none')
 $(".rentSection").css('display', 'none')
 $(".myBookings").css('display', 'none')
 $(".paymentSection").css('display', 'none')
-$(".carManagement").css('display', 'none')
+$(".carManagement").css('display', 'block')
 $(".driverManagement").css('display', 'none')
-$(".dashboard").css('display', 'block')
+$(".dashboard").css('display', 'none')
 $(".customerManagement").css('display', 'none')
 
 /* nav button functions*/
@@ -47,6 +47,8 @@ $("#homeBtn").click(function () {
     $("#logOutBtn>a").css('color', 'black')
     $("#logOutBtn").css('border-bottom', 'none')
     $("#nav").css('background-color', 'transparent')
+
+    loadAllCarsToHome()
 })
 $("#customerBTN").click(function () {
     $(".home").css('display', 'none')
@@ -208,7 +210,7 @@ $(".returnNowBtn,.bookingBtn").click(function () {
     $("#logOutBtn>a").css('color', 'black')
     $("#logOutBtn").css('border-bottom', 'none')
     $("#nav").css('background-color', 'transparent')
-
+    addOngoingAndReturnedRents()
 })
 $(".addCarBtn").click(function () {
     $(".home").css('display', 'none')
@@ -325,6 +327,7 @@ $(".viewBtn").click(function () {
     $("#logOutBtn").css('border-bottom', 'none')
     $("#nav").css('background-color', 'transparent')
 
+    addRentsToTable();
 })
 
 
@@ -337,6 +340,8 @@ $("#logOutBtn").click(function () {
     $("#ManageBTN").css('display', 'none')
     $("#logOutBtn").css('display', 'none')
     $("#logInBTN").css('display', 'block')
+    $("#customerBTN").css('display', 'block')
+    $("#EmployeeBTN").css('display', 'block')
     $("#AdminManageBTN").css('display', 'none')
     $("#EmployeeBTN").css('display', 'block')
 })
@@ -471,6 +476,7 @@ $(".rentPageModelCloseBtn").click(function () {
     $(".driverManagement").css('display', 'none')
     $(".dashboard").css('display', 'none')
     $(".customerManagement").css('display', 'none')
+    addRentsToTable();
 })
 $(".paymentPageModelCloseBtn").click(function () {
     $(".home").css('display', 'none')
@@ -487,6 +493,33 @@ $(".paymentPageModelCloseBtn").click(function () {
     $(".driverManagement").css('display', 'none')
     $(".dashboard").css('display', 'block')
     $(".customerManagement").css('display', 'none')
+    addRentsToTable();
 })
+
+/*loadAllCars function*/
+loadAllCarsToHome()
+function loadAllCarsToHome() {
+    $.ajax({
+        url: "http://localhost:8080/Course_work_war/car",
+        method:"GET",
+        success: function (resp) {
+            $(".carArea").empty();
+            console.log(resp.data)
+            for (const car of resp.data) {
+                if(car.status==="Available") {
+                    let newCar = `<div class="carTab">
+                            <pre class="carBrand">${car.brand}</pre>
+                            <pre style="display: none" class="temp_RegNo">${car.car_reg_no}</pre>
+                            <pre class="temp_CarGroup">${car.car_group}</pre>
+                            <pre class="temp_Carstatus">${car.status}</pre>
+                            <pre style="display: none" class="temp_DamageCost">${car.damageCost}</pre>
+                            </div>`;
+                    $(".carArea").append(newCar)
+                }
+                selectedCarClickEvent();
+            }
+        }
+    })
+}
 
 

@@ -139,6 +139,7 @@ function checkCar() {
             if (res.code == 200) {
                 alert(res.message);
                 addCarsToTable()
+                loadAllCarsToHome();
             }
         },
         error: function (ob) {

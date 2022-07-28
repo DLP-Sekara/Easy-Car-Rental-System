@@ -44,6 +44,7 @@ function makePayment() {
                         success: function (res) {
                             if (res.code == 200) {
                                 alert(res.message);
+                                loadAllCarsToHome();
                                 //saveOrderDetail(oid)
                                 //clearOrderDetails();
                             } else {

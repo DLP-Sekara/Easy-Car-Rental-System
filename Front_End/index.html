@@ -98,9 +98,9 @@
     <section class="firstPage">
         <pre class="topic3" id="1">AVAILABLE VEHICLES</pre>
         <div class="vehicles">
-            <section>
+            <section class="carArea">
                 <!--General cars-->
-                <div class="carTab" id="v1">
+                <!--<div class="carTab" id="v1">
                     <img src="assets/images/cars/V1.png"/>
                     <pre>Suzuki Alto</pre>
                     <pre class="temp_RegNo">v-01</pre>
@@ -140,7 +140,7 @@
                     <pre class="temp_CarGroup">General</pre>
                     <pre class="temp_DamageCost">10000</pre>
                 </div>
-                <!--premium cars-->
+                &lt;!&ndash;premium cars&ndash;&gt;
 
                 <div class="carTab" id="v6">
                     <img src="assets/images/cars/v6.png"/>
@@ -196,7 +196,7 @@
                     <pre class="temp_RegNo">v-12</pre>
                     <pre class="temp_CarGroup">Luxury</pre>
                     <pre class="temp_DamageCost">20000</pre>
-                </div>
+                </div>-->
             </section>
         </div>
     </section>
@@ -482,76 +482,21 @@
             <div class="bottom"></div>
             <pre class="bookingTopic2">Hope You Enjoyed Our Service</pre>
         </div>
-
         <div class="bookingTable">
             <table class="table">
                 <thead>
                 <tr>
-                    <th scope="col">Car No</th>
-                    <th scope="col">Start Date</th>
-                    <th scope="col">End Date</th>
-                    <th scope="col">Distance</th>
-                    <th scope="col">Total Cost</th>
+                    <th scope="col">Rent ID</th>
+                    <th scope="col">Cash On Hand</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Pickup Time</th>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Status</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody class="customerUniqueRentsTbl">
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td >Larry the Bird</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="returnTable">
-            <pre>Current rentals</pre>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">Car No</th>
-                    <th scope="col">Start Date</th>
-                    <th scope="col">End Date</th>
-                    <th scope="col">Cash on hand</th>
-                    <th scope="col">Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td type="button">@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td >Larry the Bird</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
+
                 </tr>
                 </tbody>
             </table>

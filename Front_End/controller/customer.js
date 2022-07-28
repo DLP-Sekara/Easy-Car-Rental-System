@@ -94,6 +94,8 @@ function checkCustomer() {
                         $(".dashboard").css('display', 'none')
 
                         $("#ManageBTN").css('display', 'block')
+                        $("#customerBTN").css('display', 'none')
+                        $("#EmployeeBTN").css('display', 'none')
                         $("#logOutBtn").css('display', 'block')
                         $("#logInBTN").css('display', 'none')
                         $("#AdminManageBTN").css('display', 'none')
@@ -105,6 +107,8 @@ function checkCustomer() {
                         $("#customerPassword").val("");
 
                         $(".custLogInBtn").attr('disabled', true);
+
+                    //selectedCarClickEvent();
                         return;
                     }else{
                         //alert("check emails or password")
@@ -196,7 +200,51 @@ $(".custSignInBtn").click(function () {
     availableCustomer()
 })
 function availableCustomer() {
-    let tempUsername2 = $("#inputCustomerUsername").val();
+    let tempUsername2 = $("#inputCustomerUsername").val()
+    var serialize = $(".signinForm").serialize();
+    console.log(serialize)
+    $.ajax({
+        url: "http://localhost:8080/Course_work_war/customer",
+        method: "POST",
+        data: serialize,
+        success: function (res) {
+            if (res.code == 200) {
+
+                tempLoginStatus="availableNow";
+                tempCustomerUsernameStatus=tempUsername2;
+                alert(res.message);
+
+
+                $(".home").css('display', 'block')
+                $(".firstPage").css('display', 'block')
+                $(".secondPage").css('display', 'block')
+                $(".thirdPage").css('display', 'block')
+
+                $(".loginPage").css('display', 'none')
+                $(".adminloginPage").css('display', 'none')
+                $(".rentSection").css('display', 'none')
+                $(".myBookings").css('display', 'none')
+                $(".paymentSection").css('display', 'none')
+                $(".carManagement").css('display', 'none')
+                $(".driverManagement").css('display', 'none')
+                $(".dashboard").css('display', 'none')
+
+                $("#ManageBTN").css('display', 'block')
+                $("#customerBTN").css('display', 'none')
+                $("#EmployeeBTN").css('display', 'none')
+                $("#logOutBtn").css('display', 'block')
+                $("#logInBTN").css('display', 'none')
+                $("#AdminManageBTN").css('display', 'none')
+
+                //selectedCarClickEvent();
+            }
+        },
+        error: function (ob) {
+            console.log(ob.responseJSON.message);
+            alert(ob.responseJSON.message);
+        }
+    })
+    /*let tempUsername2 = $("#inputCustomerUsername").val();
     let tempCustPassword2 = $("#inputCustomerPassword").val();
     $.ajax({
         url: "http://localhost:8080/Course_work_war/customer?username="+tempUsername2+"&"+"password="+tempCustPassword2,
@@ -216,13 +264,13 @@ function availableCustomer() {
                         if (res.code == 200) {
 
                             tempLoginStatus="availableNow";
-                            tempCustomerUsernameStatus=tempUsername;
+                            tempCustomerUsernameStatus=tempUsername2;
                             alert(res.message);
                         }
 
                     },
                     error: function (ob) {
-                        //console.log(ob.responseJSON.message);
+                        console.log(ob.responseJSON.message);
                     }
                 })
             }else {
@@ -232,7 +280,7 @@ function availableCustomer() {
 
             //tblClick1();
 
-    })
+    })*/
 }
 
 

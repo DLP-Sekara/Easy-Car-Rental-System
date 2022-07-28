@@ -173,7 +173,24 @@ body {
     color: red;
     font-weight: bold;
 }
-
+.vehicles > section > div > .temp_Carstatus {
+    position: relative;
+    top: 85%;
+    font-size: 17px;
+    color: blue;
+    font-weight: bold;
+}
+.carTab{
+    width: 30%;
+    height: 53%;
+    margin-top: 37px;
+    background-color: #dcdee7;
+    border-radius: 10px;
+    position: relative;
+    -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 6px -6px black;
+}
 /*second page*/
 .secondPage {
     position: relative;

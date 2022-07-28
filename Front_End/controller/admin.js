@@ -93,6 +93,7 @@ function checkAdmin() {
                        $(".dashboard").css('display', 'none')
 
                        $("#ManageBTN").css('display', 'none')
+                   $("#customerBTN").css('display', 'none')
                        $("#logOutBtn").css('display', 'block')
                        $("#logInBTN").css('display', 'none')
                        $("#AdminManageBTN").css('display', 'block')
