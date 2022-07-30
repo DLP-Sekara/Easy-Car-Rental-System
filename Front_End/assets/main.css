@@ -986,8 +986,7 @@ body {
     position: relative;
     background-color: red;
     height: 70%;
-    width: 20%;
-    left: 15%;
+    width: 24.5%;
     margin: 12px;
     top: 10%;
     display: inline-block;
@@ -1013,7 +1012,7 @@ body {
 }
 .dailyIncomeTable{
     position: relative;
-    width: 97%;
+    width: 51%;
     height: 20%;
     top: 45%;
     left: 1%;
@@ -1026,4 +1025,15 @@ body {
     left: 4%;
     top: 10%;
     position: relative;
+}
+
+
+#myChart{
+    position: absolute;
+    width: 600px;
+    max-width: 600px;
+    display: block;
+    height: 447px;
+    left: 55%;
+    top: 13%;
 }

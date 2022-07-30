@@ -16,6 +16,9 @@ $(".driverManagement").css('display', 'none')
 $(".dashboard").css('display', 'block')
 $(".customerManagement").css('display', 'none')
 
+$(".onlineTxt").css('display', 'none')
+$(".onlineIcon").css('display', 'none')
+
 /* nav button functions*/
 $("#homeBtn").click(function () {
     $(".home").css('display', 'block')
@@ -180,6 +183,9 @@ $("#logOutBtn").click(function () {
     $("#ManageBTN>a").css('color', 'black')
     $("#ManageBTN").css('border-bottom', 'none')
     $("#nav").css('background-color', 'transparent')
+
+    $(".onlineTxt").css('display', 'none')
+    $(".onlineIcon").css('display', 'none')
 
 })
 $(".returnNowBtn,.bookingBtn").click(function () {

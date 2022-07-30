@@ -69,6 +69,9 @@
             </ul>
 
         </div>
+
+        <pre class="onlineTxt" style="font-size: 16px;margin-top: 1%;"></pre>
+        <img class="onlineIcon" style="width: 20px" src="assets/images/summery/online1.png">
         <li class="nav-item nav-link active" id="logInBTN">
             <a class="nav-link" href="#login" style="">LOG IN</a>
         </li>
@@ -895,22 +898,16 @@
                     <pre>Daily Income</pre>
                 </div>
 
-                <div class="monthlyIncome incomeTabs" style="background-color: #f6efe3">
-                    <pre class="monthlyIncomeValue value">200</pre>
-                    <pre>Monthly Income</pre>
-                </div>
-
-                <div class="AnnualIncome incomeTabs" style="background-color: #f6efe3">
-                    <pre class="annualIncomeValue value">300</pre>
-                    <pre>Annual Income</pre>
-
+                <div class="totallyIncome incomeTabs" style="background-color: #f6efe3">
+                    <pre class="totallyIncomeValue value">200</pre>
+                    <pre>Total Income</pre>
                 </div>
 
                 <div class="dailyIncomeTable">
                     <table class=" table">
                         <thead>
                         <tr>
-                            <th scope="col">Rent ID</th>
+
                             <th scope="col">Date</th>
                             <th scope="col">Damage Cost</th>
                             <th scope="col">Distance Cost</th>
@@ -923,18 +920,67 @@
                          <td>rrrrrrrr</td>
                          <td>rrrrrrrr</td>
                          <td>rrrrrrrr</td>
-                         <td>rrrrrrrr</td>
                         </tr>
                         <tr>
                             <td>rrrrrrrr</td>
                             <td>rrrrrrrr</td>
                             <td>rrrrrrrr</td>
                             <td>rrrrrrrr</td>
+                        </tr>
+                        <tr>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
                             <td>rrrrrrrr</td>
                         </tr>
+                        <tr>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                        </tr>
+                        <tr>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                        </tr>
+                        <tr>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                        </tr>
+                        <tr>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                        </tr>
+                        <tr>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                        </tr>
+                        <tr>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                        </tr>
+                        <tr>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                        </tr>
+
                         </tbody>
                     </table>
                 </div>
+
+                <canvas id="myChart" style="width:100%;max-width:600px" height="460px"></canvas>
             </div>
             <div id="tabs-4">
                 <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
@@ -959,10 +1005,39 @@
 <script src="controller/rentDetails.js"></script>
 <script src="controller/dashboard.js"></script>
 <script src="db/db.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
 <script>
+
+
     $( function() {
         $( "#tabs" ).tabs();
     } );
+
+
+    var xValues = ["Jan", "Feb", "March", "April", "May","June", "July", "Aug", "Sep", "Oct","Nov", "Dec"];
+    var yValues = [70, 49, 44, 24, 30,25,55, 49, 44, 24, 30,25,100];
+    var barColors = ["#f5e4c7", "#f5e4c7","#f5e4c7","#f5e4c7","#f5e4c7","#f5e4c7","#f5e4c7", "#f5e4c7","#f5e4c7","#f5e4c7","#f5e4c7","#f5e4c7"];
+
+    new Chart("myChart", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+            legend: {display: false},
+            title: {
+                display: true,
+                text: "Monthly Income"
+            }
+        }
+    });
+
    /* var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!

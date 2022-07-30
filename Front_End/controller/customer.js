@@ -106,6 +106,10 @@ function checkCustomer() {
                         $("#customerUsername").val("");
                         $("#customerPassword").val("");
 
+                    $(".onlineTxt").text("Hi "+tempCustomerUsernameStatus+" ")
+                    $(".onlineTxt").css('display', 'block')
+                    $(".onlineIcon").css('display', 'block')
+
                         $(".custLogInBtn").attr('disabled', true);
 
                     //selectedCarClickEvent();

@@ -82,3 +82,8 @@ function allRentTableClick() {
         $(".customerManagement").css('display', 'none')
     })
 }
+
+loadIncomeChart();
+function loadIncomeChart() {
+
+}
