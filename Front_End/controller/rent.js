@@ -56,8 +56,10 @@ function selectedCarClickEvent() {
             $(".customerManagement").css('display', 'none')
 
             //function behaviour
-            temp_CarRegNo2=$(this).children().eq(1).text();
-            temp_CarDamagePrice=$(this).children().eq(4).text();
+            temp_CarRegNo2=$(this).children().eq(2).text();
+            temp_CarDamagePrice=$(this).children().eq(5).text();
+            console.log(temp_CarRegNo2)
+            console.log(temp_CarDamagePrice)
             $.ajax({
                 url: "http://localhost:8080/Course_work_war/car/"+temp_CarRegNo2,
                 method:"GET",
@@ -209,8 +211,13 @@ function addOngoingAndReturnedRents() {
             for (const rent of resp.data) {
                 console.log(rent.customer.username)
                 if(rent.customer.username===tempCustomerUsernameStatus) {
-                    let row = `<tr><td>${rent.rentID}</td><td>${rent.cash_on_hand}</td><td>${rent.date}</td><td>${rent.pickUpTime}</td><td>${rent.customer.username}</td><td>${rent.status}</td></tr>`;
-                    $(".customerUniqueRentsTbl").append(row);
+                    if(rent.status==="ongoing"){
+                        let row = `<tr><td>${rent.rentID}</td><td>${rent.cash_on_hand}</td><td>${rent.date}</td><td>${rent.pickUpTime}</td><td>${rent.customer.username}</td><td style="color: red; font-weight: bold">${rent.status}</td></tr>`;
+                        $(".customerUniqueRentsTbl").append(row);
+                    }else{
+                        let row = `<tr><td>${rent.rentID}</td><td>${rent.cash_on_hand}</td><td>${rent.date}</td><td>${rent.pickUpTime}</td><td>${rent.customer.username}</td><td>${rent.status}</td></tr>`;
+                        $(".customerUniqueRentsTbl").append(row);
+                    }
                 }
             }
         }

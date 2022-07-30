@@ -896,27 +896,33 @@ body {
 .dashboard{
     position: relative;
     width: 100vw;
-    height: 270vh;
+    height: 100vh;
     background-color: #f6efe3;
     left: -1%;
 }
 .DashboardLabels{
-    position: relative;
+    position: absolute;
     background-color: white;
-    height: 30%;
-    width: 90%;
-    left: 4%;
-    top: 7%;
+    height: 39%;
+    width: 94%;
+    left: 2%;
+    top: 10%;
     border-radius: 10px;
     font-size: 32px;
     font-weight: bold;
     font-family: "Arial Rounded MT Bold";
 }
-
+#tabs{
+    position: relative;
+    top: 15%;
+    width: 90%;
+    left: 4%;
+    height: 80%;
+}
 .DashboardLabels>div{
     position: relative;
     background-color: red;
-    height: 32%;
+    height: 80%;
     width: 26%;
     margin: 18px;
     left: 7%;
@@ -929,13 +935,20 @@ body {
 
 
 }
+.DashboardLabels>div>img{
+    position: relative;
+    top:3%;
+    left: 5%;
+}
 .DashboardLabels>div>pre{
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 10%;
+    top: -47%;
+    left: 10%;
     opacity: 60%;
+    font-size: 25px;
 }
 .DashboardLabels>div>.count{
     opacity: 75%;
@@ -943,13 +956,12 @@ body {
 }
 
 .returnAllTable{
-    position: absolute;
+    position: relative;
     width: 90%;
     height: 20%;
     top: 42%;
     left: 4%;
-    background-color: white;
-    border: 1px solid white;
+    background-color: #f6efe3;
     border-radius: 10px;
 }
 .returnAllTable>table{
@@ -967,9 +979,51 @@ body {
     font-size: 20px;
     font-weight: bold;
 }
-.accordion{
+
+
+
+.incomeTabs{
     position: relative;
-    top: 35%;
-    width: 90%;
+    background-color: red;
+    height: 70%;
+    width: 20%;
+    left: 15%;
+    margin: 12px;
+    top: 10%;
+    display: inline-block;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 6px -6px black;
+
+
+}
+.incomeTabs>pre{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -47%;
+    opacity: 60%;
+    font-size: 23px;
+}
+.incomeTabs>.value{
+    opacity: 75%;
+    font-size: 40px;
+}
+.dailyIncomeTable{
+    position: relative;
+    width: 97%;
+    height: 20%;
+    top: 45%;
+    left: 1%;
+    margin-top: 1%;
+    background-color: #f6efe3;
+    border-radius: 10px;
+}
+.dailyIncomeTable>table{
+    width: 92%;
     left: 4%;
+    top: 10%;
+    position: relative;
 }

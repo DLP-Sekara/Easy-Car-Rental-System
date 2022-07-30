@@ -93,7 +93,7 @@ function checkAdmin() {
                        $(".dashboard").css('display', 'none')
 
                        $("#ManageBTN").css('display', 'none')
-                   $("#customerBTN").css('display', 'none')
+                       $("#customerBTN").css('display', 'none')
                        $("#logOutBtn").css('display', 'block')
                        $("#logInBTN").css('display', 'none')
                        $("#AdminManageBTN").css('display', 'block')
@@ -105,6 +105,11 @@ function checkAdmin() {
                        $("#inputAdminPassword").val("");
                        $("#inputAdminEmail").val("");
                        $(".adminLoginBtn").attr('disabled', true);
+                       $(".carArea").css('pointer-events', 'none');
+
+                   //$(".carArea").attr('disabled', true);
+
+                   $(".carTab").disable(true);
                        return;
                    }else{
                        //alert("check emails or password")
@@ -120,3 +125,5 @@ function checkAdmin() {
         }
     })
 }
+
+

@@ -1,6 +1,5 @@
 
-
-
+//$(".carTab").prop('disabled',true);
 //main functions======================================
 $(".home").css('display', 'block')
 $(".firstPage").css('display', 'block')
@@ -12,9 +11,9 @@ $(".adminloginPage").css('display', 'none')
 $(".rentSection").css('display', 'none')
 $(".myBookings").css('display', 'none')
 $(".paymentSection").css('display', 'none')
-$(".carManagement").css('display', 'block')
+$(".carManagement").css('display', 'none')
 $(".driverManagement").css('display', 'none')
-$(".dashboard").css('display', 'none')
+$(".dashboard").css('display', 'block')
 $(".customerManagement").css('display', 'none')
 
 /* nav button functions*/
@@ -344,6 +343,7 @@ $("#logOutBtn").click(function () {
     $("#EmployeeBTN").css('display', 'block')
     $("#AdminManageBTN").css('display', 'none')
     $("#EmployeeBTN").css('display', 'block')
+    $(".carArea").css('pointer-events', '');
 })
 $("#logoutIcon").click(function () {
     window.location.href = "index.html"
@@ -517,9 +517,7 @@ function loadAllCarsToHome() {
                             <pre class="temp_Carstatus">${car.status}</pre>
                             <pre style="display: none" class="temp_DamageCost">${car.damageCost}</pre>
                             </div>`;
-
-                    $(".carImg").attr("src","assets/images/cars/"+imgArray[imgArray.length-1]);
-
+                    $(".carImg").attr("src","assets/images/cars/"+imgArray[count]);
                     $(".carArea").append(newCar)
                 }
                 selectedCarClickEvent();

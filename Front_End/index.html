@@ -12,6 +12,9 @@
     <link href="assets/css/fontawesome/css/all.css" rel="stylesheet">
     <link href="assets/css/fontawesome/css/all.css" rel="stylesheet">
     <link href="assets/main.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
 </head>
 <body>
 <!--    nav   -->
@@ -814,98 +817,138 @@
 
     <!--dashboard page-->
     <section class="dashboard" id="dashboard">
-        <div class="DashboardLabels">
-            <div class="customers" style="background-color: #f6efe3">
-                <pre>Customers</pre>
-                <pre class="count">100</pre>
-            </div>
+        <div id="tabs">
+            <ul>
+                <li><a href="#tabs-1">Daily Summery</a></li>
+                <li><a href="#tabs-2">Existing rents</a></li>
+                <li><a href="#tabs-3">Income Reports</a></li>
+                <li><a href="#tabs-4">Statistics</a></li>
+            </ul>
+            <div id="tabs-1">
+                <div class="DashboardLabels">
+                    <div class="customers" style="background-color: #f6efe3">
+                        <img src="assets/images/summery/customer.png" alt="">
+                        <pre class="count">100</pre>
+                        <pre>Customers</pre>
+                    </div>
 
-            <div class="availableCars" style="background-color: #f6efe3">
-                <pre>Available Cars</pre>
-                <pre class="count">200</pre>
-            </div>
+                    <div class="availableCars" style="background-color: #f6efe3">
+                        <img src="assets/images/summery/cars.png" alt="">
+                        <pre class="count">200</pre>
+                        <pre>Available Cars</pre>
+                    </div>
 
-            <div class="rentedCars" style="background-color: #f6efe3">
-                <pre>Rented Cars</pre>
-                <pre class="count">300</pre>
-            </div>
+                    <div class="rentedCars" style="background-color: #f6efe3">
+                        <img src="assets/images/summery/rented%20car.png" alt="">
+                        <pre class="count">300</pre>
+                        <pre>Rented Cars</pre>
 
-            <div class="availableDrivers" style="background-color: #f6efe3">
-                <pre>Available Drivers</pre>
-                <pre class="count">400</pre>
-            </div>
+                    </div>
 
-            <div class="underMaintenanceCar" style="background-color: #f6efe3">
-                <pre>Under Maintenance Car</pre>
-                <pre class="count">500</pre>
-            </div>
+                    <div class="availableDrivers" style="background-color: #f6efe3">
+                        <img src="assets/images/summery/driver.png" alt="">
+                        <pre class="count">400</pre>
+                        <pre>Available Drivers</pre>
 
-            <div class="rentals" style="background-color: #f6efe3">
-                <pre>Rentals</pre>
-                <pre class="count">600</pre>
-            </div>
-        </div>
-        <div class="returnAllTable">
-            <pre>Current All rentals</pre>
-            <table class=" table">
-                <thead>
-                <tr>
-                    <th scope="col">Rent ID</th>
-                    <th scope="col">Customer</th>
-                    <th scope="col">Starting Date</th>
-                    <th scope="col">Pickup Time</th>
-                    <th scope="col">Action</th>
-                </tr>
-                </thead>
-                <tbody class="allRentTable">
-            <tr>
+                    </div>
 
-            </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="accordion" id="accordionPanelsStayOpenExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                        Daily Income
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-                    <div class="accordion-body">
-                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    <div class="underMaintenanceCar" style="background-color: #f6efe3">
+                        <img src="assets/images/summery/Maintenance.png" alt="">
+                        <pre class="count">500</pre>
+                        <pre>Under Maintenance</pre>
+
+                    </div>
+
+                    <div class="rentals" style="background-color: #f6efe3">
+                        <img src="assets/images/summery/rentals.png" alt="">
+                        <pre class="count">600</pre>
+                        <pre>Rentals</pre>
+
                     </div>
                 </div>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                       Monthly Income
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-                    <div class="accordion-body">
-                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
+            <div id="tabs-2">
+                <div class="returnAllTable">
+                    <pre>All Existing rentals</pre>
+                    <table class=" table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Rent ID</th>
+                            <th scope="col">Customer</th>
+                            <th scope="col">Starting Date</th>
+                            <th scope="col">Pickup Time</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody class="allRentTable">
+                        <tr>
+
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                        Annual Income
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-                    <div class="accordion-body">
-                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
+            <div id="tabs-3">
+
+                <div class="dailyIncome incomeTabs" style="background-color: #f6efe3">
+                    <pre class="dailyIncomeValue value">100</pre>
+                    <pre>Daily Income</pre>
                 </div>
+
+                <div class="monthlyIncome incomeTabs" style="background-color: #f6efe3">
+                    <pre class="monthlyIncomeValue value">200</pre>
+                    <pre>Monthly Income</pre>
+                </div>
+
+                <div class="AnnualIncome incomeTabs" style="background-color: #f6efe3">
+                    <pre class="annualIncomeValue value">300</pre>
+                    <pre>Annual Income</pre>
+
+                </div>
+
+                <div class="dailyIncomeTable">
+                    <table class=" table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Rent ID</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Damage Cost</th>
+                            <th scope="col">Distance Cost</th>
+                            <th scope="col">Total Amount</th>
+                        </tr>
+                        </thead>
+                        <tbody class="dailyIncomeTbl">
+                        <tr>
+                         <td>rrrrrrrr</td>
+                         <td>rrrrrrrr</td>
+                         <td>rrrrrrrr</td>
+                         <td>rrrrrrrr</td>
+                         <td>rrrrrrrr</td>
+                        </tr>
+                        <tr>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                            <td>rrrrrrrr</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="tabs-4">
+                <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+                <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
             </div>
         </div>
+
     </section>
+
+
 </section>
 </main>
 <script src="assets/JQuery/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script src="assets/main.js"></script>
 <script src="controller/admin.js"></script>
 <script src="controller/car.js"></script>
@@ -917,6 +960,9 @@
 <script src="controller/dashboard.js"></script>
 <script src="db/db.js"></script>
 <script>
+    $( function() {
+        $( "#tabs" ).tabs();
+    } );
    /* var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
