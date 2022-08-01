@@ -83,6 +83,85 @@ function allRentTableClick() {
     })
 }
 
+loadAllSummeryTags();
+function loadAllSummeryTags() {
+   //set customers
+    $.ajax({
+        url: "http://localhost:8080/Course_work_war/customer",
+        method:"GET",
+        success: function (resp) {
+            var customerCount = [];
+            customerCount.length = 0;
+            for (var i = 0; i < resp.data.length; i++) {
+                customerCount.push(resp.data[i]);
+            }
+            $(".customerCount").text(customerCount.length);
+        }
+    })
+
+    //set available , rentd cars and maintains car
+    $.ajax({
+        url: "http://localhost:8080/Course_work_war/car",
+        method:"GET",
+        success: function (resp) {
+            var availableCarCount = [];
+            var rentedCarCount = [];
+            var maintainsCarCount = [];
+            availableCarCount.length = 0;
+            rentedCarCount.length = 0;
+            maintainsCarCount.length = 0;
+
+            for (var i = 0; i < resp.data.length; i++) {
+                if(resp.data[i].status==="Available"){
+                    availableCarCount.push(resp.data[i]);
+                }else if(resp.data[i].status==="Running"){
+                    rentedCarCount.push(resp.data[i]);
+                }else if(resp.data[i].status==="Under Maintenance"){
+                    maintainsCarCount.push(resp.data[i]);
+                }
+            }
+
+            $(".AvailableCarCount").text(availableCarCount.length);
+            $(".rentedCarCount").text(rentedCarCount.length);
+            $(".maintainsCount").text(rentedCarCount.length);
+
+
+        }
+    })
+
+    //set driver tag
+    $.ajax({
+        url: "http://localhost:8080/Course_work_war/driver",
+        method:"GET",
+        success: function (resp) {
+            var driverCount = [];
+            driverCount.length = 0;
+            for (var i = 0; i < resp.data.length; i++) {
+                driverCount.push(resp.data[i]);
+            }
+            $(".driverCount").text(driverCount.length);
+        }
+    })
+
+    //set rentals tag
+    $.ajax({
+        url: "http://localhost:8080/Course_work_war/rent",
+        method:"GET",
+        success: function (resp) {
+            var rentalsCount = [];
+            rentalsCount.length = 0;
+            for (var i = 0; i < resp.data.length; i++) {
+                if(resp.data[i].status==="ongoing"){
+                    rentalsCount.push(resp.data[i]);
+                }
+            }
+            $(".rentalsCount").text(rentalsCount.length);
+        }
+    })
+
+}
+
+
 loadIncomeChart();
 function loadIncomeChart() {
 

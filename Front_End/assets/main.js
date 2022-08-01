@@ -512,23 +512,26 @@ function loadAllCarsToHome() {
         method:"GET",
         success: function (resp) {
             $(".carArea").empty();
-            var count=0;
+            var imgCount = [];
+            imgCount.length = 0;
             for (const car of resp.data) {
                 if(car.status==="Available") {
                     let newCar = `<div class="carTab">
                             <img  class="carImg" src="">
-                            <pre class="carBrand">${car.brand}</pre>
+                            <pre  class="carBrand">${car.brand}</pre>
                             <pre style="display: none" class="temp_RegNo">${car.car_reg_no}</pre>
                             <pre class="temp_CarGroup">${car.car_group}</pre>
-                            <pre class="temp_Carstatus">${car.status}</pre>
+                            <pre style="display: none" class="temp_Carstatus">${car.status}</pre>
                             <pre style="display: none" class="temp_DamageCost">${car.damageCost}</pre>
+                            <pre  class="temp_perKmCost">${car.extra_km_price} LKR Per Km</pre>
                             </div>`;
-                    $(".carImg").attr("src","assets/images/cars/"+imgArray[count]);
+                    imgCount.push(car);
                     $(".carArea").append(newCar)
                 }
+                $(".carImg").attr("src","assets/images/cars/"+imgArray[imgCount.length]);
                 selectedCarClickEvent();
-                count=count++;
             }
+
         }
     })
 }

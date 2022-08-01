@@ -45,13 +45,14 @@ body {
 }
 
 .topic1 {
-    font-size: 120px;
+    font-size: 45px;
     color: black;
     font-family: "Arial Unicode MS";
     position: relative;
     left: 9%;
+    font-weight: bold;
     bottom: 39%;
-    opacity: 75%;
+    opacity: 40%;
 }
 
 .top {
@@ -76,15 +77,16 @@ body {
 
 .topic2 {
     position: relative;
-    left: 31%;
-    bottom: 51%;
-    font-size: 20px;
+    left: 34%;
+    bottom: 43%;
+    COLOR: #846c6c;
+    font-size: 27px;
 }
 
 .topic > a {
     position: relative;
-    left: 49%;
-    top: -47%;
+    left: 52%;
+    top: -43%;
 }
 
 .topic > img:hover {
@@ -145,7 +147,6 @@ body {
     cursor: pointer;
     background-color: #abacb4;
     font-weight: bold;
-
 }
 .vehicles > section > div > img {
     position: absolute;
@@ -163,14 +164,15 @@ body {
     right: 0;
     left: 0;
     margin: auto;
-    top: 75%;
+    top: 80%;
     display: table;
 }
 .vehicles > section > div > .temp_CarGroup {
     position: relative;
-    top: 85%;
+    top: 2%;
+    left: -38%;
     font-size: 17px;
-    color: red;
+    color: black;
     font-weight: bold;
 }
 .vehicles > section > div > .temp_Carstatus {
@@ -179,6 +181,13 @@ body {
     font-size: 17px;
     color: blue;
     font-weight: bold;
+}
+.vehicles > section > div > .temp_perKmCost {
+    top: 2%;
+    left: 67%;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fe1d1d;
 }
 .carTab{
     width: 30%;
@@ -1010,7 +1019,7 @@ body {
     opacity: 75%;
     font-size: 40px;
 }
-.dailyIncomeTable{
+/*.dailyIncomeTable{
     position: relative;
     width: 51%;
     height: 20%;
@@ -1025,9 +1034,47 @@ body {
     left: 4%;
     top: 10%;
     position: relative;
+}*/
+.alert{
+    width: 51%;
+    height: 17%;
+    position: relative;
+    left: 1%;
+    margin-top: 1%;
+}
+.dailyIncome,.totallyIncome{
+    top: 12%;
+    left: 0;
+    display: inline;
+    position: relative;
+    font-size: 23px;
+}
+.totallyRentalValue1,.totallyRentalValue2{
+    top: 12%;
+    left: 0;
+    display: inline;
+    position: relative;
+    font-size: 23px;
 }
 
-
+.area1{
+    position: relative;
+    left: 15%;
+}
+.searchIncomeBtn{
+    position: relative;
+    top: 10%;
+    left: 7%;
+}
+#myChart2{
+    width: 602px;
+    max-width: 602px;
+    display: block;
+    height: 200px;
+    max-height: 215px;
+    left: 4%;
+    position: relative;
+}
 #myChart{
     position: absolute;
     width: 600px;

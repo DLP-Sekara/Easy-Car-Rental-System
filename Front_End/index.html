@@ -15,6 +15,12 @@
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/base/jquery-ui.css">-->
+<style>
+    .datepicker-calendar {
+        display: none;
+    }
+</style>
 </head>
 <body>
 <!--    nav   -->
@@ -28,7 +34,7 @@
                 data-bs-target="#navbarNavDropdown" data-bs-toggle="collapse" type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown" style="">
+        <div class="collapse navbar-collapse " id="navbarNavDropdown" style="">
             <ul class="navbar-nav" id="ulNAV">
                 <li class="nav-item nav-link active" id="homeBtn">
                     <a aria-current="" class="nav-link active" href="#home" style="">Home</a>
@@ -90,10 +96,10 @@
     <section class="home" id="home">
         <img alt="..." class="homePageImg img-fluid" src="assets/images/background.png" style="">
         <div class="topic">
-            <div class="top"></div>
-            <pre class="topic1">Car Rentals</pre>
-            <div class="bottom"></div>
-            <pre class="topic2">Online  Car  Rental  Service</pre>
+         <!--   <div class="top"></div>-->
+            <pre class="topic1">MAKE YOUR TOUR MEMORABLE </pre>
+           <!-- <div class="bottom"></div>-->
+            <pre class="topic2">WITH OUR LUXURIOUS CARS</pre>
             <!--<a href="#1"></a>-->
             <a aria-current="" class="nav-link active" href="#1" style=""><img
                     src="assets/images/icons8-down-button-50.png"></a>
@@ -831,40 +837,40 @@
                 <div class="DashboardLabels">
                     <div class="customers" style="background-color: #f6efe3">
                         <img src="assets/images/summery/customer.png" alt="">
-                        <pre class="count">100</pre>
+                        <pre class="count customerCount">100</pre>
                         <pre>Customers</pre>
                     </div>
 
                     <div class="availableCars" style="background-color: #f6efe3">
                         <img src="assets/images/summery/cars.png" alt="">
-                        <pre class="count">200</pre>
+                        <pre class="count AvailableCarCount">200</pre>
                         <pre>Available Cars</pre>
                     </div>
 
                     <div class="rentedCars" style="background-color: #f6efe3">
                         <img src="assets/images/summery/rented%20car.png" alt="">
-                        <pre class="count">300</pre>
+                        <pre class="count rentedCarCount">300</pre>
                         <pre>Rented Cars</pre>
 
                     </div>
 
                     <div class="availableDrivers" style="background-color: #f6efe3">
                         <img src="assets/images/summery/driver.png" alt="">
-                        <pre class="count">400</pre>
+                        <pre class="count driverCount">400</pre>
                         <pre>Available Drivers</pre>
 
                     </div>
 
                     <div class="underMaintenanceCar" style="background-color: #f6efe3">
                         <img src="assets/images/summery/Maintenance.png" alt="">
-                        <pre class="count">500</pre>
+                        <pre class="count maintainsCount">500</pre>
                         <pre>Under Maintenance</pre>
 
                     </div>
 
                     <div class="rentals" style="background-color: #f6efe3">
                         <img src="assets/images/summery/rentals.png" alt="">
-                        <pre class="count">600</pre>
+                        <pre class="count rentalsCount">600</pre>
                         <pre>Rentals</pre>
 
                     </div>
@@ -893,93 +899,46 @@
             </div>
             <div id="tabs-3">
 
-                <div class="dailyIncome incomeTabs" style="background-color: #f6efe3">
+               <!-- <div class="dailyIncome incomeTabs" style="background-color: #f6efe3">
                     <pre class="dailyIncomeValue value">100</pre>
                     <pre>Daily Income</pre>
-                </div>
-
-                <div class="totallyIncome incomeTabs" style="background-color: #f6efe3">
+                </div>-->
+               <!-- <div class="totallyIncome incomeTabs" style="background-color: #f6efe3">
                     <pre class="totallyIncomeValue value">200</pre>
                     <pre>Total Income</pre>
+                </div>-->
+                <div class="alert alert-info" role="alert">
+                    <div class="area1">
+                    <label class="col-sm-2 col-form-label" for="totallyRentalValue1">Total Rentals :</label>
+                    <div class="totallyRentalValue1 col-sm-10">
+                        <label class="col-sm-2 col-form-label" id="totallyRentalValue1">2000</label>
+                    </div>
+                    <label class="col-sm-2 col-form-label" for="totallyIncomeValue">Total amount :</label>
+                    <div class="totallyIncome col-sm-10">
+                        <label class="col-sm-2 col-form-label" id="totallyIncomeValue">Rs.2000</label>
+                    </div>
+                    </div>
                 </div>
-
-                <div class="dailyIncomeTable">
-                    <table class=" table">
-                        <thead>
-                        <tr>
-
-                            <th scope="col">Date</th>
-                            <th scope="col">Damage Cost</th>
-                            <th scope="col">Distance Cost</th>
-                            <th scope="col">Total Amount</th>
-                        </tr>
-                        </thead>
-                        <tbody class="dailyIncomeTbl">
-                        <tr>
-                         <td>rrrrrrrr</td>
-                         <td>rrrrrrrr</td>
-                         <td>rrrrrrrr</td>
-                         <td>rrrrrrrr</td>
-                        </tr>
-                        <tr>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                        </tr>
-                        <tr>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                        </tr>
-                        <tr>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                        </tr>
-                        <tr>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                        </tr>
-                        <tr>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                        </tr>
-                        <tr>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                        </tr>
-                        <tr>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                        </tr>
-                        <tr>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                        </tr>
-                        <tr>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                            <td>rrrrrrrr</td>
-                        </tr>
-
-                        </tbody>
-                    </table>
+                <div class="alert alert-success" role="alert">
+                    <div class="area1">
+                    <p style="display: inline;">Date: <input type="text" id="datepicker"></p>
+                    <button type="button" class="searchIncomeBtn btn btn-info">Search Income</button>
                 </div>
+                </div>
+                <div class="alert alert-warning" role="alert">
+                    <div class="area1">
+                    <label class="col-sm-2 col-form-label" for="totallyRentalValue2">Total Rentals :</label>
+                    <div class="totallyRentalValue2 col-sm-10">
+                        <label class="col-sm-2 col-form-label" id="totallyRentalValue2">2000</label>
+                    </div>
 
+                    <label class="col-sm-2 col-form-label" for="dailyIncomeValue">Daily income :</label>
+                    <div class="dailyIncome col-sm-10">
+                        <label class="col-sm-2 col-form-label" id="dailyIncomeValue">Rs.200</label>
+                    </div>
+                </div>
+                </div>
+                <canvas id="myChart2" style=""></canvas>
                 <canvas id="myChart" style="width:100%;max-width:600px" height="460px"></canvas>
             </div>
             <div id="tabs-4">
@@ -1008,14 +967,26 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
+<!--
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
+--><!--
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>-->
+
 <script>
 
+
+    $( function() {
+        $( "#datepicker" ).datepicker();
+    } );
 
     $( function() {
         $( "#tabs" ).tabs();
     } );
 
-
+    //bar chart
     var xValues = ["Jan", "Feb", "March", "April", "May","June", "July", "Aug", "Sep", "Oct","Nov", "Dec"];
     var yValues = [70, 49, 44, 24, 30,25,55, 49, 44, 24, 30,25,100];
     var barColors = ["#f5e4c7", "#f5e4c7","#f5e4c7","#f5e4c7","#f5e4c7","#f5e4c7","#f5e4c7", "#f5e4c7","#f5e4c7","#f5e4c7","#f5e4c7","#f5e4c7"];
@@ -1035,6 +1006,32 @@
                 display: true,
                 text: "Monthly Income"
             }
+        }
+    });
+
+    //pie chart
+    var xValues2 = [100,200,300,400,500,600,700,800,900,1000];
+
+    new Chart("myChart2", {
+        type: "line",
+        data: {
+            labels: xValues2,
+            datasets: [{
+                data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
+                borderColor: "red",
+                fill: false
+            }, {
+                data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,7000],
+                borderColor: "green",
+                fill: false
+            }, {
+                data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
+                borderColor: "blue",
+                fill: false
+            }]
+        },
+        options: {
+            legend: {display: false}
         }
     });
 

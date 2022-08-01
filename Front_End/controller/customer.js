@@ -239,7 +239,7 @@ function availableCustomer() {
                 $("#logOutBtn").css('display', 'block')
                 $("#logInBTN").css('display', 'none')
                 $("#AdminManageBTN").css('display', 'none')
-
+                loadAllSummeryTags();
                 //selectedCarClickEvent();
             }
         },
