@@ -913,7 +913,7 @@
                     <div class="totallyRentalValue1 col-sm-10">
                         <label class="col-sm-2 col-form-label" id="totallyRentalValue1">2000</label>
                     </div>
-                    <label class="col-sm-2 col-form-label" for="totallyIncomeValue">Total amount :</label>
+                    <label class="col-sm-2 col-form-label" for="totallyIncomeValue">Total amount (LKR) :</label>
                     <div class="totallyIncome col-sm-10">
                         <label class="col-sm-2 col-form-label" id="totallyIncomeValue">Rs.2000</label>
                     </div>
@@ -929,12 +929,12 @@
                     <div class="area1">
                     <label class="col-sm-2 col-form-label" for="totallyRentalValue2">Total Rentals :</label>
                     <div class="totallyRentalValue2 col-sm-10">
-                        <label class="col-sm-2 col-form-label" id="totallyRentalValue2">2000</label>
+                        <label class="col-sm-2 col-form-label" id="totallyRentalValue2">00</label>
                     </div>
 
-                    <label class="col-sm-2 col-form-label" for="dailyIncomeValue">Daily income :</label>
+                    <label class="col-sm-2 col-form-label" for="dailyIncomeValue">Daily income (LKR) :</label>
                     <div class="dailyIncome col-sm-10">
-                        <label class="col-sm-2 col-form-label" id="dailyIncomeValue">Rs.200</label>
+                        <label class="col-sm-2 col-form-label" id="dailyIncomeValue">00</label>
                     </div>
                 </div>
                 </div>
@@ -979,7 +979,10 @@
 
 
     $( function() {
-        $( "#datepicker" ).datepicker();
+        $( "#datepicker" ).datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
+
     } );
 
     $( function() {

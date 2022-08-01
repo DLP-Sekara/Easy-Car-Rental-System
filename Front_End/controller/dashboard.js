@@ -164,5 +164,57 @@ function loadAllSummeryTags() {
 
 loadIncomeChart();
 function loadIncomeChart() {
+//set all rentals
+    $.ajax({
+        url: "http://localhost:8080/Course_work_war/rent",
+        method:"GET",
+        success: function (resp) {
+            var rentCount = [];
+            rentCount.length = 0;
+            for (var i = 0; i < resp.data.length; i++) {
+                rentCount.push(resp.data[i]);
+            }
+            $("#totallyRentalValue1").text(rentCount.length);
+        }
+    })
 
+    //set all rentals total income
+    $.ajax({
+        url: "http://localhost:8080/Course_work_war/payment",
+        method:"GET",
+        success: function (resp) {
+            var total=0
+
+            for (var i = 0; i < resp.data.length; i++) {
+                total=total+resp.data[i].total_amount;
+            }
+            $("#totallyIncomeValue").text(total);
+        }
+    })
+}
+
+
+$(".searchIncomeBtn").click(function () {
+    searchIncomeByDate()
+})
+function searchIncomeByDate() {
+    var tempDate=$("#datepicker").val();
+    var total=0;
+    console.log(tempDate)
+    $.ajax({
+        url: "http://localhost:8080/Course_work_war/payment",
+        method:"GET",
+        success: function (resp) {
+            var paymentCount = [];
+            paymentCount.length = 0;
+            for (var i = 0; i < resp.data.length; i++) {
+                if(resp.data[i].date===tempDate){
+                    paymentCount.push(resp.data[i]);
+                    total=total+resp.data[i].total_amount;
+                }
+            }
+            $("#totallyRentalValue2").text(paymentCount.length);
+            $("#dailyIncomeValue").text(total);
+        }
+    })
 }
