@@ -11,6 +11,7 @@ import lk.ijse.spring.service.RentService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -76,7 +77,7 @@ public class RentServiceImpl implements RentService {
 
     @Override
     public List<RentDto> getAllRent() {
-        return mapper.map(repo.findAll(), new TypeToken<List<RentDto>>() {
+        return mapper.map(repo.findAll(Sort.by(Sort.Direction.ASC, "date")), new TypeToken<List<RentDto>>() {
         }.getType());
     }
 }
