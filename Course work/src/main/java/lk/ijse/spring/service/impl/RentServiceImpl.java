@@ -28,6 +28,9 @@ public class RentServiceImpl implements RentService {
 
     @Autowired
     private CarRepo carRepo;
+
+    @Autowired
+    private RentRepo rentRepo;
     @Override
     public void saveRent(RentDto rentDto) {
         if (!repo.existsById(rentDto.getRentID())) {
@@ -56,11 +59,20 @@ public class RentServiceImpl implements RentService {
     }
 
     @Override
-    public void updateRent(RentDto customerDto) {
-        if (repo.existsById(customerDto.getRentID())) {
-            Rent rent = mapper.map(customerDto, Rent.class);
-            repo.deleteById(customerDto.getRentID());
+    public void updateRent(RentDto rentDto) {
+        if (repo.existsById(rentDto.getRentID())) {
+            Rent rent = mapper.map(rentDto, Rent.class);
+            repo.deleteById(rentDto.getRentID());
             repo.save(rent);
+
+            if(rentDto.getStatus().equals("rejected")){
+                for (RentDetailsDto rentDetails : rentDto.getRentDetails()) {
+                    Car car = carRepo.findById(rentDetails.getCar_reg_no()).get();
+                    car.setStatus("Available");
+                    carRepo.save(car);
+                }
+            }
+
         } else {
             throw new RuntimeException("No Such Rent To Update..! Please Check the ID..!");
         }
