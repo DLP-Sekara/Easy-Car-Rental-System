@@ -416,72 +416,185 @@ function availableCustomer() {
 //======================customer manage form ========================================================
 
 /*customer management validation==============================================*/
-/*$(".custSignInBtn").attr('disabled', true);
-var cust_Username = /^[A-z]{2,20}$/;
-var cust_Password = /^[A-z,0-9 _]{4,10}$/;
-var cust_Email =/^[A-z]{2,20}[@][A-z]{2,10}[.][A-z]{2,20}$/;
-var cust_Address = /^[A-z,0-9 _]{4,10}$/;
-var cust_Contact = /^[0-9]{5,20}$/;
-var cust_DLicenseNo = /^[0-9]{5,20}$/;
-var cust_NIC = /^[0-9]{5,20}$/;
+$(".custSignInBtn").attr('disabled', true);
+var custManage_Username = /^[A-z]{2,20}$/;
+var custManage_Password = /^[A-z,0-9 _]{4,10}$/;
+var custManage_Email =/^[A-z]{2,20}[@][A-z]{2,10}[.][A-z]{2,20}$/;
+var custManage_Address = /^[A-z,0-9 _]{4,10}$/;
+var custManage_Contact = /^[0-9]{5,20}$/;
+var custManage_DLicenseNo = /^[0-9]{5,20}$/;
+var custManage_NIC = /^[0-9]{5,20}$/;
 
-$('#customerUsername,#customerPassword').on('keydown', function (event) {
+$('#CustomerUsernameMng,#CustomerPasswordMng').on('keydown', function (event) {
     if (event.key == "Tab") {
         event.preventDefault();
     }
 });
 
-$("#customerUsername").keyup(function (event) {
-    let temp = checkUsername();
-    btnAction2();
+$("#CustomerUsernameMng").keyup(function (event) {
+    let temp = checkUsername2();
+    btnAction6();
     if ("Enter" == event.key & temp == true) {
-        $("#customerPassword").focus();
+        $("#CustomerPasswordMng").focus();
     }
 })
-
-function checkUsername() {
-    let temp = $("#customerUsername").val();
-    if (custUsername.test(temp)) {
-        $("#customerUsername").css('border', '2px solid green');
+function checkUsername2() {
+    let temp = $("#CustomerUsernameMng").val();
+    if (custManage_Username.test(temp)) {
+        $("#CustomerUsernameMng").css('border', '2px solid green');
         return true;
     } else {
-        $("#customerUsername").css('border', '2px solid red');
+        $("#CustomerUsernameMng").css('border', '2px solid red');
     }
 }
 
-$("#customerPassword").keyup(function (event) {
-    let temp = checkCustPassword();
-    btnAction2();
+$("#CustomerPasswordMng").keyup(function (event) {
+    let temp = checkCustPassword2();
+    btnAction6();
     if ("Enter" == event.key & temp == true) {
-        $(".custLogInBtn").focus();
+        $("#CustomerEmailMng").focus();
     }
 })
-
-function checkCustPassword() {
-    let temp = $("#customerPassword").val();
-    if (custPassword.test(temp)) {
-        $("#customerPassword").css('border', '2px solid green');
+function checkCustPassword2() {
+    let temp = $("#CustomerPasswordMng").val();
+    if (custManage_Password.test(temp)) {
+        $("#CustomerPasswordMng").css('border', '2px solid green');
         return true;
     } else {
-        $("#customerPassword").css('border', '2px solid red');
+        $("#CustomerPasswordMng").css('border', '2px solid red');
     }
 }
 
-function btnAction2() {
-    let username = $("#customerUsername").val();
-    if (custUsername.test(username)) {
-        let tempPassword = $("#customerPassword").val();
-        if (custPassword.test(tempPassword)) {
-            $(".custLogInBtn").attr('disabled', false);
-        } else {
-            $(".custLogInBtn").attr('disabled', true);
+$("#CustomerEmailMng").keyup(function (event) {
+    let temp = checkCustEmail2();
+    btnAction6();
+    if ("Enter" == event.key & temp == true) {
+        $("#CustomerAddressMng").focus();
+    }
+})
+function checkCustEmail2() {
+    let temp = $("#CustomerEmailMng").val();
+    if (custManage_Email.test(temp)) {
+        $("#CustomerEmailMng").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#CustomerEmailMng").css('border', '2px solid red');
+    }
+}
+
+$("#CustomerAddressMng").keyup(function (event) {
+    let temp = checkCustAddress2();
+    btnAction6();
+    if ("Enter" == event.key & temp == true) {
+        $("#CustomerDLicenseNoMng").focus();
+    }
+})
+function checkCustAddress2() {
+    let temp = $("#CustomerAddressMng").val();
+    if (custManage_Address.test(temp)) {
+        $("#CustomerAddressMng").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#CustomerAddressMng").css('border', '2px solid red');
+    }
+}
+
+$("#CustomerDLicenseNoMng").keyup(function (event) {
+    let temp = checkCustDLicenseNo2();
+    btnAction6();
+    if ("Enter" == event.key & temp == true) {
+        $("#CustomerContactMng").focus();
+    }
+})
+function checkCustDLicenseNo2() {
+    let temp = $("#CustomerDLicenseNoMng").val();
+    if (custManage_DLicenseNo.test(temp)) {
+        $("#CustomerDLicenseNoMng").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#CustomerDLicenseNoMng").css('border', '2px solid red');
+    }
+}
+
+$("#CustomerContactMng").keyup(function (event) {
+    let temp = checkCustContact2();
+    btnAction6();
+    if ("Enter" == event.key & temp == true) {
+        $("#CustomerNICMng").focus();
+    }
+})
+ function checkCustContact2() {
+    let temp = $("#CustomerContactMng").val();
+    if (custManage_Contact.test(temp)) {
+        $("#CustomerContactMng").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#CustomerContactMng").css('border', '2px solid red');
+    }
+}
+
+$("#CustomerNICMng").keyup(function (event) {
+    let temp = checkCustNic2();
+    btnAction6();
+    if ("Enter" == event.key & temp == true) {
+        $(".customerUpdateBtn").focus();
+    }
+})
+function checkCustNic2() {
+    let temp = $("#CustomerNICMng").val();
+    if (custManage_NIC.test(temp)) {
+        $("#CustomerNICMng").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#CustomerNICMng").css('border', '2px solid red');
+    }
+}
+
+function btnAction6() {
+    let temp_Username2=$("#CustomerUsernameMng").val();
+    if(custManage_Username.test(temp_Username2)){
+        let temp_Password2=$("#CustomerPasswordMng").val();
+        if(custManage_Password.test(temp_Password2)){
+            let temp_Email2=$("#CustomerEmailMng").val();
+            if(custManage_Email.test(temp_Email2)){
+                let temp_Address2=$("#CustomerAddressMng").val();
+                if(custManage_Address.test(temp_Address2)){
+                    let temp_DLicenseNo2=$("#CustomerDLicenseNoMng").val();
+                    if(custManage_DLicenseNo.test(temp_DLicenseNo2)){
+                        let temp_contact2=$("#CustomerContactMng").val();
+                        if(custManage_Contact.test(temp_contact2)){
+                            let temp_NIC2=$("#CustomerNICMng").val();
+                            if(custManage_NIC.test(temp_NIC2)){
+                                $(".customerUpdateBtn").attr('disabled', false);
+                            }else{
+                                $(".customerUpdateBtn").attr('disabled', true);
+                                return false;
+                            }
+                        }else{
+                            $(".customerUpdateBtn").attr('disabled', true);
+                            return false;
+                        }
+                    }else{
+                        $(".customerUpdateBtn").attr('disabled', true);
+                        return false;
+                    }
+                }else{
+                    $(".customerUpdateBtn").attr('disabled', true);
+                    return false;
+                }
+            }else{
+                $(".customerUpdateBtn").attr('disabled', true);
+                return false;
+            }
+        }else{
+            $(".customerUpdateBtn").attr('disabled', true);
             return false;
         }
-    } else {
-        $(".custLogInBtn").attr('disabled', true);
+    }else{
+        $(".customerUpdateBtn").attr('disabled', true);
         return false;
     }
-}*/
+}
 
 
 /*customer tbl click event============================================*/
@@ -504,6 +617,7 @@ function customerTblClick() {
                 $("#CustomerContactMng").val(resp.data.contact);
                 $("#CustomerNICMng").val(resp.data.nic);
                 $("#CustomerStatusMng").val(resp.data.status);
+                $(".customerUpdateBtn").attr('disabled', false);
             }
         })
 
