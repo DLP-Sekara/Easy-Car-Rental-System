@@ -1,3 +1,128 @@
+/*Driver login validation==============================================*/
+$(".driverSaveBtn").attr('disabled', true);
+var driverID = /^[A-z,0-9 _]{4,10}$/;
+var driverNic = /^[0-9 _]{4,10}$/;
+var driverLicenseNo = /^[0-9 _]{4,10}$/;
+var driverName = /^[A-z]{3,10}$/;
+var driverStatus = /^[A-z,0-9 _]{4,10}$/;
+$('#driverID,#driverNic').on('keydown', function (event) {
+    if (event.key == "Tab") {
+        event.preventDefault();
+    }
+});
+
+$("#driverID").keyup(function (event) {
+    let temp = checkDriverID();
+    btnAction5();
+    if ("Enter" == event.key & temp == true) {
+        $("#driverNic").focus();
+    }
+})
+function checkDriverID() {
+    let temp = $("#driverID").val();
+    if (driverID.test(temp)) {
+        $("#driverID").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#driverID").css('border', '2px solid red');
+    }
+}
+
+$("#driverNic").keyup(function (event) {
+    let temp = checkDriverNic();
+    btnAction5();
+    if ("Enter" == event.key & temp == true) {
+        $("#Driving_License_no").focus();
+    }
+})
+function checkDriverNic() {
+    let temp = $("#driverNic").val();
+    if (driverNic.test(temp)) {
+        $("#driverNic").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#driverNic").css('border', '2px solid red');
+    }
+}
+
+$("#Driving_License_no").keyup(function (event) {
+    let temp = checkDriverLicenseNo();
+    btnAction5();
+    if ("Enter" == event.key & temp == true) {
+        $("#driverName").focus();
+    }
+})
+function checkDriverLicenseNo() {
+    let temp = $("#Driving_License_no").val();
+    if (driverLicenseNo.test(temp)) {
+        $("#Driving_License_no").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#Driving_License_no").css('border', '2px solid red');
+    }
+}
+
+$("#driverName").keyup(function (event) {
+    let temp = checkDriverName();
+    btnAction5();
+    if ("Enter" == event.key & temp == true) {
+        $("#driverStatus").focus();
+    }
+})
+function checkDriverName() {
+    let temp = $("#driverName").val();
+    if (driverName.test(temp)) {
+        $("#driverName").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#driverName").css('border', '2px solid red');
+    }
+}
+
+$("#driverStatus").keyup(function (event) {
+    let temp = checkDriverStatus();
+    btnAction5();
+    if ("Enter" == event.key & temp == true) {
+        $(".driverSaveBtn").focus();
+    }
+})
+function checkDriverStatus() {
+    let temp = $("#driverStatus").val();
+    if (temp ==="Available" || temp ==="Working") {
+        $("#driverStatus").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#driverStatus").css('border', '2px solid red');
+    }
+}
+
+function btnAction5() {
+    let temp_driverID = $("#driverID").val();
+    if (driverID.test(temp_driverID)) {
+        let temp_driverNic = $("#driverNic").val();
+        if (driverNic.test(temp_driverNic)) {
+            let temp_Driving_License_no = $("#Driving_License_no").val();
+            if (driverLicenseNo.test(temp_Driving_License_no)) {
+                let temp_driverName = $("#driverName").val();
+                if (driverName.test(temp_driverName)) {
+                    $(".driverSaveBtn").attr('disabled', false);
+                } else {
+                    $(".driverSaveBtn").attr('disabled', true);
+                    return false;
+                }
+            } else {
+                $(".driverSaveBtn").attr('disabled', true);
+                return false;
+            }
+        } else {
+            $(".driverSaveBtn").attr('disabled', true);
+            return false;
+        }
+    } else {
+        $(".driverSaveBtn").attr('disabled', true);
+        return false;
+    }
+}
 
 DriverTblClick()
 function DriverTblClick() {
@@ -22,7 +147,7 @@ function DriverTblClick() {
 }
 
 
-/*driver  getall BtnEvent==============================================*/
+/*driver  get all BtnEvent==============================================*/
 addDriverToTable();
 function addDriverToTable() {
     $.ajax({

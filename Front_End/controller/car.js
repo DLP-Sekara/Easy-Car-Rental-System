@@ -1,65 +1,326 @@
 /*car  validation==============================================*/
-/*$(".custLogInBtn").attr('disabled', true);
-var custUsername = /^[A-z]{2,20}$/;
-var custPassword = /^[A-z,0-9 _]{4,10}$/;
+$(".carSaveBtn").attr('disabled', true);
+$(".carUpdateBtn").attr('disabled', true);
+$(".carDeleteBtn").attr('disabled', true);
 
-$('#customerUsername,#customerPassword').on('keydown', function (event) {
+var car_regNo = /^[A-z,0-9]{4,10}$/;
+var car_brand = /^[A-z,0-9 _]{4,20}$/;
+var car_color = /^[A-z]{2,20}$/;
+var car_NoOfPassengers = /^[0-9]{1,10}$/;
+var car_type =/^[A-z]{2,20}$/;
+var car_ExtraKmPrice = /^[0-9]{1,10}$/;
+var car_dailyPrice = /^[0-9]{1,10}$/;
+var car_monthlyPrice = /^[0-9]{1,10}$/;
+var car_damageCost =/^[0-9]{1,10}$/;
+
+/*$('#regNo,#brand').on('keydown', function (event) {
     if (event.key == "Tab") {
         event.preventDefault();
     }
-});
+});*/
 
-$("#customerUsername").keyup(function (event) {
-    let temp = checkUsername();
-    btnAction2();
+$("#regNo").keyup(function (event) {
+    let temp = checkCarRegNo();
+    btnAction4();
     if ("Enter" == event.key & temp == true) {
-        $("#customerPassword").focus();
+        $("#brand").focus();
     }
 })
-
-function checkUsername() {
-    let temp = $("#customerUsername").val();
-    if (custUsername.test(temp)) {
-        $("#customerUsername").css('border', '2px solid green');
+function checkCarRegNo() {
+    let temp = $("#regNo").val();
+    if (car_regNo.test(temp)) {
+        $("#regNo").css('border', '2px solid green');
         return true;
     } else {
-        $("#customerUsername").css('border', '2px solid red');
+        $("#regNo").css('border', '2px solid red');
     }
 }
 
-$("#customerPassword").keyup(function (event) {
-    let temp = checkCustPassword();
-    btnAction2();
+$("#brand").keyup(function (event) {
+    let temp = checkCarBrand();
+    btnAction4();
     if ("Enter" == event.key & temp == true) {
-        $(".custLogInBtn").focus();
+        $("#color").focus();
     }
 })
-
-function checkCustPassword() {
-    let temp = $("#customerPassword").val();
-    if (custPassword.test(temp)) {
-        $("#customerPassword").css('border', '2px solid green');
+function checkCarBrand() {
+    let temp = $("#brand").val();
+    if (car_brand.test(temp)) {
+        $("#brand").css('border', '2px solid green');
         return true;
     } else {
-        $("#customerPassword").css('border', '2px solid red');
+        $("#brand").css('border', '2px solid red');
     }
 }
 
-function btnAction2() {
-    let username = $("#customerUsername").val();
-    if (custUsername.test(username)) {
-        let tempPassword = $("#customerPassword").val();
-        if (custPassword.test(tempPassword)) {
-            $(".custLogInBtn").attr('disabled', false);
+$("#color").keyup(function (event) {
+    let temp = checkCarColor();
+    btnAction4();
+    if ("Enter" == event.key & temp == true) {
+        $("#noOfPassengers").focus();
+    }
+})
+function checkCarColor() {
+    let temp = $("#color").val();
+    if (car_color.test(temp)) {
+        $("#color").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#color").css('border', '2px solid red');
+    }
+}
+
+$("#noOfPassengers").keyup(function (event) {
+    let temp = checkCarNoOfPassengers();
+    btnAction4();
+    if ("Enter" == event.key & temp == true) {
+        $("#type").focus();
+    }
+})
+function checkCarNoOfPassengers() {
+    let temp = $("#noOfPassengers").val();
+    if (car_NoOfPassengers.test(temp)) {
+        $("#noOfPassengers").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#noOfPassengers").css('border', '2px solid red');
+    }
+}
+
+$("#type").keyup(function (event) {
+    let temp = checkCarType();
+    btnAction4();
+    if ("Enter" == event.key & temp == true) {
+        $("#extraKmPrice").focus();
+    }
+})
+function checkCarType() {
+    let temp = $("#type").val();
+    if (car_type.test(temp)) {
+        $("#type").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#type").css('border', '2px solid red');
+    }
+}
+
+$("#extraKmPrice").keyup(function (event) {
+    let temp = checkCarExtraKmPrice();
+    btnAction4();
+    if ("Enter" == event.key & temp == true) {
+        $("#dailyPrice").focus();
+    }
+})
+function checkCarExtraKmPrice() {
+    let temp = $("#extraKmPrice").val();
+    if (car_ExtraKmPrice.test(temp)) {
+        $("#extraKmPrice").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#extraKmPrice").css('border', '2px solid red');
+    }
+}
+
+$("#dailyPrice").keyup(function (event) {
+    let temp = checkCarDailyPrice();
+    btnAction4();
+    if ("Enter" == event.key & temp == true) {
+        $("#monthlyPrice").focus();
+    }
+})
+function checkCarDailyPrice() {
+    let temp = $("#dailyPrice").val();
+    if (car_dailyPrice.test(temp)) {
+        $("#dailyPrice").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#dailyPrice").css('border', '2px solid red');
+    }
+}
+
+$("#monthlyPrice").keyup(function (event) {
+    let temp = checkCarMonthlyPrice();
+    btnAction4();
+    if ("Enter" == event.key & temp == true) {
+        $("#fuelType").focus();
+    }
+})
+function checkCarMonthlyPrice() {
+    let temp = $("#monthlyPrice").val();
+    if (car_monthlyPrice.test(temp)) {
+        $("#monthlyPrice").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#monthlyPrice").css('border', '2px solid red');
+    }
+}
+
+$("#fuelType").keyup(function (event) {
+    let temp = checkCarFuelType();
+    btnAction4();
+    if ("Enter" == event.key & temp == true) {
+        $("#lostDamageCost").focus();
+    }
+})
+function checkCarFuelType() {
+    let temp = $("#fuelType").val();
+    if (temp==="Petrol" || temp==="Diesel") {
+        $("#fuelType").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#fuelType").css('border', '2px solid red');
+    }
+}
+
+$("#lostDamageCost").keyup(function (event) {
+    let temp = checkCarDamageCost();
+    btnAction4();
+    if ("Enter" == event.key & temp == true) {
+        $("#car_group").focus();
+    }
+})
+function checkCarDamageCost() {
+    let temp = $("#lostDamageCost").val();
+    if (car_damageCost.test(temp)) {
+        $("#lostDamageCost").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#lostDamageCost").css('border', '2px solid red');
+    }
+}
+
+$("#car_group").keyup(function (event) {
+    let temp = checkCarGroup();
+    btnAction4();
+    if ("Enter" == event.key & temp == true) {
+        $("#transmissionType").focus();
+    }
+})
+function checkCarGroup() {
+    let temp = $("#car_group").val();
+    if (temp==="Premium" || temp==="General" || temp==="Luxury") {
+        $("#car_group").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#car_group").css('border', '2px solid red');
+    }
+}
+
+$("#transmissionType").keyup(function (event) {
+    let temp = checkCarTransmissionType();
+    btnAction4();
+    if ("Enter" == event.key & temp == true) {
+        $("#status").focus();
+    }
+})
+function checkCarTransmissionType() {
+    let temp = $("#transmissionType").val();
+    if (temp==="Manual" || temp==="Auto") {
+        $("#transmissionType").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#transmissionType").css('border', '2px solid red');
+    }
+}
+
+$("#status").keyup(function (event) {
+    let temp = checkCarStatus();
+    btnAction4();
+    if ("Enter" == event.key & temp == true) {
+        $(".carSaveBtn").focus();
+    }
+})
+function checkCarStatus() {
+    let temp = $("#status").val();
+    if (temp==="Available" || temp==="Under Maintenance" || temp==="Running") {
+        $("#status").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#status").css('border', '2px solid red');
+    }
+}
+
+function btnAction4() {
+    let val_regNo = $("#regNo").val();
+    if (car_regNo.test(val_regNo)) {
+        let val_brand = $("#brand").val();
+        if (car_brand.test(val_brand)) {
+            let val_color = $("#color").val();
+            if (car_color.test(val_color)) {
+                let val_NoOfPassengers = $("#noOfPassengers").val();
+                if (car_NoOfPassengers.test(val_NoOfPassengers)) {
+                    let val_type = $("#type").val();
+                    if (car_type.test(val_type)) {
+                        let val_ExtraKmPrice = $("#extraKmPrice").val();
+                        if (car_ExtraKmPrice.test(val_ExtraKmPrice)) {
+                            let val_dailyPrice = $("#dailyPrice").val();
+                            if (car_dailyPrice.test(val_dailyPrice)) {
+                                let val_monthlyPrice = $("#monthlyPrice").val();
+                                if (car_monthlyPrice.test(val_monthlyPrice)) {
+                                    let val_fuelType = $("#fuelType").val();
+                                    if (val_fuelType==="Petrol" || val_fuelType==="Diesel") {
+                                        let val_lostDamageCost = $("#lostDamageCost").val();
+                                        if (car_damageCost.test(val_lostDamageCost)) {
+                                            let val_car_group = $("#car_group").val();
+                                            if (val_car_group==="Premium" || val_car_group==="General" || val_car_group==="Luxury") {
+                                                let val_transmissionType = $("#transmissionType").val();
+                                                if (val_transmissionType==="Manual" || val_transmissionType==="Auto") {
+                                                    let val_status = $("#status").val();
+                                                    if (val_status==="Available" || val_status==="Under Maintenance" || val_status==="Running") {
+                                                        $(".carSaveBtn").attr('disabled', false);
+                                                    } else {
+                                                        $(".carSaveBtn").attr('disabled', true);
+                                                        return false;
+                                                    }
+                                                } else {
+                                                    $(".carSaveBtn").attr('disabled', true);
+                                                    return false;
+                                                }
+                                            } else {
+                                                $(".carSaveBtn").attr('disabled', true);
+                                                return false;
+                                            }
+                                        } else {
+                                            $(".carSaveBtn").attr('disabled', true);
+                                            return false;
+                                        }
+                                    } else {
+                                        $(".carSaveBtn").attr('disabled', true);
+                                        return false;
+                                    }
+                                } else {
+                                    $(".carSaveBtn").attr('disabled', true);
+                                    return false;
+                                }
+                            } else {
+                                $(".carSaveBtn").attr('disabled', true);
+                                return false;
+                            }
+                        } else {
+                            $(".carSaveBtn").attr('disabled', true);
+                            return false;
+                        }
+                    } else {
+                        $(".carSaveBtn").attr('disabled', true);
+                        return false;
+                    }
+                } else {
+                    $(".carSaveBtn").attr('disabled', true);
+                    return false;
+                }
+            } else {
+                $(".carSaveBtn").attr('disabled', true);
+                return false;
+            }
         } else {
-            $(".custLogInBtn").attr('disabled', true);
+            $(".carSaveBtn").attr('disabled', true);
             return false;
         }
     } else {
-        $(".custLogInBtn").attr('disabled', true);
+        $(".carSaveBtn").attr('disabled', true);
         return false;
     }
-}*/
+}
 
 /*car tbl click event============================================*/
 carTblClick();
