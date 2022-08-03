@@ -13,11 +13,14 @@ $(".myBookings").css('display', 'none')
 $(".paymentSection").css('display', 'none')
 $(".carManagement").css('display', 'none')
 $(".driverManagement").css('display', 'none')
-$(".dashboard").css('display', 'block')
+$(".dashboard").css('display', 'none')
 $(".customerManagement").css('display', 'none')
 
 $(".onlineTxt").css('display', 'none')
 $(".onlineIcon").css('display', 'none')
+
+$("#notifyIcon1_customer").css('display', 'none')
+$("#notifyIcon2_admin").css('display', 'none')
 
 /* nav button functions*/
 $("#homeBtn").click(function () {
@@ -333,11 +336,13 @@ $(".viewBtn").click(function () {
     $("#nav").css('background-color', 'transparent')
 
     addRentsToTable();
+    loadAllSummeryTags();
+    loadIncomeChart();
 })
 
 
 //nav changes
-$("#nav1").css('background-color', 'transparent')
+//$("#nav1").css('background-color', 'transparent')
 $(".ManageBTN").css('display', 'none')
 $("#AdminManageBTN").css('display', 'none')
 $(".SignInForm").css('display', 'none')
@@ -350,6 +355,9 @@ $("#logOutBtn").click(function () {
     $("#AdminManageBTN").css('display', 'none')
     $("#EmployeeBTN").css('display', 'block')
     $(".carArea").css('pointer-events', '');
+
+    $("#notifyIcon1_customer").css('display', 'none')
+    $("#notifyIcon2_admin").css('display', 'none')
 })
 $("#logoutIcon").click(function () {
     window.location.href = "index.html"
@@ -468,21 +476,23 @@ $(".backImg2").click(function () {
 
 /*rentPageModelClose*/
 $(".rentPageModelCloseBtn").click(function () {
-    $(".home").css('display', 'block')
-    $(".firstPage").css('display', 'block')
-    $(".secondPage").css('display', 'block')
-    $(".thirdPage").css('display', 'block')
+    $(".home").css('display', 'none')
+    $(".firstPage").css('display', 'none')
+    $(".secondPage").css('display', 'none')
+    $(".thirdPage").css('display', 'none')
 
     $(".loginPage").css('display', 'none')
     $(".adminloginPage").css('display', 'none')
     $(".rentSection").css('display', 'none')
-    $(".myBookings").css('display', 'none')
+    $(".myBookings").css('display', 'block')
     $(".paymentSection").css('display', 'none')
     $(".carManagement").css('display', 'none')
     $(".driverManagement").css('display', 'none')
     $(".dashboard").css('display', 'none')
     $(".customerManagement").css('display', 'none')
     addRentsToTable();
+    addOngoingAndReturnedRents()
+
 })
 $(".paymentPageModelCloseBtn").click(function () {
     $(".home").css('display', 'none')
@@ -536,4 +546,25 @@ function loadAllCarsToHome() {
     })
 }
 
+/*check notifications action*/
+loadNotifications();
+function loadNotifications() {
+    $.ajax({
+        url: "http://localhost:8080/Course_work_war/rent",
+        method:"GET",
+        success: function (resp) {
+            var pendingRequestCount=[];
+            pendingRequestCount.length=0;
+            for (const rent of resp.data) {
+               if(rent.status==="pending"){
+                   pendingRequestCount.push(rent);
+                }
+                $(".pendingReqCount").text(pendingRequestCount.length);
+               if(pendingRequestCount.length!==0){
+                   $("#notifyIcon2_admin").css('background-color','rgb(229 162 66)');
+               }
+            }
 
+        }
+    })
+}

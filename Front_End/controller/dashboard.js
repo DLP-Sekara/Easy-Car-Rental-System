@@ -9,19 +9,34 @@ function addRentsToTable() {
             console.log(resp.data)
             for (const rent of resp.data) {
                 if(rent.status==="ongoing") {
-                    let row = `<tr><td>${rent.rentID}</td><td>${rent.customer.username}</td><td>${rent.date}</td><td>${rent.pickUpTime}</td><td><button class="returnBtn" style="border: 1px solid white;background-color: #ea9e41;border-radius: 6px; cursor: pointer">Return car</button></td></tr>`;
+                    let row = `<tr><td class="rId">${rent.rentID}</td><td>${rent.customer.username}</td><td>${rent.date}</td><td>${rent.pickUpTime}</td>
+                    <td><button class="returnBtn" style="border: 1px solid white;color: white; background-color: #ea9e41;border-radius: 6px; cursor: pointer">Return</button></td>
+                    <td><button class="rejectBtn" style="border: 1px solid white;color: white; background-color: orangered;border-radius: 6px; cursor: pointer">Reject</button></td>
+                    <td><button class="confirmBtn" style="display: none; border: 1px solid white;color: white; background-color: green;border-radius: 6px; cursor: pointer">Confirm</button></td></tr>`;
+                    $(".allRentTable").append(row);
+                }else if(rent.status==="pending"){
+                    let row = `<tr><td class="rId">${rent.rentID}</td><td>${rent.customer.username}</td><td>${rent.date}</td><td>${rent.pickUpTime}</td>
+                    <td><button class="returnBtn" style="display: none;border: 1px solid white;color: white; background-color: #ea9e41;border-radius: 6px; cursor: pointer">Return</button></td>
+                    <td><button class="rejectBtn" style="border: 1px solid white;color: white; background-color: orangered;border-radius: 6px; cursor: pointer">Reject</button></td>
+                    <td><button class="confirmBtn" style=" border: 1px solid white;color: white; background-color: green;border-radius: 6px; cursor: pointer">Confirm</button></td></tr>`;
                     $(".allRentTable").append(row);
                 }
             }
             allRentTableClick();
+            rentConfirmBtnClick();
+            rentRejectBtnClick();
         }
     })
 }
+
+//rent btn click
 function allRentTableClick() {
-    $(".allRentTable>tr").click(function () {
-        temp_Rent_ID=$(this).children().eq(0).text();
+    $(".returnBtn").click(function () {
+        //temp_Rent_ID=$(this).children().eq(0).text();
+        temp_Rent_ID=$(this).closest("tr").find(".rId").text();
+
         $("#rentID").text(temp_Rent_ID);
-        console.log(temp_Rent_ID);
+        console.log("this is the final "+temp_Rent_ID);
         $.ajax({
             url: "http://localhost:8080/Course_work_war/rent/"+temp_Rent_ID,
             method:"GET",
@@ -82,6 +97,129 @@ function allRentTableClick() {
         $(".customerManagement").css('display', 'none')
     })
 }
+
+//confirm btn click
+function rentConfirmBtnClick() {
+    $(".confirmBtn").click(function () {
+        console.log("hello")
+        temp_Rent_ID=$(this).closest("tr").find(".rId").text();
+        //$(this).closest("tr").find(".returnBtn").css("display", "block");
+        $.ajax({
+            url: "http://localhost:8080/Course_work_war/rent/" + temp_Rent_ID,
+            method: "GET",
+            success: function (resp) {
+                let tempRent=resp.data;
+                var rentOB = {
+                    "rentID": tempRent.rentID,
+                    "date": tempRent.date,
+                    "pickUpTime": tempRent.pickUpTime,
+                    "driver": tempRent.driver,
+                    "status": "ongoing",
+                    "cash_on_hand":tempRent.cash_on_hand,
+                    "customer":tempRent.customer,
+                    "rentDetails":tempRent.rentDetails
+                }
+                console.log(rentOB)
+                $.ajax({
+                    url: "http://localhost:8080/Course_work_war/rent",
+                    method: "PUT",
+                    contentType: "application/json",
+                    data: JSON.stringify(rentOB),
+                    success: function (res) {
+                        if (res.code == 200) {
+                            alert("rent confirmed");
+                            /*$(this).closest("tr").find(".returnBtn").css("display", "block");
+                            $(this).closest("tr").find(".confirmBtn").css("display", "none");*/
+                            addRentsToTable();
+
+                            //update notification
+                            $.ajax({
+                                url: "http://localhost:8080/Course_work_war/rent",
+                                method:"GET",
+                                success: function (resp) {
+                                    var pendingRequestCount=[];
+                                    pendingRequestCount.length=0;
+                                    for (const rent of resp.data) {
+                                        if(rent.status==="pending"){
+                                            pendingRequestCount.push(rent);
+                                        }
+                                        $(".pendingReqCount").text(pendingRequestCount.length);
+                                        if(pendingRequestCount.length!==0){
+                                            $("#notifyIcon2_admin").css('background-color','rgb(229 162 66)');
+                                        }
+                                    }
+
+                                }
+                            })
+                        } else {
+                            alert(res.data);
+                        }
+                    },
+                    error: function (ob) {
+                        //console.log(ob);
+
+                    }
+                })
+            }
+        })
+        //$(this).closest("tr").find(".returnBtn").css("display", "block");
+        //$(this).closest("tr").find(".confirmBtn").css("display", "none");
+    })
+}
+
+//reject btn click
+function rentRejectBtnClick() {
+    $(".rejectBtn").click(function () {
+        console.log("hello")
+        temp_Rent_ID=$(this).closest("tr").find(".rId").text();
+        //$(this).closest("tr").find(".returnBtn").css("display", "block");
+        $.ajax({
+            url: "http://localhost:8080/Course_work_war/rent/" + temp_Rent_ID,
+            method: "GET",
+            success: function (resp) {
+                let tempRent=resp.data;
+                var rentOB = {
+                    "rentID": tempRent.rentID,
+                    "date": tempRent.date,
+                    "pickUpTime": tempRent.pickUpTime,
+                    "driver": tempRent.driver,
+                    "status": "rejected",
+                    "cash_on_hand":tempRent.cash_on_hand,
+                    "customer":tempRent.customer,
+                    "rentDetails":tempRent.rentDetails
+                }
+                console.log(rentOB)
+                $.ajax({
+                    url: "http://localhost:8080/Course_work_war/rent",
+                    method: "PUT",
+                    contentType: "application/json",
+                    data: JSON.stringify(rentOB),
+                    success: function (res) {
+                        if (res.code == 200) {
+                            alert("rent rejected");
+                            /*$(this).closest("tr").find(".returnBtn").css("display", "block");
+                            $(this).closest("tr").find(".confirmBtn").css("display", "none");*/
+                            addRentsToTable();
+                        } else {
+                            alert(res.data);
+                        }
+                    },
+                    error: function (ob) {
+                        //console.log(ob);
+
+                    }
+                })
+            }
+        })
+        /*$(this).closest("tr").find(".returnBtn").css("display", "block");
+        $(this).closest("tr").find(".confirmBtn").css("display", "none");*/
+
+    })
+}
+
+
+
+
 
 loadAllSummeryTags();
 function loadAllSummeryTags() {

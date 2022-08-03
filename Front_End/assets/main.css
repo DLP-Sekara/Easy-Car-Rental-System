@@ -1,7 +1,10 @@
 #nav1{
     height: 60px;
 }
-
+#nav1:hover{
+    cursor: pointer;
+    background-color: #f6efe3;
+}
 #EmployeeBTN > a, #CustomerBTN > a, #logInBTN > a, #homeBtn > a,#ManageBTN>a,#AdminManageBTN>a {
     color: black;
 }
@@ -9,7 +12,21 @@
 #ManageBTN,#AdminManageBTN{
     top: 9px;
 }
-
+.notifyIcon{
+    width: 60px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    position: relative;
+    left: -14px;
+}
+.notifyIcon>pre{
+    position: relative;
+    display: inline;
+    font-size: 18px;
+    left: 4px;
+    top: 3px;
+    color: white;
+}
 main {
     overflow: hidden;
     position: relative;

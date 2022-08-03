@@ -140,7 +140,7 @@ $(".rentBtn").click(function () {
                         "date": date,
                         "pickUpTime": pickUpTime,
                         "driver": driver,
-                        "status": "ongoing",
+                        "status": "pending",
                         "cash_on_hand":temp_CarDamagePrice,
                         "customer":customer,
                         "rentDetails":rentDetails
@@ -156,6 +156,27 @@ $(".rentBtn").click(function () {
                                 alert(res.message);
                                 loadAllCarsToHome();
                                 addRentsToTable();
+
+                                //update notification
+                                $.ajax({
+                                    url: "http://localhost:8080/Course_work_war/rent",
+                                    method:"GET",
+                                    success: function (resp) {
+                                        var pendingRequestCount=[];
+                                        pendingRequestCount.length=0;
+                                        for (const rent of resp.data) {
+                                            if(rent.status==="pending"){
+                                                pendingRequestCount.push(rent);
+                                            }
+                                            $(".pendingReqCount").text(pendingRequestCount.length);
+                                            if(pendingRequestCount.length!==0){
+                                                $("#notifyIcon2_admin").css('background-color','rgb(229 162 66)');
+                                            }
+                                        }
+
+                                    }
+                                })
+
                             } else {
                                 alert(res.data);
                             }
@@ -174,6 +195,9 @@ $(".rentBtn").click(function () {
 
 
 })
+
+
+
 
 
 //car view btn function
@@ -212,6 +236,12 @@ function addOngoingAndReturnedRents() {
                 console.log(rent.customer.username)
                 if(rent.customer.username===tempCustomerUsernameStatus) {
                     if(rent.status==="ongoing"){
+                        let row = `<tr><td>${rent.rentID}</td><td>${rent.cash_on_hand}</td><td>${rent.date}</td><td>${rent.pickUpTime}</td><td>${rent.customer.username}</td><td style="color: green; font-weight: bold">${rent.status}</td></tr>`;
+                        $(".customerUniqueRentsTbl").append(row);
+                    }else if(rent.status==="pending"){
+                        let row = `<tr><td>${rent.rentID}</td><td>${rent.cash_on_hand}</td><td>${rent.date}</td><td>${rent.pickUpTime}</td><td>${rent.customer.username}</td><td style="color: #ea9e41; font-weight: bold">${rent.status}</td></tr>`;
+                        $(".customerUniqueRentsTbl").append(row);
+                    }else if(rent.status==="rejected"){
                         let row = `<tr><td>${rent.rentID}</td><td>${rent.cash_on_hand}</td><td>${rent.date}</td><td>${rent.pickUpTime}</td><td>${rent.customer.username}</td><td style="color: red; font-weight: bold">${rent.status}</td></tr>`;
                         $(".customerUniqueRentsTbl").append(row);
                     }else{

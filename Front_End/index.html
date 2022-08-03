@@ -75,7 +75,19 @@
             </ul>
 
         </div>
-
+        <!--<li class="nav-item dropdown notifyIcon">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="assets/images/notification.png">
+            </a>
+            &lt;!&ndash;<ul class="dropdown-menu">
+                &lt;!&ndash;<li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>&ndash;&gt;
+            </ul>&ndash;&gt;
+        </li>-->
+        <div class="notifyIcon dropdown" id="notifyIcon1_customer"><img src="assets/images/notification.png"><pre></pre></div>
+        <div class="notifyIcon dropdown" id="notifyIcon2_admin"><img src="assets/images/notification.png"><pre class="pendingReqCount"></pre></div>
         <pre class="onlineTxt" style="font-size: 16px;margin-top: 1%;"></pre>
         <img class="onlineIcon" style="width: 20px" src="assets/images/summery/online1.png">
         <li class="nav-item nav-link active" id="logInBTN">
@@ -494,10 +506,10 @@
             <div class="bottom"></div>
             <pre class="bookingTopic2">Hope You Enjoyed Our Service</pre>
         </div>
-        <div class="bookingTable">
+        <div class="bookingTable overflow-auto">
             <table class="table">
-                <thead>
-                <tr>
+                <thead >
+                <tr class="">
                     <th scope="col">Rent ID</th>
                     <th scope="col">Cash On Hand</th>
                     <th scope="col">Date</th>
@@ -832,6 +844,7 @@
                 <li><a href="#tabs-2">Existing rents</a></li>
                 <li><a href="#tabs-3">Income Reports</a></li>
                 <li><a href="#tabs-4">Statistics</a></li>
+
             </ul>
             <div id="tabs-1">
                 <div class="DashboardLabels">

@@ -45,6 +45,8 @@ function makePayment() {
                             if (res.code == 200) {
                                 alert(res.message);
                                 loadAllCarsToHome();
+                                loadAllSummeryTags();
+                                loadIncomeChart();
                                 //saveOrderDetail(oid)
                                 //clearOrderDetails();
                             } else {
@@ -61,3 +63,6 @@ function makePayment() {
         }
     })
 }
+
+
+//confirm btn function

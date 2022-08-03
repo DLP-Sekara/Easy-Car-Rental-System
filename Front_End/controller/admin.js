@@ -107,6 +107,9 @@ function checkAdmin() {
                        $(".adminLoginBtn").attr('disabled', true);
                        $(".carArea").css('pointer-events', 'none');
 
+                   $("#notifyIcon1_customer").css('display', 'none')
+                   $("#notifyIcon2_admin").css('display', 'block')
+
                    //$(".carArea").attr('disabled', true);
 
                    $(".carTab").disable(true);

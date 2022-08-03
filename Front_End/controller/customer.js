@@ -100,6 +100,9 @@ function checkCustomer() {
                         $("#logInBTN").css('display', 'none')
                         $("#AdminManageBTN").css('display', 'none')
 
+                    $("#notifyIcon1_customer").css('display', 'block')
+                    $("#notifyIcon2_admin").css('display', 'none')
+
                         $("#customerLoginWarningMsg").text("")
                         $("#customerUsername").css('border', '2px solid #ced4da');
                         $("#customerPassword").css('border', '2px solid #ced4da');
@@ -132,7 +135,7 @@ function checkCustomer() {
 //======================sign in form ========================================================
 
 /*customer signin validation==============================================*/
-/*$(".custSignInBtn").attr('disabled', true);
+$(".custSignInBtn").attr('disabled', true);
 var cust_Username = /^[A-z]{2,20}$/;
 var cust_Password = /^[A-z,0-9 _]{4,10}$/;
 var cust_Email =/^[A-z]{2,20}[@][A-z]{2,10}[.][A-z]{2,20}$/;
@@ -141,65 +144,178 @@ var cust_Contact = /^[0-9]{5,20}$/;
 var cust_DLicenseNo = /^[0-9]{5,20}$/;
 var cust_NIC = /^[0-9]{5,20}$/;
 
-$('#customerUsername,#customerPassword').on('keydown', function (event) {
+$('#inputCustomerUsername,#inputCustomerPassword').on('keydown', function (event) {
     if (event.key == "Tab") {
         event.preventDefault();
     }
 });
 
-$("#customerUsername").keyup(function (event) {
+$("#inputCustomerUsername").keyup(function (event) {
     let temp = checkUsername();
-    btnAction2();
+    btnAction3();
     if ("Enter" == event.key & temp == true) {
-        $("#customerPassword").focus();
+        $("#inputCustomerPassword").focus();
     }
 })
-
 function checkUsername() {
-    let temp = $("#customerUsername").val();
-    if (custUsername.test(temp)) {
-        $("#customerUsername").css('border', '2px solid green');
+    let temp = $("#inputCustomerUsername").val();
+    if (cust_Username.test(temp)) {
+        $("#inputCustomerUsername").css('border', '2px solid green');
         return true;
     } else {
-        $("#customerUsername").css('border', '2px solid red');
+        $("#inputCustomerUsername").css('border', '2px solid red');
     }
 }
 
-$("#customerPassword").keyup(function (event) {
+$("#inputCustomerPassword").keyup(function (event) {
     let temp = checkCustPassword();
-    btnAction2();
+    btnAction3();
     if ("Enter" == event.key & temp == true) {
-        $(".custLogInBtn").focus();
+        $("#inputCustomerEmail").focus();
     }
 })
-
 function checkCustPassword() {
-    let temp = $("#customerPassword").val();
-    if (custPassword.test(temp)) {
-        $("#customerPassword").css('border', '2px solid green');
+    let temp = $("#inputCustomerPassword").val();
+    if (cust_Password.test(temp)) {
+        $("#inputCustomerPassword").css('border', '2px solid green');
         return true;
     } else {
-        $("#customerPassword").css('border', '2px solid red');
+        $("#inputCustomerPassword").css('border', '2px solid red');
     }
 }
 
-function btnAction2() {
-    let username = $("#customerUsername").val();
-    if (custUsername.test(username)) {
-        let tempPassword = $("#customerPassword").val();
-        if (custPassword.test(tempPassword)) {
-            $(".custLogInBtn").attr('disabled', false);
-        } else {
-            $(".custLogInBtn").attr('disabled', true);
+$("#inputCustomerEmail").keyup(function (event) {
+    let temp = checkCustEmail();
+    btnAction3();
+    if ("Enter" == event.key & temp == true) {
+        $("#inputCustomerAddress").focus();
+    }
+})
+function checkCustEmail() {
+    let temp = $("#inputCustomerEmail").val();
+    if (cust_Email.test(temp)) {
+        $("#inputCustomerEmail").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#inputCustomerEmail").css('border', '2px solid red');
+    }
+}
+
+$("#inputCustomerAddress").keyup(function (event) {
+    let temp = checkCustAddress();
+    btnAction3();
+    if ("Enter" == event.key & temp == true) {
+        $("#inputCustomerDrivingLicenseNo").focus();
+    }
+})
+function checkCustAddress() {
+    let temp = $("#inputCustomerAddress").val();
+    if (cust_Address.test(temp)) {
+        $("#inputCustomerAddress").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#inputCustomerAddress").css('border', '2px solid red');
+    }
+}
+
+$("#inputCustomerDrivingLicenseNo").keyup(function (event) {
+    let temp = checkCustDLicenseNo();
+    btnAction3();
+    if ("Enter" == event.key & temp == true) {
+        $("#inputCustomerContact").focus();
+    }
+})
+function checkCustDLicenseNo() {
+    let temp = $("#inputCustomerDrivingLicenseNo").val();
+    if (cust_DLicenseNo.test(temp)) {
+        $("#inputCustomerDrivingLicenseNo").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#inputCustomerDrivingLicenseNo").css('border', '2px solid red');
+    }
+}
+
+$("#inputCustomerContact").keyup(function (event) {
+    let temp = checkCustContact();
+    btnAction3();
+    if ("Enter" == event.key & temp == true) {
+        $("#inputCustomerNic").focus();
+    }
+})
+function checkCustContact() {
+    let temp = $("#inputCustomerContact").val();
+    if (cust_Contact.test(temp)) {
+        $("#inputCustomerContact").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#inputCustomerContact").css('border', '2px solid red');
+    }
+}
+
+$("#inputCustomerNic").keyup(function (event) {
+    let temp = checkCustNic();
+    btnAction3();
+    if ("Enter" == event.key & temp == true) {
+        $(".custSignInBtn").focus();
+    }
+})
+function checkCustNic() {
+    let temp = $("#inputCustomerNic").val();
+    if (cust_NIC.test(temp)) {
+        $("#inputCustomerNic").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#inputCustomerNic").css('border', '2px solid red');
+    }
+}
+
+function btnAction3() {
+    let temp_Username=$("#inputCustomerUsername").val();
+    if(cust_Username.test(temp_Username)){
+        let temp_Password=$("#inputCustomerPassword").val();
+        if(cust_Password.test(temp_Password)){
+            let temp_Email=$("#inputCustomerEmail").val();
+            if(cust_Email.test(temp_Email)){
+                let temp_Address=$("#inputCustomerAddress").val();
+                if(cust_Address.test(temp_Address)){
+                    let temp_DLicenseNo=$("#inputCustomerDrivingLicenseNo").val();
+                    if(cust_DLicenseNo.test(temp_DLicenseNo)){
+                        let temp_contact=$("#inputCustomerContact").val();
+                        if(cust_Contact.test(temp_contact)){
+                            let temp_NIC=$("#inputCustomerNic").val();
+                            if(cust_NIC.test(temp_NIC)){
+                                $(".custSignInBtn").attr('disabled', false);
+                            }else{
+                                $(".custSignInBtn").attr('disabled', true);
+                                return false;
+                            }
+                        }else{
+                            $(".custSignInBtn").attr('disabled', true);
+                            return false;
+                        }
+                    }else{
+                        $(".custSignInBtn").attr('disabled', true);
+                        return false;
+                    }
+                }else{
+                    $(".custSignInBtn").attr('disabled', true);
+                    return false;
+                }
+            }else{
+                $(".custSignInBtn").attr('disabled', true);
+                return false;
+            }
+        }else{
+            $(".custSignInBtn").attr('disabled', true);
             return false;
         }
-    } else {
-        $(".custLogInBtn").attr('disabled', true);
+    }else{
+        $(".custSignInBtn").attr('disabled', true);
         return false;
     }
-}*/
+}
 
-/*customer login BtnEvent==============================================*/
+/*customer sign in BtnEvent==============================================*/
 $(".custSignInBtn").click(function () {
     availableCustomer()
 })
@@ -239,6 +355,14 @@ function availableCustomer() {
                 $("#logOutBtn").css('display', 'block')
                 $("#logInBTN").css('display', 'none')
                 $("#AdminManageBTN").css('display', 'none')
+
+                $("#notifyIcon1_customer").css('display', 'block')
+                $("#notifyIcon2_admin").css('display', 'none')
+
+                $(".onlineTxt").text("Hi "+tempCustomerUsernameStatus+" ")
+                $(".onlineTxt").css('display', 'block')
+                $(".onlineIcon").css('display', 'block')
+
                 loadAllSummeryTags();
                 //selectedCarClickEvent();
             }
