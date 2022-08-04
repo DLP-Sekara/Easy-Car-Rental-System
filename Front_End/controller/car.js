@@ -3,7 +3,7 @@ $(".carSaveBtn").attr('disabled', true);
 $(".carUpdateBtn").attr('disabled', true);
 $(".carDeleteBtn").attr('disabled', true);
 
-var car_regNo = /^[A-z,0-9]{4,10}$/;
+var car_regNo = /^[A-z,0-9 -]{4,10}$/;
 var car_brand = /^[A-z,0-9 _]{4,20}$/;
 var car_color = /^[A-z]{2,20}$/;
 var car_NoOfPassengers = /^[0-9]{1,10}$/;
@@ -155,7 +155,7 @@ function checkCarMonthlyPrice() {
     }
 }
 
-$("#fuelType").keyup(function (event) {
+/*$("#fuelType").keyup(function (event) {
     let temp = checkCarFuelType();
     btnAction4();
     if ("Enter" == event.key & temp == true) {
@@ -170,7 +170,7 @@ function checkCarFuelType() {
     } else {
         $("#fuelType").css('border', '2px solid red');
     }
-}
+}*/
 
 $("#lostDamageCost").keyup(function (event) {
     let temp = checkCarDamageCost();
@@ -189,7 +189,7 @@ function checkCarDamageCost() {
     }
 }
 
-$("#car_group").keyup(function (event) {
+/*$("#car_group").keyup(function (event) {
     let temp = checkCarGroup();
     btnAction4();
     if ("Enter" == event.key & temp == true) {
@@ -238,7 +238,7 @@ function checkCarStatus() {
     } else {
         $("#status").css('border', '2px solid red');
     }
-}
+}*/
 
 function btnAction4() {
     let val_regNo = $("#regNo").val();
@@ -257,16 +257,8 @@ function btnAction4() {
                             if (car_dailyPrice.test(val_dailyPrice)) {
                                 let val_monthlyPrice = $("#monthlyPrice").val();
                                 if (car_monthlyPrice.test(val_monthlyPrice)) {
-                                    let val_fuelType = $("#fuelType").val();
-                                    if (val_fuelType==="Petrol" || val_fuelType==="Diesel") {
                                         let val_lostDamageCost = $("#lostDamageCost").val();
                                         if (car_damageCost.test(val_lostDamageCost)) {
-                                            let val_car_group = $("#car_group").val();
-                                            if (val_car_group==="Premium" || val_car_group==="General" || val_car_group==="Luxury") {
-                                                let val_transmissionType = $("#transmissionType").val();
-                                                if (val_transmissionType==="Manual" || val_transmissionType==="Auto") {
-                                                    let val_status = $("#status").val();
-                                                    if (val_status==="Available" || val_status==="Under Maintenance" || val_status==="Running") {
                                                         $(".carSaveBtn").attr('disabled', false);
                                                     } else {
                                                         $(".carSaveBtn").attr('disabled', true);
@@ -276,22 +268,7 @@ function btnAction4() {
                                                     $(".carSaveBtn").attr('disabled', true);
                                                     return false;
                                                 }
-                                            } else {
-                                                $(".carSaveBtn").attr('disabled', true);
-                                                return false;
                                             }
-                                        } else {
-                                            $(".carSaveBtn").attr('disabled', true);
-                                            return false;
-                                        }
-                                    } else {
-                                        $(".carSaveBtn").attr('disabled', true);
-                                        return false;
-                                    }
-                                } else {
-                                    $(".carSaveBtn").attr('disabled', true);
-                                    return false;
-                                }
                             } else {
                                 $(".carSaveBtn").attr('disabled', true);
                                 return false;
@@ -316,10 +293,7 @@ function btnAction4() {
             $(".carSaveBtn").attr('disabled', true);
             return false;
         }
-    } else {
-        $(".carSaveBtn").attr('disabled', true);
-        return false;
-    }
+
 }
 
 /*car tbl click event============================================*/
