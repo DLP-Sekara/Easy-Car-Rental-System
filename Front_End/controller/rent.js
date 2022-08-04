@@ -158,7 +158,9 @@ $(".rentBtn").click(function () {
                                 addRentsToTable();
 
                                 //update notification
-                                $.ajax({
+
+                                self.loadNotifications()
+                              /*  $.ajax({
                                     url: "http://localhost:8080/Course_work_war/rent",
                                     method:"GET",
                                     success: function (resp) {
@@ -175,7 +177,7 @@ $(".rentBtn").click(function () {
                                         }
 
                                     }
-                                })
+                                })*/
 
                             } else {
                                 alert(res.data);
@@ -193,7 +195,7 @@ $(".rentBtn").click(function () {
         }
     })
 
-
+    loadNotifications()
 })
 
 

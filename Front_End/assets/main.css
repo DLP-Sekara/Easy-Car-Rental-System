@@ -872,7 +872,7 @@ body {
     left: -1%;
 }
 .customerManagementForm{
-    height: 63%;
+    height: 67%;
     width: 78%;
     background-color: white;
     position: absolute;
@@ -1097,7 +1097,7 @@ body {
     width: 600px;
     max-width: 600px;
     display: block;
-    height: 447px;
+    max-height: 515px;
     left: 55%;
     top: 13%;
 }

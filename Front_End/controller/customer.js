@@ -151,13 +151,13 @@ $('#inputCustomerUsername,#inputCustomerPassword').on('keydown', function (event
 });
 
 $("#inputCustomerUsername").keyup(function (event) {
-    let temp = checkUsername();
+    let temp = checkUsername3();
     btnAction3();
     if ("Enter" == event.key & temp == true) {
         $("#inputCustomerPassword").focus();
     }
 })
-function checkUsername() {
+function checkUsername3() {
     let temp = $("#inputCustomerUsername").val();
     if (cust_Username.test(temp)) {
         $("#inputCustomerUsername").css('border', '2px solid green');
@@ -168,13 +168,13 @@ function checkUsername() {
 }
 
 $("#inputCustomerPassword").keyup(function (event) {
-    let temp = checkCustPassword();
+    let temp = checkCustPassword3();
     btnAction3();
     if ("Enter" == event.key & temp == true) {
         $("#inputCustomerEmail").focus();
     }
 })
-function checkCustPassword() {
+function checkCustPassword3() {
     let temp = $("#inputCustomerPassword").val();
     if (cust_Password.test(temp)) {
         $("#inputCustomerPassword").css('border', '2px solid green');
@@ -416,7 +416,7 @@ function availableCustomer() {
 //======================customer manage form ========================================================
 
 /*customer management validation==============================================*/
-$(".custSignInBtn").attr('disabled', true);
+$(".customerUpdateBtn").attr('disabled', true);
 var custManage_Username = /^[A-z]{2,20}$/;
 var custManage_Password = /^[A-z,0-9 _]{4,10}$/;
 var custManage_Email =/^[A-z]{2,20}[@][A-z]{2,10}[.][A-z]{2,20}$/;
@@ -567,31 +567,31 @@ function btnAction6() {
                             if(custManage_NIC.test(temp_NIC2)){
                                 $(".customerUpdateBtn").attr('disabled', false);
                             }else{
-                                $(".customerUpdateBtn").attr('disabled', true);
+                                $(".customerUpdateBtn").attr('disabled', false);
                                 return false;
                             }
                         }else{
-                            $(".customerUpdateBtn").attr('disabled', true);
+                            $(".customerUpdateBtn").attr('disabled', false);
                             return false;
                         }
                     }else{
-                        $(".customerUpdateBtn").attr('disabled', true);
+                        $(".customerUpdateBtn").attr('disabled', false);
                         return false;
                     }
                 }else{
-                    $(".customerUpdateBtn").attr('disabled', true);
+                    $(".customerUpdateBtn").attr('disabled', false);
                     return false;
                 }
             }else{
-                $(".customerUpdateBtn").attr('disabled', true);
+                $(".customerUpdateBtn").attr('disabled', false);
                 return false;
             }
         }else{
-            $(".customerUpdateBtn").attr('disabled', true);
+            $(".customerUpdateBtn").attr('disabled', false);
             return false;
         }
     }else{
-        $(".customerUpdateBtn").attr('disabled', true);
+        $(".customerUpdateBtn").attr('disabled', false);
         return false;
     }
 }
@@ -622,6 +622,7 @@ function customerTblClick() {
         })
 
     })
+
 }
 
 /*load all customer to table=========================================*/
@@ -667,6 +668,9 @@ function updateCustomer() {
             if(resp.code==200){
                 addCustomerToTable();
                 alert("successfully update");
+                $( '.updateForm' ).each(function(){
+                    this.reset();
+                });
             }
         },
         error:function (ob) {
@@ -688,6 +692,9 @@ function deleteCustomer() {
             if(resp.code==200){
                 alert("successfully delete")
                 addCustomerToTable();
+                $( '.updateForm' ).each(function(){
+                    this.reset();
+                });
             }
         },
         error:function (ob) {

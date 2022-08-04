@@ -549,6 +549,7 @@ function loadAllCarsToHome() {
 /*check notifications action*/
 loadNotifications();
 function loadNotifications() {
+    console.log("notify done")
     $.ajax({
         url: "http://localhost:8080/Course_work_war/rent",
         method:"GET",

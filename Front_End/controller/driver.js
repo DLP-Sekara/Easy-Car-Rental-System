@@ -1,5 +1,7 @@
 /*Driver login validation==============================================*/
 $(".driverSaveBtn").attr('disabled', true);
+$(".driverUpdateBtn").attr('disabled', true);
+$(".driverDeleteBtn").attr('disabled', true);
 var driverID = /^[A-z,0-9 _]{4,10}$/;
 var driverNic = /^[0-9 _]{4,10}$/;
 var driverLicenseNo = /^[0-9 _]{4,10}$/;
@@ -141,8 +143,8 @@ function DriverTblClick() {
         $("#driverName").val(driverName);
         $("#driverStatus").val(status);
 
-        $(".updateBtn").attr('disabled', false);
-        $(".dltBtn").attr('disabled', false);
+        $(".driverUpdateBtn").attr('disabled', false);
+        $(".driverDeleteBtn").attr('disabled', false);
     })
 }
 
@@ -178,6 +180,10 @@ $(".driverSaveBtn").click(function () {
                 alert(res.message);
                 addDriverToTable()
                 DriverTblClick()
+                $( '#driverForm' ).each(function(){
+                    this.reset();
+                    $('input').css('border','2px solid #ced4da')
+                });
             }
 
         },
@@ -209,6 +215,11 @@ function updateDriver() {
             if(resp.code==200){
                 addDriverToTable();
                 alert("successfully update");
+                $( '#driverForm' ).each(function(){
+                    this.reset();
+                    this.css('border','2px solid blue')
+                });
+
             }
         },
         error:function (ob) {
@@ -230,6 +241,9 @@ function deleteDriver() {
             if(resp.code==200){
                 alert("successfully delete")
                 addDriverToTable();
+                $( '#driverForm' ).each(function(){
+                    this.reset();
+                });
             }
         },
         error:function (ob) {

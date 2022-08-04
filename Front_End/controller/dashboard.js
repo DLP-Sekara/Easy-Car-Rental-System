@@ -32,6 +32,7 @@ function addRentsToTable() {
 //rent btn click
 function allRentTableClick() {
     $(".returnBtn").click(function () {
+
         //temp_Rent_ID=$(this).children().eq(0).text();
         temp_Rent_ID=$(this).closest("tr").find(".rId").text();
 
@@ -261,7 +262,7 @@ function loadAllSummeryTags() {
 
             $(".AvailableCarCount").text(availableCarCount.length);
             $(".rentedCarCount").text(rentedCarCount.length);
-            $(".maintainsCount").text(rentedCarCount.length);
+            $(".maintainsCount").text(maintainsCarCount.length);
 
 
         }

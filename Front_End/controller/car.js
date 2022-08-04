@@ -349,6 +349,9 @@ function carTblClick() {
                      $("#car_group").val(resp.data.car_group);
                     $("#transmission_type").val(resp.data.transmission_type);
                     $("#status").val(resp.data.status);
+
+                $(".carUpdateBtn").attr('disabled', false);
+                $(".carDeleteBtn").attr('disabled', false);
             }
         })
        /* let Driving_License_no = $(this).children().eq(1).text();
@@ -401,6 +404,10 @@ function checkCar() {
                 alert(res.message);
                 addCarsToTable()
                 loadAllCarsToHome();
+                $( '.carManagementForm' ).each(function(){
+                    this.reset();
+                    $('input').css('border','2px solid #ced4da')
+                });
             }
         },
         error: function (ob) {
@@ -470,6 +477,9 @@ function updateCar() {
             if(resp.code==200){
                 addCarsToTable();
                 alert("successfully update");
+                $( '.carManagementForm' ).each(function(){
+                    this.reset();
+                });
             }
         },
         error:function (ob) {
@@ -491,6 +501,9 @@ function deleteCar() {
             if(resp.code==200){
                 alert("successfully delete")
                 addCarsToTable();
+                $( '.carManagementForm' ).each(function(){
+                    this.reset();
+                });
             }
         },
         error:function (ob) {

@@ -286,13 +286,13 @@
                 <div class="row mb-3 col-11 col-lg-3">
                     <label class="col-sm-2 col-form-label" for="customerUsername">Username</label>
                     <div class="col-sm-10">
-                        <input class="form-control" id="customerUsername" type="text">
+                        <input class="form-control" name="username" id="customerUsername" type="text">
                     </div>
                 </div>
                 <div class="row mb-3 col-11 col-lg-3">
                     <label class="col-sm-2 col-form-label" for="customerPassword">Password</label>
                     <div class="col-sm-10">
-                        <input class="form-control" id="customerPassword" type="password">
+                        <input class="form-control" name="password" id="customerPassword" type="password">
                     </div>
                 </div>
                 <button class="btn custLogInBtn btn-primary" type="button">Login</button>
@@ -529,7 +529,7 @@
 
     <!--payment page-->
     <section class="paymentSection">
-        <idv class="paymentForm">
+        <form class="paymentForm">
             <img class="backImg1" src="assets/images/back.png">
             <pre class="paymentTopic">Payment Details</pre>
             <div class="col-md-6">
@@ -571,7 +571,7 @@
             <div class="col-12">
                 <button class="btn submitBtn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">SUBMIT</button>
             </div>
-        </idv>
+        </form>
 
         <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -686,7 +686,7 @@
             </form>
 
         </div>
-        <div class="carTable">
+        <div class="carTable overflow-auto">
             <table class="table">
                 <thead>
                 <tr>
@@ -733,9 +733,9 @@
                 <div class="col-md-6">
                     <label for="driverStatus" class="form-label">Driver Status</label>
                     <select name="status" class="col-md-6 form-select" id="driverStatus" aria-label="Default select example">
-                        <option selected>Fuel Type</option>
-                        <option value="1">Available</option>
-                        <option value="2">Working</option>
+                        <option selected>Driver Status</option>
+                        <option value="Available">Available</option>
+                        <option value="Working">Working</option>
                     </select>
                 </div>
 
@@ -748,7 +748,7 @@
             </form>
 
         </div>
-        <div class="driverTable">
+        <div class="driverTable overflow-auto">
             <table class="table driverTbl1">
                 <thead>
                 <tr>
@@ -772,7 +772,7 @@
     <section class="customerManagement" id="customerManagement">
         <div class="customerManagementForm">
             <pre>Customer Management</pre>
-            <form class="signinForm row g-3">
+            <form class="updateForm row g-3">
                 <div class="col-md-12">
                     <label class="form-label" for="CustomerUsernameMng">Username</label>
                     <input class="form-control" name="username" id="CustomerUsernameMng" placeholder="Username" type="text">
@@ -816,7 +816,7 @@
             </form>
 
         </div>
-        <div class="customerTable">
+        <div class="customerTable overflow-auto">
             <table class="table customerTbl1">
                 <thead>
                 <tr>
@@ -952,7 +952,7 @@
                 </div>
                 </div>
                 <canvas id="myChart2" style=""></canvas>
-                <canvas id="myChart" style="width:100%;max-width:600px" height="460px"></canvas>
+                <canvas id="myChart" style="width:100%;max-width:600px" ></canvas>
             </div>
             <div id="tabs-4">
                 <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
@@ -989,7 +989,6 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>-->
 
 <script>
-
 
     $( function() {
         $( "#datepicker" ).datepicker({
