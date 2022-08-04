@@ -1,7 +1,7 @@
 /*payment validation*/
 
 $(".submitBtn").attr('disabled', true);
-var distance = /^[0-9]{2,20}$/;
+var distance = /^[0-9]{1,20}$/;
 
 $("#distance").keyup(function (event) {
     let temp = checkDistance();

@@ -1,3 +1,59 @@
+/*rent validation*/
+
+/*$(".rentBtn").attr('disabled', true);
+var rent_date = /^[0-9]{2,20}$/;
+
+$("#startDate").keyup(function (event) {
+    //let temp = checkStartDate();
+    btnAction8();
+    if ("Enter" == event.key & temp == true) {
+        $(".pickUpTime").focus();
+    }
+})
+function checkStartDate() {
+    let temp = $("#startDate").val();
+    if (Date.parse(temp)) {
+        $("#distance").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#distance").css('border', '2px solid red');
+    }
+}
+
+$("#pickUpTime").keyup(function (event) {
+    //let temp = checkPickUpTime();
+    btnAction8();
+    if ("Enter" == event.key & temp == true) {
+        $(".rentBtn").focus();
+    }
+})
+function checkPickUpTime() {
+    let temp = $("#pickUpTime").val();
+    if (temp!==null) {
+        $("#pickUpTime").css('border', '2px solid green');
+        return true;
+    } else {
+        $("#pickUpTime").css('border', '2px solid red');
+    }
+}
+
+function btnAction8() {
+    let startDate1 = $("#startDate").val();
+    if (Date.parse(startDate1)) {
+        let pickUpTime1 = $("#pickUpTime").val();
+        if (pickUpTime1!==null) {
+            $(".rentBtn").attr('disabled', false);
+        } else {
+            $(".rentBtn").attr('disabled', true);
+            return false;
+        }
+    } else {
+        $(".rentBtn").attr('disabled', true);
+        return false;
+    }
+}*/
+
+
 
 /*car click event*/
 $(".temp_RegNo").css('display','none');
@@ -89,6 +145,9 @@ function selectedCarClickEvent() {
 
 //rent btn function
 $(".rentBtn").click(function () {
+        rentCar();
+})
+function rentCar() {
     console.log("this is done")
     console.log($("#LossDamageCost").val());
     console.log($("#selectedCar").val());
@@ -153,31 +212,36 @@ $(".rentBtn").click(function () {
                         data: JSON.stringify(rentOB),
                         success: function (res) {
                             if (res.code == 200) {
-                                alert(res.message);
+                                //alert(res.message);
                                 loadAllCarsToHome();
                                 addRentsToTable();
+
+                                $( '.rentForm' ).each(function(){
+                                    this.reset();
+                                    $('input').css('border','2px solid #ced4da')
+                                });
 
                                 //update notification
 
                                 self.loadNotifications()
-                              /*  $.ajax({
-                                    url: "http://localhost:8080/Course_work_war/rent",
-                                    method:"GET",
-                                    success: function (resp) {
-                                        var pendingRequestCount=[];
-                                        pendingRequestCount.length=0;
-                                        for (const rent of resp.data) {
-                                            if(rent.status==="pending"){
-                                                pendingRequestCount.push(rent);
-                                            }
-                                            $(".pendingReqCount").text(pendingRequestCount.length);
-                                            if(pendingRequestCount.length!==0){
-                                                $("#notifyIcon2_admin").css('background-color','rgb(229 162 66)');
-                                            }
-                                        }
+                                /*  $.ajax({
+                                      url: "http://localhost:8080/Course_work_war/rent",
+                                      method:"GET",
+                                      success: function (resp) {
+                                          var pendingRequestCount=[];
+                                          pendingRequestCount.length=0;
+                                          for (const rent of resp.data) {
+                                              if(rent.status==="pending"){
+                                                  pendingRequestCount.push(rent);
+                                              }
+                                              $(".pendingReqCount").text(pendingRequestCount.length);
+                                              if(pendingRequestCount.length!==0){
+                                                  $("#notifyIcon2_admin").css('background-color','rgb(229 162 66)');
+                                              }
+                                          }
 
-                                    }
-                                })*/
+                                      }
+                                  })*/
 
                             } else {
                                 alert(res.data);
@@ -196,8 +260,7 @@ $(".rentBtn").click(function () {
     })
 
     loadNotifications()
-})
-
+}
 
 
 

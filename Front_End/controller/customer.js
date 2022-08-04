@@ -138,7 +138,7 @@ function checkCustomer() {
 $(".custSignInBtn").attr('disabled', true);
 var cust_Username = /^[A-z]{2,20}$/;
 var cust_Password = /^[A-z,0-9 _]{4,10}$/;
-var cust_Email =/^[A-z]{2,20}[@][A-z]{2,10}[.][A-z]{2,20}$/;
+var cust_Email =/^[A-z,0-9]{2,20}[@][A-z]{2,10}[.][A-z]{2,20}$/;
 var cust_Address = /^[A-z,0-9 _]{4,10}$/;
 var cust_Contact = /^[0-9]{5,20}$/;
 var cust_DLicenseNo = /^[0-9]{5,20}$/;
@@ -362,6 +362,11 @@ function availableCustomer() {
                 $(".onlineTxt").text("Hi "+tempCustomerUsernameStatus+" ")
                 $(".onlineTxt").css('display', 'block')
                 $(".onlineIcon").css('display', 'block')
+
+                $( '.signinForm' ).each(function(){
+                    this.reset();
+                    $('input').css('border','2px solid #ced4da')
+                });
 
                 loadAllSummeryTags();
                 //selectedCarClickEvent();
